@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Mail, MapPin, Clock, Phone, Plus } from "lucide-react";
-import { HireHeader } from "@/components/portfolio/hire-header";
+import { HireHero } from "@/components/portfolio/hire-hero";
 import { HireFooter } from "@/components/portfolio/hire-footer";
 import { ContactForm } from "@/components/portfolio/contact-form";
 
@@ -51,32 +51,8 @@ const FAQ = [
 export default function ContactPage() {
   return (
     <>
-      <HireHeader />
+      <HireHero small="Let's talk" title="Contact" taglineTitle="Tell me about your project." taglineText="I'll get back to you within 24 hours with a clear plan and a fixed quote." />
       <main>
-        {/* hero with background image */}
-        <section className="relative flex min-h-[60vh] items-center overflow-hidden border-b border-border">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://picsum.photos/seed/asif-contact-bg/1920/1080"
-            alt=""
-            className="absolute inset-0 h-full w-full object-cover opacity-55"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/45" />
-          <div className="relative mx-auto w-full max-w-7xl px-6 pt-20 pb-16 lg:pt-24">
-            <span className="inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-brand">
-              <span className="h-px w-8 bg-brand" />
-              Get in touch
-            </span>
-            <h1 className="mt-6 max-w-3xl text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground sm:text-6xl">
-              Let&apos;s build something great together.
-            </h1>
-            <p className="mt-6 max-w-xl text-lg text-foreground/80">
-              Have a project, an idea, or just a question? Drop me a message — I reply to every
-              enquiry within 24 hours.
-            </p>
-          </div>
-        </section>
-
         {/* info + form */}
         <section className="border-b border-border py-20">
           <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2 lg:gap-16">

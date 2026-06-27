@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { HireHeader } from "@/components/portfolio/hire-header";
+import { HireHero } from "@/components/portfolio/hire-hero";
 import { HireFooter } from "@/components/portfolio/hire-footer";
 import { PROJECTS, projectShot } from "@/lib/projects-data";
 
@@ -16,32 +16,8 @@ const shot = (url: string) => projectShot(url, 900, 675);
 export default function ProjectsPage() {
   return (
     <>
-      <HireHeader />
+      <HireHero small="My work" title="Projects" taglineTitle="Real sites, real results." taglineText="A selection of websites and stores I've designed, built, and shipped." />
       <main>
-        {/* hero with background image */}
-        <section className="relative flex min-h-[55vh] items-center overflow-hidden border-b border-border">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://picsum.photos/seed/asif-projects-bg/1920/1080"
-            alt=""
-            className="absolute inset-0 h-full w-full object-cover opacity-25"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/45" />
-          <div className="relative mx-auto w-full max-w-7xl px-6 pt-20 pb-16 lg:pt-24">
-            <span className="inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-brand">
-              <span className="h-px w-8 bg-brand" />
-              Selected Work
-            </span>
-            <h1 className="mt-6 max-w-3xl text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground sm:text-6xl">
-              Projects I&apos;ve designed &amp; built.
-            </h1>
-            <p className="mt-6 max-w-xl text-lg text-foreground/80">
-              Real, live websites and stores — from Shopify e-commerce to custom WordPress builds and
-              web apps. Click any project to visit the real site.
-            </p>
-          </div>
-        </section>
-
         {/* grid */}
         <section className="py-20">
           <div className="mx-auto max-w-7xl px-6">

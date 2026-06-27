@@ -11,7 +11,7 @@ import {
   Rocket,
   LifeBuoy,
 } from "lucide-react";
-import { HireHeader } from "@/components/portfolio/hire-header";
+import { HireHero } from "@/components/portfolio/hire-hero";
 import { HireFooter } from "@/components/portfolio/hire-footer";
 
 export const metadata: Metadata = {
@@ -65,34 +65,8 @@ const STEPS = [
 export default function ServicesPage() {
   return (
     <>
-      <HireHeader />
+      <HireHero small="What I do" title="Services" taglineTitle="Everything to win online." taglineText="From the first line of code to long-term support — fast, SEO-ready, and built to convert." />
       <main className="bg-[#0a0a0a] text-white">
-        {/* ===== HERO ===== */}
-        <section className="relative overflow-hidden border-b border-white/10 px-6 py-20 lg:px-10 lg:py-28">
-          <div className="pointer-events-none absolute -top-32 left-1/2 h-80 w-[760px] -translate-x-1/2 rounded-full bg-[#ff5a1e]/15 blur-[130px]" />
-          <div className="relative mx-auto max-w-3xl text-center">
-            <p className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-[#ff5a1e]">
-              <span className="h-2 w-2 rounded-full bg-[#ff5a1e]" />
-              Services
-            </p>
-            <h1 className="mt-5 text-4xl font-extrabold leading-[1.04] tracking-tight sm:text-5xl lg:text-6xl">
-              Everything your business needs to{" "}
-              <span className="text-[#ff5a1e]">win online</span>
-            </h1>
-            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/65 sm:text-lg">
-              Four focused services — from the first line of code to long-term support. Fast,
-              SEO-ready, and built to turn visitors into clients.
-            </p>
-            <Link
-              href="/contact"
-              className="group mt-8 inline-flex items-center gap-2.5 rounded-full bg-[#ff5a1e] px-7 py-3.5 text-sm font-bold text-white transition-transform hover:scale-105"
-            >
-              Start a project
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          </div>
-        </section>
-
         {/* ===== 4 SERVICE CARDS ===== */}
         <section className="px-6 py-20 lg:px-10 lg:py-24">
           <div className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-2">

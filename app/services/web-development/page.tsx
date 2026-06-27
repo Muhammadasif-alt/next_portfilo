@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Globe, Code2, Layers, Triangle, Boxes, ArrowRight, type LucideIcon } from "lucide-react";
-import { HireHeader } from "@/components/portfolio/hire-header";
+import { HireHero } from "@/components/portfolio/hire-hero";
 import { HireFooter } from "@/components/portfolio/hire-footer";
 import { Button } from "@/components/ui/button";
 
@@ -127,43 +127,8 @@ const PACKAGES: Pkg[] = [
 export default function WebDevelopmentPage() {
   return (
     <>
-      <HireHeader />
+      <HireHero small="Service" title="Web Development" taglineTitle="Fast sites that rank." taglineText="SEO-ready websites and web apps — built around your goals, not a template." />
       <main>
-        {/* HERO */}
-        <section className="relative overflow-hidden border-b border-border">
-          <div className="pointer-events-none absolute -top-24 left-1/2 h-[420px] w-[680px] -translate-x-1/2 rounded-full bg-brand/10 blur-[140px]" />
-          <div className="relative mx-auto max-w-3xl px-6 pt-20 pb-16 text-center lg:pt-24">
-            <nav className="flex items-center justify-center gap-2 font-mono text-xs text-muted-foreground">
-              <Link href="/" className="transition-colors hover:text-foreground">Home</Link>
-              <span className="text-muted-foreground/50">›</span>
-              <Link href="/services" className="transition-colors hover:text-foreground">Services</Link>
-              <span className="text-muted-foreground/50">›</span>
-              <span className="text-brand">Web Development</span>
-            </nav>
-
-            <span className="mt-6 inline-block rounded-full border border-brand/25 bg-brand/10 px-4 py-1.5 font-mono text-xs uppercase tracking-[0.12em] text-brand">
-              Web Development
-            </span>
-
-            <h1 className="mt-6 text-4xl font-extrabold leading-[1.12] tracking-tight text-foreground sm:text-5xl">
-              Websites that <span className="text-brand">rank, convert,</span> and load fast
-            </h1>
-            <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              From simple WordPress sites to complex full-stack applications — I build clean,
-              SEO-ready websites that actually grow your business.
-            </p>
-
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Button asChild size="lg" className="rounded-full">
-                <Link href="/contact">Start a project <ArrowRight className="ml-1 h-4 w-4" /></Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full border-border bg-transparent text-foreground hover:bg-accent hover:text-foreground">
-                <Link href="/projects">See my work</Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-
         {/* STATS */}
         <section className="border-b border-border">
           <div className="mx-auto grid max-w-5xl grid-cols-2 px-6 sm:grid-cols-4">

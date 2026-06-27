@@ -5,9 +5,14 @@ import { Send, Check } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Select } from "@/components/portfolio/select";
-import { SERVICE_LIST } from "@/lib/services-data";
 
-const SERVICE_OPTIONS = [...SERVICE_LIST.map((s) => s.name), "Other / Not sure"];
+const SERVICE_OPTIONS = [
+  "Web Development",
+  "Marketing & SEO",
+  "E-commerce & Automation",
+  "Support & Maintenance",
+  "Other / Not sure",
+];
 
 const EMAIL = "raoasifriyasat@gmail.com";
 

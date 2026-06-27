@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { HireHeader } from "@/components/portfolio/hire-header";
+import { HireHero } from "@/components/portfolio/hire-hero";
 import { HireFooter } from "@/components/portfolio/hire-footer";
 
 export const metadata: Metadata = {
@@ -73,24 +73,8 @@ const POSTS: Post[] = [
 export default function BlogPage() {
   return (
     <>
-      <HireHeader />
+      <HireHero small="Insights & tips" title="Blog" taglineTitle="Build smarter sites." taglineText="Practical articles on web development, SEO, and performance." />
       <main>
-        <section className="border-b border-border">
-          <div className="mx-auto max-w-7xl px-6 pt-20 pb-14 lg:pt-24">
-            <span className="inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-brand">
-              <span className="h-px w-8 bg-brand" />
-              Blog
-            </span>
-            <h1 className="mt-6 max-w-3xl text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground sm:text-5xl">
-              Notes on building faster, better websites
-            </h1>
-            <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-              Practical articles on web development, SEO, and performance — what I learn building
-              real projects.
-            </p>
-          </div>
-        </section>
-
         <section className="py-16">
           <div className="mx-auto max-w-7xl px-6">
             <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">

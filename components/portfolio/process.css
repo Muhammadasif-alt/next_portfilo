@@ -1,0 +1,327 @@
+/* Interactive "How it works" process — auto-playing. Scoped .pr-* — theme-aware via CSS vars. */
+.pr-sec * {
+  box-sizing: border-box;
+}
+.pr-sec {
+  --pr-card: var(--card);
+  --pr-card-active: var(--muted);
+  --pr-line: var(--border);
+  --pr-accent: var(--brand);
+  --pr-soft: var(--brand-soft);
+  --pr-border: var(--brand-border);
+  --pr-fg: var(--foreground);
+  --pr-dim: var(--muted-foreground);
+  position: relative;
+  overflow: hidden;
+  padding: 96px 24px;
+  border-top: 1px solid var(--pr-line);
+  background: var(--background);
+  color: var(--pr-fg);
+}
+.pr-glow {
+  pointer-events: none;
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 640px;
+  height: 360px;
+  border-radius: 9999px;
+  background: color-mix(in srgb, var(--brand) 6%, transparent);
+  filter: blur(140px);
+}
+.pr-wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.pr-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--pr-accent);
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.pr-eyebrow::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--pr-accent);
+}
+.pr-sec h2 {
+  font-size: clamp(30px, 4.5vw, 46px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+.pr-sub {
+  color: var(--pr-dim);
+  max-width: 540px;
+  margin-bottom: 44px;
+  line-height: 1.6;
+}
+
+.pr-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  align-items: start;
+}
+
+/* left cards */
+.pr-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.pr-card {
+  background: var(--pr-card);
+  border: 1px solid var(--pr-line);
+  border-radius: 16px;
+  padding: 20px 22px;
+  cursor: pointer;
+  transition: 0.35s;
+  position: relative;
+  overflow: hidden;
+}
+.pr-card:hover {
+  border-color: var(--pr-border);
+}
+.pr-card.active {
+  background: var(--pr-card-active);
+  border-color: var(--pr-border);
+  box-shadow: 0 0 0 1px var(--pr-border) inset;
+}
+.pr-card.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+  width: 3px;
+  background: var(--pr-accent);
+  border-radius: 0 4px 4px 0;
+}
+.pr-tick {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: var(--pr-accent);
+  opacity: 0;
+}
+.pr-card.active .pr-tick {
+  opacity: 1;
+}
+.pr-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.pr-num {
+  font-family: var(--font-mono, monospace);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--pr-dim);
+  width: 26px;
+  flex: none;
+}
+.pr-card.active .pr-num {
+  color: var(--pr-accent);
+}
+.pr-ico {
+  width: 42px;
+  height: 42px;
+  flex: none;
+  border-radius: 11px;
+  border: 1px solid var(--pr-line);
+  display: grid;
+  place-items: center;
+  color: var(--pr-dim);
+  transition: 0.35s;
+}
+.pr-card.active .pr-ico {
+  border-color: var(--pr-border);
+  background: var(--pr-soft);
+  color: var(--pr-accent);
+}
+.pr-ico svg {
+  width: 21px;
+  height: 21px;
+}
+.pr-info {
+  flex: 1;
+  min-width: 0;
+}
+.pr-info h3 {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.pr-info p {
+  font-size: 12.5px;
+  color: var(--pr-dim);
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pr-arrow {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  color: var(--pr-dim);
+  transition: 0.35s;
+}
+.pr-card.active .pr-arrow {
+  color: var(--pr-accent);
+  transform: translate(2px, -2px);
+}
+
+/* right panel */
+.pr-panel {
+  background: var(--pr-card);
+  border: 1px solid var(--pr-line);
+  border-radius: 20px;
+  padding: 28px;
+  position: sticky;
+  top: 24px;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+}
+.pr-media {
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 70% 25%, color-mix(in srgb, var(--brand) 22%, transparent), transparent 55%),
+    linear-gradient(135deg, color-mix(in srgb, var(--brand) 12%, var(--card)), var(--card));
+  border: 1px solid var(--pr-line);
+}
+.pr-glyph {
+  width: 38%;
+  height: auto;
+  color: color-mix(in srgb, var(--brand) 42%, transparent);
+}
+.pr-media-tag {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pr-accent);
+}
+.pr-pico {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--pr-soft);
+  border: 1px solid var(--pr-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pr-accent);
+  margin-bottom: 18px;
+}
+.pr-pico svg {
+  width: 25px;
+  height: 25px;
+}
+.pr-panel h4 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+.pr-desc {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--pr-dim);
+  margin-bottom: 22px;
+}
+.pr-feats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+.pr-feat {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--pr-fg);
+}
+.pr-feat .pr-ck {
+  width: 21px;
+  height: 21px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--pr-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pr-accent);
+  margin-top: 1px;
+}
+.pr-feat .pr-ck svg {
+  width: 12px;
+  height: 12px;
+}
+.pr-link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-foreground);
+  background: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 11px 20px;
+  border-radius: 999px;
+  width: fit-content;
+  transition: 0.25s;
+}
+.pr-link:hover {
+  opacity: 0.9;
+}
+.pr-link svg {
+  width: 15px;
+  height: 15px;
+  transition: 0.25s;
+}
+.pr-link:hover svg {
+  transform: translateX(3px);
+}
+
+.pr-fade {
+  animation: pr-fade 0.45s ease;
+}
+@keyframes pr-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 860px) {
+  .pr-grid { grid-template-columns: 1fr; gap: 20px; }
+  .pr-panel { position: static; min-height: 0; }
+  .pr-sec { padding: 64px 18px; }
+  .pr-info p { white-space: normal; }
+}

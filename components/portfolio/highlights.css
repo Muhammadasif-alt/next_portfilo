@@ -1,0 +1,110 @@
+/* "Why work with me" flip cards. Scoped under .wf-* — theme-aware. */
+.wf-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.wf-card {
+  perspective: 1600px;
+  height: 300px;
+}
+.wf-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.wf-card:hover .wf-inner,
+.wf-card.flipped .wf-inner {
+  transform: rotateY(180deg);
+}
+
+.wf-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wf-front {
+  background: var(--card);
+  justify-content: space-between;
+  transition: border-color 0.4s;
+}
+.wf-card:hover .wf-front {
+  border-color: var(--brand-border);
+}
+.wf-front .wf-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wf-ico {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: var(--brand-soft);
+  border: 1px solid var(--brand-border);
+  display: grid;
+  place-items: center;
+  color: var(--brand);
+}
+.wf-ico svg {
+  width: 26px;
+  height: 26px;
+}
+.wf-num {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--muted-foreground);
+}
+.wf-front h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--foreground);
+  line-height: 1.2;
+}
+.wf-hint {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+.wf-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(160deg, var(--brand-soft), transparent 80%);
+  background-color: var(--card);
+  border-color: var(--brand-border);
+  justify-content: center;
+}
+.wf-back h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 12px;
+}
+.wf-back p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted-foreground);
+}
+
+@media (max-width: 980px) {
+  .wf-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .wf-grid { grid-template-columns: 1fr; }
+  .wf-card { height: 260px; }
+}

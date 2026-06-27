@@ -2,12 +2,14 @@
 .hwf-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 320px; /* force every row to a fixed height — flip can't grow the card */
   gap: 20px;
 }
 
 .hwf-card {
   perspective: 1600px;
   height: 320px;
+  min-height: 0; /* defeat grid's default min-height:auto so content can't stretch the card */
 }
 .hwf-inner {
   position: relative;
@@ -128,6 +130,6 @@
   .hwf-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 520px) {
-  .hwf-grid { grid-template-columns: 1fr; }
+  .hwf-grid { grid-template-columns: 1fr; grid-auto-rows: 260px; }
   .hwf-card { height: 260px; }
 }

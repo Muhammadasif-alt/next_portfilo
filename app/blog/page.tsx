@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Navbar } from "@/components/portfolio/navbar";
-import { Footer } from "@/components/portfolio/footer";
+import { HireHeader } from "@/components/portfolio/hire-header";
+import { HireFooter } from "@/components/portfolio/hire-footer";
 
 export const metadata: Metadata = {
   title: "Blog — Web Development Tips by Asif",
@@ -73,10 +73,10 @@ const POSTS: Post[] = [
 export default function BlogPage() {
   return (
     <>
-      <Navbar />
+      <HireHeader />
       <main>
         <section className="border-b border-border">
-          <div className="mx-auto max-w-7xl px-6 pt-32 pb-14 lg:pt-40">
+          <div className="mx-auto max-w-7xl px-6 pt-20 pb-14 lg:pt-24">
             <span className="inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-brand">
               <span className="h-px w-8 bg-brand" />
               Blog
@@ -133,7 +133,7 @@ export default function BlogPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <HireFooter />
     </>
   );
 }

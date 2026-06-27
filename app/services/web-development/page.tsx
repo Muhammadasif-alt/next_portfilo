@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Globe, Code2, Layers, Triangle, Boxes, ArrowRight, type LucideIcon } from "lucide-react";
-import { Navbar } from "@/components/portfolio/navbar";
-import { Footer } from "@/components/portfolio/footer";
+import { HireHeader } from "@/components/portfolio/hire-header";
+import { HireFooter } from "@/components/portfolio/hire-footer";
 import { Button } from "@/components/ui/button";
 
 const PHONE_WA = "923088663440";
@@ -127,12 +127,12 @@ const PACKAGES: Pkg[] = [
 export default function WebDevelopmentPage() {
   return (
     <>
-      <Navbar />
+      <HireHeader />
       <main>
         {/* HERO */}
         <section className="relative overflow-hidden border-b border-border">
           <div className="pointer-events-none absolute -top-24 left-1/2 h-[420px] w-[680px] -translate-x-1/2 rounded-full bg-brand/10 blur-[140px]" />
-          <div className="relative mx-auto max-w-3xl px-6 pt-32 pb-16 text-center lg:pt-40">
+          <div className="relative mx-auto max-w-3xl px-6 pt-20 pb-16 text-center lg:pt-24">
             <nav className="flex items-center justify-center gap-2 font-mono text-xs text-muted-foreground">
               <Link href="/" className="transition-colors hover:text-foreground">Home</Link>
               <span className="text-muted-foreground/50">›</span>
@@ -195,7 +195,7 @@ export default function WebDevelopmentPage() {
               return (
                 <Link
                   key={s.slug}
-                  href={`/services/${s.slug}`}
+                  href="/contact"
                   className={`group relative flex flex-col rounded-2xl border p-6 transition-colors ${
                     s.featured
                       ? "border-brand/40 bg-brand/[0.07]"
@@ -344,7 +344,7 @@ export default function WebDevelopmentPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <HireFooter />
     </>
   );
 }

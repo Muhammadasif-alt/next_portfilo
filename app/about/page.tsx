@@ -60,7 +60,7 @@ export default function AboutPage() {
           {/* portrait */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/asif-portrait.png"
+            src="/asif-hero-section.png"
             alt="Asif — web developer"
             className="pointer-events-none absolute inset-y-0 right-0 h-full w-full object-cover object-[72%_38%] opacity-95 sm:object-[70%_40%] lg:w-[52%]"
           />

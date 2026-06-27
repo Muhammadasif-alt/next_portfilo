@@ -10,8 +10,8 @@ import {
   Plug,
   type LucideIcon,
 } from "lucide-react";
-import { Navbar } from "@/components/portfolio/navbar";
-import { Footer } from "@/components/portfolio/footer";
+import { HireHeader } from "@/components/portfolio/hire-header";
+import { HireFooter } from "@/components/portfolio/hire-footer";
 import { Button } from "@/components/ui/button";
 
 const PHONE_WA = "923088663440";
@@ -54,7 +54,7 @@ const BLOCKS: Block[] = [
       "Google Shopping feed setup",
       "Abandoned cart flows",
     ],
-    link: { label: "Full Shopify details", href: "/services/shopify" },
+    link: { label: "Full Shopify details", href: "/contact" },
     timelineLabel: "Timeline:",
     timeline: "2–4 weeks depending on scope",
     accent: true,
@@ -72,7 +72,7 @@ const BLOCKS: Block[] = [
       "Scheduled task automation",
       "Data cleaning & transformation",
     ],
-    link: { label: "Python development details", href: "/services/python" },
+    link: { label: "Python development details", href: "/contact" },
     timelineLabel: "Timeline:",
     timeline: "48hr – 1 week per script",
   },
@@ -127,12 +127,12 @@ const PACKAGES: Pkg[] = [
 export default function EcommercePage() {
   return (
     <>
-      <Navbar />
+      <HireHeader />
       <main>
         {/* HERO */}
         <section className="relative overflow-hidden border-b border-border">
           <div className="pointer-events-none absolute -top-24 left-1/2 h-[420px] w-[680px] -translate-x-1/2 rounded-full bg-brand/10 blur-[140px]" />
-          <div className="relative mx-auto max-w-3xl px-6 pt-32 pb-16 text-center lg:pt-40">
+          <div className="relative mx-auto max-w-3xl px-6 pt-20 pb-16 text-center lg:pt-24">
             <nav className="flex items-center justify-center gap-2 font-mono text-xs text-muted-foreground">
               <Link href="/" className="transition-colors hover:text-foreground">Home</Link>
               <span className="text-muted-foreground/50">›</span>
@@ -326,7 +326,7 @@ export default function EcommercePage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <HireFooter />
     </>
   );
 }

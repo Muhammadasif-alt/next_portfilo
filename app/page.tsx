@@ -85,13 +85,13 @@ const OFFER: { n: string; title: [string, string]; desc: string; href: string }[
     n: "03",
     title: ["SEO", "Expert"],
     desc: "Technical and on-page SEO that gets you ranking — audits, schema, content, and Core Web Vitals tuned to win.",
-    href: "/services/seo",
+    href: "/services/marketing",
   },
   {
     n: "04",
     title: ["Speed", "Optimization"],
     desc: "Sub-second load times — image, caching, code, and CDN tuning that passes Google's Core Web Vitals.",
-    href: "/services/speed-optimization",
+    href: "/services/support-maintenance",
   },
 ];
 
@@ -160,7 +160,7 @@ export default function HireMePage() {
       {/* portrait */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/asif-portrait.png"
+        src="/asif-hero-section.png"
         alt="Asif — web developer"
         className="pointer-events-none absolute inset-y-0 right-0 h-full w-full object-cover object-[72%_38%] opacity-95 sm:object-[70%_40%] lg:w-[52%]"
       />

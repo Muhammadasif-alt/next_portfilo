@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { Navbar } from "@/components/portfolio/navbar";
-import { Footer } from "@/components/portfolio/footer";
+import { HireHeader } from "@/components/portfolio/hire-header";
+import { HireFooter } from "@/components/portfolio/hire-footer";
 import { PROJECTS, projectShot } from "@/lib/projects-data";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ const shot = (url: string) => projectShot(url, 900, 675);
 export default function ProjectsPage() {
   return (
     <>
-      <Navbar />
+      <HireHeader />
       <main>
         {/* hero with background image */}
         <section className="relative flex min-h-[55vh] items-center overflow-hidden border-b border-border">
@@ -27,7 +27,7 @@ export default function ProjectsPage() {
             className="absolute inset-0 h-full w-full object-cover opacity-25"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/45" />
-          <div className="relative mx-auto w-full max-w-7xl px-6 pt-32 pb-16 lg:pt-40">
+          <div className="relative mx-auto w-full max-w-7xl px-6 pt-20 pb-16 lg:pt-24">
             <span className="inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-brand">
               <span className="h-px w-8 bg-brand" />
               Selected Work
@@ -97,7 +97,7 @@ export default function ProjectsPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <HireFooter />
     </>
   );
 }

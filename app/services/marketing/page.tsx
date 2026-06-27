@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Navbar } from "@/components/portfolio/navbar";
-import { Footer } from "@/components/portfolio/footer";
+import { HireHeader } from "@/components/portfolio/hire-header";
+import { HireFooter } from "@/components/portfolio/hire-footer";
 import { Button } from "@/components/ui/button";
 
 const PHONE_WA = "923088663440";
@@ -44,7 +44,7 @@ const SERVICES: SvcBlock[] = [
       "Monthly ranking reports",
       "Schema markup (LocalBusiness, FAQ)",
     ],
-    link: { label: "Learn more about SEO", href: "/services/seo" },
+    link: { label: "Learn more about SEO", href: "/contact" },
     results: [
       { label: "Typical result — 90 days", num: "+180%", sub: "Organic traffic increase" },
       { label: "Local pack ranking", num: "Top 3", sub: "For primary keywords" },
@@ -132,12 +132,12 @@ const PACKAGES: Pkg[] = [
 export default function MarketingPage() {
   return (
     <>
-      <Navbar />
+      <HireHeader />
       <main>
         {/* HERO */}
         <section className="relative overflow-hidden border-b border-border">
           <div className="pointer-events-none absolute -top-24 left-1/2 h-[420px] w-[680px] -translate-x-1/2 rounded-full bg-brand/10 blur-[140px]" />
-          <div className="relative mx-auto max-w-3xl px-6 pt-32 pb-16 text-center lg:pt-40">
+          <div className="relative mx-auto max-w-3xl px-6 pt-20 pb-16 text-center lg:pt-24">
             <nav className="flex items-center justify-center gap-2 font-mono text-xs text-muted-foreground">
               <Link href="/" className="transition-colors hover:text-foreground">Home</Link>
               <span className="text-muted-foreground/50">›</span>
@@ -165,7 +165,7 @@ export default function MarketingPage() {
                 <Link href="/contact">Get a free audit <ArrowRight className="ml-1 h-4 w-4" /></Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-full border-border bg-transparent text-foreground hover:bg-accent hover:text-foreground">
-                <Link href="/services/seo#results">View case studies</Link>
+                <Link href="/contact">View case studies</Link>
               </Button>
             </div>
           </div>
@@ -315,7 +315,7 @@ export default function MarketingPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <HireFooter />
     </>
   );
 }

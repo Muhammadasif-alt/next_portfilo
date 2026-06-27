@@ -1,0 +1,133 @@
+/* Orange flip cards for the About page. Scoped under .hwf-* with a hardcoded orange palette. */
+.hwf-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.hwf-card {
+  perspective: 1600px;
+  height: 320px;
+}
+.hwf-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.hwf-card:hover .hwf-inner,
+.hwf-card.flipped .hwf-inner {
+  transform: rotateY(180deg);
+}
+
+.hwf-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* keep the flipped (back) face the same height as the card */
+}
+
+.hwf-front {
+  background: #121212;
+  justify-content: space-between;
+  transition: border-color 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+.hwf-card:hover .hwf-front {
+  border-color: rgba(255, 90, 30, 0.45);
+}
+/* background image + readable overlay */
+.hwf-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-image:
+    linear-gradient(150deg, rgba(255, 90, 30, 0.28), transparent 48%),
+    linear-gradient(to top, #121212, rgba(18, 18, 18, 0.5) 52%, transparent 90%),
+    var(--hwf-img);
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.hwf-card:hover .hwf-bg {
+  transform: scale(1.07);
+}
+.hwf-front > *:not(.hwf-bg) {
+  position: relative;
+  z-index: 1;
+}
+.hwf-front .hwf-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hwf-ico {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: rgba(255, 90, 30, 0.12);
+  border: 1px solid rgba(255, 90, 30, 0.35);
+  display: grid;
+  place-items: center;
+  color: #ff5a1e;
+}
+.hwf-ico svg {
+  width: 26px;
+  height: 26px;
+}
+.hwf-num {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.55);
+}
+.hwf-front h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+.hwf-hint {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ff5a1e;
+}
+
+.hwf-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(160deg, rgba(255, 90, 30, 0.16), transparent 80%);
+  background-color: #121212;
+  border-color: rgba(255, 90, 30, 0.35);
+  justify-content: center;
+}
+.hwf-back h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.hwf-back p {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 980px) {
+  .hwf-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .hwf-grid { grid-template-columns: 1fr; }
+  .hwf-card { height: 260px; }
+}

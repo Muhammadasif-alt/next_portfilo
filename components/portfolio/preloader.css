@@ -17,6 +17,14 @@
   pointer-events: none;
 }
 
+/* Orange variant — used on the home landing page. */
+.pl-orange {
+  --brand: #ff5a1e;
+  --background: #0a0604;
+  --muted-foreground: rgba(255, 255, 255, 0.5);
+  background: #0a0604;
+}
+
 .pl-spinner {
   position: relative;
   width: 240px;

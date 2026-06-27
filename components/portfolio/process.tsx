@@ -22,6 +22,7 @@ const STEPS = [
     tagline: "Honest review of your site or idea — free.",
     desc: "Share your site or idea and I'll review it completely free. You get honest feedback on what's holding you back and where the quick wins are — no commitment required.",
     points: ["No cost, no obligation", "Quick wins & blockers spotted", "Clear written feedback"],
+    img: "https://picsum.photos/seed/asif-proc-audit/900/520",
   },
   {
     icon: CalendarCheck,
@@ -29,6 +30,7 @@ const STEPS = [
     tagline: "We talk goals, scope, and timeline.",
     desc: "We jump on a quick call or meeting to talk through your goals, scope, and timeline. Book a slot that suits you — no pressure, no jargon, just a real conversation.",
     points: ["Book a slot that suits you", "Plain talk, no jargon", "Goals & scope agreed"],
+    img: "https://picsum.photos/seed/asif-proc-call/900/520",
   },
   {
     icon: FileText,
@@ -36,6 +38,7 @@ const STEPS = [
     tagline: "Clear plan, fixed price, no surprises.",
     desc: "You get a clear plan with a fixed price and timeline before any work begins. No hidden fees, no surprises — you know exactly what you're paying and what you're getting.",
     points: ["Fixed price upfront", "No hidden fees", "Defined timeline"],
+    img: "https://picsum.photos/seed/asif-proc-proposal/900/520",
   },
   {
     icon: Code2,
@@ -43,6 +46,7 @@ const STEPS = [
     tagline: "Clean code, SEO & speed baked in.",
     desc: "I design and build your site with clean code, SEO, and speed baked in from day one. You see progress along the way and give feedback as we go — nothing is a black box.",
     points: ["SEO & speed from day one", "Progress shared as we go", "Your feedback built in"],
+    img: "https://picsum.photos/seed/asif-proc-build/900/520",
   },
   {
     icon: Rocket,
@@ -50,6 +54,7 @@ const STEPS = [
     tagline: "Go live — fast, secure, indexed.",
     desc: "We go live. I handle deployment, final testing, and make sure everything is fast, secure, and properly indexed by Google from the very start.",
     points: ["Deployment handled for you", "Final testing & QA", "Indexed by Google"],
+    img: "https://picsum.photos/seed/asif-proc-launch/900/520",
   },
   {
     icon: LifeBuoy,
@@ -57,6 +62,7 @@ const STEPS = [
     tagline: "Updates, backups & changes, anytime.",
     desc: "Updates, backups, security, and small changes whenever you need them. Your site stays fast, safe, and in good hands long after launch.",
     points: ["Updates & backups", "Security monitoring", "Small changes anytime"],
+    img: "https://picsum.photos/seed/asif-proc-support/900/520",
   },
 ];
 
@@ -149,7 +155,9 @@ export function Process() {
           {/* RIGHT — detail panel */}
           <div className="pr-panel">
             <div className="pr-media" key={`media-${idx}`}>
-              <ActiveIcon className="pr-glyph" strokeWidth={1} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={active.img} alt="" className="pr-media-img" />
+              <span className="pr-media-shade" />
               <span className="pr-media-tag">Step {String(idx + 1).padStart(2, "0")}</span>
             </div>
             <div className="pr-pico" key={`ico-${idx}`}>

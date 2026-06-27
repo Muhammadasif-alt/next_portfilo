@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import "./preloader.css";
 
 const MIN_SHOW_MS = 1500; // minimum time the loader stays visible
@@ -8,6 +9,8 @@ const MIN_SHOW_MS = 1500; // minimum time the loader stays visible
 export function Preloader() {
   const [hidden, setHidden] = useState(false);
   const [removed, setRemoved] = useState(false);
+  const pathname = usePathname();
+  const orange = pathname === "/";
 
   // hide after the page has loaded, but keep it on screen at least MIN_SHOW_MS
   useEffect(() => {
@@ -49,7 +52,11 @@ export function Preloader() {
   if (removed) return null;
 
   return (
-    <div className={`pl-root ${hidden ? "pl-hide" : ""}`} aria-hidden={hidden} role="status">
+    <div
+      className={`pl-root ${orange ? "pl-orange" : ""} ${hidden ? "pl-hide" : ""}`}
+      aria-hidden={hidden}
+      role="status"
+    >
       <div className="pl-spinner">
         <div className="pl-dots">
           <span />

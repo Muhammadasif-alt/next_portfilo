@@ -9,6 +9,7 @@ type Item = {
   num: string;
   title: string;
   desc: string;
+  img: string;
 };
 
 /* ---- EDIT YOUR "BEST" POINTS HERE ---- */
@@ -18,24 +19,28 @@ const ITEMS: Item[] = [
     num: "01",
     title: "SEO-First Build",
     desc: "Every site ships with proper meta tags, schema markup, and Core Web Vitals tuned to rank on Google from day one.",
+    img: "https://picsum.photos/seed/asif-why-seo/600/420",
   },
   {
     icon: Zap,
     num: "02",
     title: "Lightning Fast",
     desc: "Optimised, lightweight code and images so your pages load in under a second — on any device, anywhere.",
+    img: "https://picsum.photos/seed/asif-why-fast/600/420",
   },
   {
     icon: Target,
     num: "03",
     title: "Conversion Focused",
     desc: "Layouts and copy designed to turn visitors into leads and paying customers, not just passing traffic.",
+    img: "https://picsum.photos/seed/asif-why-convert/600/420",
   },
   {
     icon: LifeBuoy,
     num: "04",
     title: "Ongoing Support",
     desc: "I don't disappear after launch — updates, fixes, and improvements whenever you need them.",
+    img: "https://picsum.photos/seed/asif-why-support/600/420",
   },
 ];
 
@@ -53,6 +58,11 @@ function Card({ item }: { item: Item }) {
       <div className="wf-inner">
         {/* FRONT */}
         <div className="wf-face wf-front">
+          <span
+            className="wf-bg"
+            style={{ ["--wf-img" as string]: `url(${item.img})` }}
+            aria-hidden
+          />
           <div className="wf-top">
             <div className="wf-ico">
               <Icon strokeWidth={2} />

@@ -20,13 +20,13 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {SERVICE_GROUPS.map((group) => {
             const GroupIcon = group.icon;
             return (
               <div
                 key={group.key}
-                className="flex flex-col rounded-2xl border border-border bg-card/50 p-6 sm:p-7"
+                className="flex h-full flex-col rounded-2xl border border-border bg-card/50 p-6 sm:p-7"
               >
                 {/* header */}
                 <div className="flex items-start gap-4">
@@ -71,7 +71,7 @@ export function Services() {
                 {/* footer link */}
                 <Link
                   href={group.href ?? `/services#${group.key}`}
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand transition-all hover:gap-3"
+                  className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-brand transition-all hover:gap-3"
                 >
                   <ArrowRight className="h-4 w-4" />
                   {group.cta}

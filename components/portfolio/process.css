@@ -217,8 +217,25 @@
   height: auto;
   color: color-mix(in srgb, var(--brand) 42%, transparent);
 }
+.pr-media-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pr-media-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 72% 22%, color-mix(in srgb, var(--brand) 26%, transparent), transparent 55%),
+    linear-gradient(to top, color-mix(in srgb, var(--card) 80%, transparent), transparent 62%);
+}
 .pr-media-tag {
   position: absolute;
+  z-index: 2;
   bottom: 14px;
   left: 16px;
   font-family: var(--font-mono, monospace);
@@ -226,6 +243,7 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--pr-accent);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 .pr-pico {
   width: 52px;

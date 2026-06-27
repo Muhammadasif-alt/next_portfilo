@@ -8,8 +8,9 @@ export const metadata: Metadata = {
     "Freelance web development by Asif — WordPress, Shopify, custom web apps, high-converting landing pages, and SEO-ready websites.",
 };
 
-// Runs before paint to set the theme class and avoid a flash of the wrong theme.
-const themeScript = `(function(){try{var t=localStorage.getItem('theme');var d=t?t==='dark':true;document.documentElement.classList.toggle('dark',d);}catch(e){document.documentElement.classList.add('dark');}})();`;
+// The site is a single dark (orange) theme — force the dark class before paint,
+// overriding any stale light-theme value a visitor may still have in localStorage.
+const themeScript = `document.documentElement.classList.add('dark');`;
 
 export default function RootLayout({
   children,
@@ -17,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full" suppressHydrationWarning>
+    <html lang="en" className="dark h-full" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

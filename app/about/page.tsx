@@ -2,235 +2,188 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
-  Code2,
-  Globe,
-  ShoppingBag,
-  Atom,
-  Server,
-  Braces,
+  Check,
+  Zap,
   Search,
+  MessageSquare,
   Gauge,
+  ShieldCheck,
+  BadgeCheck,
 } from "lucide-react";
-import { HireNav } from "@/components/portfolio/hire-nav";
+import { HireHero } from "@/components/portfolio/hire-hero";
 import { HireFooter } from "@/components/portfolio/hire-footer";
-import { HireHighlights } from "@/components/portfolio/hire-highlights";
 
 export const metadata: Metadata = {
-  title: "About Asif — Freelance Web Developer & SEO Specialist",
+  title: "About Asif | Freelance Web Developer and SEO Specialist",
   description:
-    "Get to know Asif — a freelance web developer and SEO specialist building fast, search-ready websites and web apps with WordPress, Shopify, Laravel, Python, and Next.js.",
+    "Meet Asif, a freelance web developer and SEO specialist with 5+ years building fast, search-ready websites and stores for clients across the US, UK, UAE, and Pakistan.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Asif | Web Developer and SEO Specialist",
+    description:
+      "Meet Asif, a freelance web developer and SEO specialist with 5+ years building fast, search-ready websites and stores for clients across the US, UK, UAE, and Pakistan.",
+  },
 };
 
-const SKILLS = [
-  { num: "01", label: "Web Development", href: "/services/web-development" },
-  { num: "02", label: "Marketing & SEO", href: "/services/marketing" },
-  { num: "03", label: "E-commerce & Automation", href: "/services/ecommerce" },
-  { num: "04", label: "Support & Maintenance", href: "/services/support-maintenance" },
+const PRINCIPLES = [
+  {
+    icon: Zap,
+    title: "Performance first",
+    desc: "If it is not fast, nothing else matters.",
+  },
+  {
+    icon: Search,
+    title: "SEO built in",
+    desc: "Structure, schema, and Core Web Vitals from the first line of code.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Clear communication",
+    desc: "You always know what is happening and what it costs.",
+  },
 ];
 
-const NOTIFS = [
-  { pos: "left-0 bottom-[28%] lg:-left-8", amount: "$3,396.00", time: "", show: "" },
-  { pos: "right-0 bottom-[32%] lg:-right-8", amount: "$2,800.00", time: "", show: "hidden sm:block" },
-  { pos: "left-0 bottom-[3%] lg:-left-6", amount: "$1,250.00", time: "15:24", show: "" },
+const STACK_GROUPS = [
+  {
+    title: "Web Development",
+    items: ["WordPress", "Elementor", "Shopify", "WooCommerce", "PHP", "Laravel", "Python", "MERN Stack", "Next.js", "Tailwind CSS"],
+  },
+  {
+    title: "SEO and Marketing",
+    items: ["Technical SEO", "On-page SEO", "Local SEO", "Schema & structured data", "Core Web Vitals", "Search Console", "GA4", "Meta Ads"],
+  },
+  {
+    title: "Automation and Integration",
+    items: ["GHL", "Zapier", "Make", "Payment gateways", "API integration", "CRM setup"],
+  },
 ];
 
-const WORK_SKILLS = [
-  { icon: Code2, name: "Web Development", pct: 98 },
-  { icon: Globe, name: "WordPress", pct: 97 },
-  { icon: ShoppingBag, name: "Shopify", pct: 93 },
-  { icon: Atom, name: "React / Next.js", pct: 95 },
-  { icon: Server, name: "Laravel / PHP", pct: 92 },
-  { icon: Braces, name: "Python", pct: 88 },
-  { icon: Search, name: "SEO", pct: 96 },
-  { icon: Gauge, name: "Speed Optimization", pct: 94 },
+const PROCESS = [
+  { n: "01", t: "We talk first.", d: "I learn your goals before I quote a single number." },
+  { n: "02", t: "You get a fixed price.", d: "No hourly meter, no scope creep bills." },
+  { n: "03", t: "I build clean.", d: "Semantic, SEO-ready code that search engines and humans both understand." },
+  { n: "04", t: "We test everything.", d: "Across devices and browsers before anything goes live." },
+  { n: "05", t: "I stay available.", d: "Clear updates throughout, and support after launch." },
 ];
+
+const NUMBERS = [
+  ["50+", "Websites and stores shipped"],
+  ["5+", "Years building for the web"],
+  ["200%+", "Average organic traffic growth"],
+  ["24h", "Reply time, every day"],
+];
+
+const VALUES = [
+  { icon: ShieldCheck, title: "Honesty", desc: "If you do not need something, I will tell you, even if it means a smaller invoice." },
+  { icon: Gauge, title: "Speed", desc: "Every site I ship is tuned to pass Core Web Vitals." },
+  { icon: BadgeCheck, title: "Ownership", desc: "I take responsibility from the first message to long after launch." },
+  { icon: MessageSquare, title: "Clarity", desc: "Plain language, fixed quotes, and no jargon walls." },
+];
+
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-[#ff5a1e]">
+      <span className="h-2 w-2 rounded-full bg-[#ff5a1e]" />
+      {children}
+    </p>
+  );
+}
 
 export default function AboutPage() {
   return (
     <>
-      <main className="bg-[#0a0a0a]">
-        {/* ===== HERO ===== */}
-        <section
-          className="relative min-h-screen overflow-hidden text-white"
-          style={{
-            background:
-              "radial-gradient(125% 125% at 68% 32%, #ff6a1f 0%, #e0330b 46%, #9d1206 100%)",
-          }}
-        >
-          {/* portrait */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/asif-hero-section.png"
-            alt="Asif — web developer"
-            className="pointer-events-none absolute inset-y-0 right-0 h-full w-full object-cover object-[72%_38%] opacity-95 sm:object-[70%_40%] lg:w-[52%]"
-          />
+      <HireHero
+        small="About Me"
+        title="The developer behind the builds"
+        taglineTitle="Hi, I'm Asif, a web developer and SEO specialist."
+        taglineText="I build fast, search-ready websites and stores that rank on Google and turn visitors into clients. Clean code, honest advice, and work that performs in the real world."
+        primaryCta={{ label: "Start your project", href: "/contact" }}
+        secondaryCta={{ label: "View my work", href: "/projects" }}
+      />
 
-          {/* left fade so the copy stays readable over the photo */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to right, #b81c06 0%, rgba(184,28,6,0.78) 30%, rgba(184,28,6,0.15) 58%, transparent 75%)",
-            }}
-          />
-          {/* extra wash on small screens (photo sits behind the text there) */}
-          <div className="absolute inset-0 bg-[#9d1206]/55 sm:bg-[#9d1206]/30 lg:hidden" />
-          {/* subtle bottom + top shading */}
-          <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-black/45 to-transparent" />
-          <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/25 to-transparent" />
+      <main className="bg-[#0a0a0a] text-white">
+        {/* ===== 2. QUICK INTRO ===== */}
+        <section className="border-b border-white/10 px-6 py-20 lg:px-10 lg:py-24">
+          <div className="mx-auto max-w-3xl text-center">
+            <Eyebrow>In short</Eyebrow>
+            <p className="mt-6 text-lg leading-relaxed text-white/80 sm:text-xl">
+              For the past 5+ years I have helped businesses across the US, UK, UAE, and Pakistan
+              launch websites that load fast, rank well, and actually bring in leads. I work across
+              WordPress, Shopify, Laravel, Python, the MERN stack, and Next.js, and I pick the right
+              stack for the job instead of forcing every project into the same template.
+            </p>
+            <p className="mx-auto mt-8 max-w-2xl rounded-2xl border border-[#ff5a1e]/30 bg-[#ff5a1e]/10 px-6 py-4 text-base font-semibold text-white">
+              One developer, start to finish, with SEO and speed built into every build.
+            </p>
+          </div>
+        </section>
 
-          <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col px-6 lg:px-10">
-            {/* NAV */}
-            <HireNav />
-
-            {/* HERO BODY */}
-            <div className="flex flex-1 flex-col justify-center py-16 lg:py-24">
-              <p className="text-2xl font-medium text-white/95 sm:text-3xl">Get to know</p>
-              <h1 className="-mt-1 font-extrabold leading-[0.86] tracking-tight text-white drop-shadow-sm text-6xl sm:text-7xl lg:text-[8.5rem]">
-                About Me
-              </h1>
-
-              {/* tagline — placed below the heading, clear of the photo */}
-              <div className="mt-8 max-w-md">
-                <h2 className="text-2xl font-bold leading-snug text-white sm:text-3xl">
-                  A developer obsessed with results.
-                </h2>
-                <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/85 sm:text-base">
-                  I&apos;m Asif — I turn ideas into fast, SEO-ready websites that rank on Google and
-                  win clients. Here&apos;s a little about how I got here.
+        {/* ===== 3. MY STORY ===== */}
+        <section className="border-b border-white/10 bg-black px-6 py-20 lg:px-10 lg:py-24">
+          <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <div className="order-2 lg:order-1">
+              <Eyebrow>The Journey</Eyebrow>
+              <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl">
+                How I got here
+              </h2>
+              <div className="mt-6 space-y-4 text-base leading-relaxed text-white/70">
+                <p>
+                  I started the way most self-taught developers do, building small WordPress sites and
+                  fixing broken ones for anyone who would let me. What kept me going was a simple
+                  frustration: most websites looked fine but performed terribly. Slow load times, no
+                  SEO, no real strategy behind them.
+                </p>
+                <p>
+                  So I went deeper. I learned to write clean, semantic code, to build custom themes
+                  instead of drag-and-drop clutter, and to treat SEO and speed as part of development,
+                  not an afterthought. Over time I moved from single pages to full custom web apps in
+                  Laravel, Next.js, and the MERN stack, and from one-off fixes to long-term
+                  partnerships with agencies and business owners.
+                </p>
+                <p>
+                  Today I ship fast, SEO-ready websites and stores for clients around the world. The
+                  mission has not changed since day one: build sites that are quick, that rank, and
+                  that earn their keep.
                 </p>
               </div>
             </div>
-
-            {/* BOTTOM SKILLS */}
-            <div className="grid grid-cols-2 gap-x-6 gap-y-8 border-t border-white/15 py-8 sm:grid-cols-4">
-              {SKILLS.map((s) => (
-                <Link key={s.num} href={s.href} className="group">
-                  <div className="font-mono text-sm font-semibold tracking-wider text-orange-200">
-                    <span className="text-orange-300">#</span> {s.num}
-                  </div>
-                  <div className="mt-2 text-base font-semibold text-white transition-opacity group-hover:opacity-80 sm:text-lg">
-                    {s.label}
-                  </div>
-                </Link>
-              ))}
+            <div className="order-1 lg:order-2">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/asif-about.png"
+                alt="Asif — freelance web developer"
+                className="w-full rounded-2xl border border-white/10 object-cover"
+              />
             </div>
           </div>
         </section>
 
-        {/* ===== ABOUT ME ===== */}
-        <section className="relative overflow-hidden border-t border-white/10 bg-black text-white">
-          <div className="absolute inset-x-0 bottom-0 h-1 bg-[#e0330b]" />
-          <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:gap-8 lg:px-10 lg:py-24">
-            {/* LEFT — about me */}
-            <div>
-              <span className="inline-block rounded-full border border-white/25 px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white/80">
-                My Story
-              </span>
-              <h2 className="mt-5 text-4xl font-extrabold leading-[1.02] tracking-tight sm:text-5xl">
-                Hi, I&apos;m <span className="text-[#ff5a1e]">Asif</span> — and I&apos;ve been
-                building the web since 2018.
+        {/* ===== 4. MY APPROACH ===== */}
+        <section className="border-b border-white/10 bg-[#0a0604] px-6 py-20 lg:px-10 lg:py-24">
+          <div className="mx-auto max-w-7xl">
+            <div className="max-w-2xl">
+              <Eyebrow>How I Think</Eyebrow>
+              <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl">
+                The right tool for the job, every time
               </h2>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-white/70">
-                What started as curiosity quickly became a craft. For the past 5+ years I&apos;ve
-                helped businesses, founders, and agencies across the US, UK, UAE, and Pakistan turn
-                ideas into fast, reliable websites and web apps — from WordPress and Shopify stores
-                to custom Laravel, Python, and Next.js builds.
-              </p>
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-white/70">
-                I care about the things visitors never see but always feel: clean code, real speed,
-                solid SEO, and a structure that&apos;s easy to grow. Every project is built to rank
-                on Google and convert visitors into clients — with clear communication and results
-                you can measure, not just a pretty portfolio piece.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-x-10 gap-y-5">
-                {[
-                  ["50+", "Projects shipped"],
-                  ["5+", "Years experience"],
-                  ["200%+", "Avg. traffic growth"],
-                ].map(([n, l]) => (
-                  <div key={l}>
-                    <div className="text-2xl font-extrabold text-white">{n}</div>
-                    <div className="mt-1 text-xs text-white/50">{l}</div>
-                  </div>
-                ))}
-              </div>
-
-              <Link
-                href="/contact"
-                className="group mt-9 inline-flex items-center gap-3 rounded-full bg-[#ff5a1e] py-3 pl-6 pr-2 text-sm font-bold text-white transition-opacity hover:opacity-90"
-              >
-                Contact me
-                <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-[#ff5a1e]">
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                </span>
-              </Link>
-            </div>
-
-            {/* RIGHT — image + floating notifications */}
-            <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-              <div className="relative overflow-hidden rounded-2xl">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/asif-laptop.png" alt="Asif working" className="w-full object-cover" />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-              </div>
-
-              {NOTIFS.map((n) => (
-                <div
-                  key={n.amount}
-                  className={`absolute ${n.pos} ${n.show} w-56 rounded-xl border border-white/10 bg-black/70 p-3 shadow-xl shadow-black/40 backdrop-blur-sm`}
-                >
-                  <div className="flex items-center justify-between text-[11px] text-white/45">
-                    <span>Payment received{n.time ? ` · ${n.time}` : ""}</span>
-                    <span>•••</span>
-                  </div>
-                  <div className="mt-1 text-sm font-semibold text-white">Transfer received</div>
-                  <div className="text-[11px] leading-snug text-white/55">
-                    You received a transfer of {n.amount}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ===== MY WORK SKILLS ===== */}
-        <section className="relative overflow-hidden border-t border-[#ff5a1e]/25 bg-[#0a0604] px-6 py-20 text-white lg:px-10 lg:py-28">
-          <div className="pointer-events-none absolute -top-32 left-1/2 h-80 w-[700px] -translate-x-1/2 rounded-full bg-[#ff5a1e]/15 blur-[120px]" />
-          <div className="relative mx-auto max-w-7xl">
-            {/* header */}
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-                My Work <span className="text-[#ff5a1e]">Skills</span>
-              </h2>
-              <p className="mt-4 text-sm leading-relaxed text-white/65 sm:text-base">
-                The tools and technologies I use every day to build fast, SEO-ready websites and web
-                apps — and the level I bring to each one.
+              <p className="mt-6 text-base leading-relaxed text-white/70">
+                A lot of freelancers sell you one stack and bend your project to fit it. I do the
+                opposite. I start with your goal, your audience, and your budget, then choose the
+                platform and approach that fit. WordPress for content-heavy sites. Shopify for stores.
+                Custom Next.js or Laravel when speed and scale matter. The tech serves the goal, never
+                the other way around.
               </p>
             </div>
-
-            {/* grid */}
-            <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {WORK_SKILLS.map((s) => {
-                const Icon = s.icon;
+            <div className="mt-12 grid gap-5 sm:grid-cols-3">
+              {PRINCIPLES.map((p) => {
+                const Icon = p.icon;
                 return (
-                  <div
-                    key={s.name}
-                    className="group rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition-all duration-300 hover:-translate-y-1.5 hover:border-[#ff5a1e]/60 hover:bg-white/[0.05]"
-                  >
-                    <span className="mx-auto grid h-14 w-14 place-items-center rounded-xl border border-[#ff5a1e]/25 bg-[#ff5a1e]/10 text-[#ff5a1e] transition-colors group-hover:bg-[#ff5a1e] group-hover:text-white">
-                      <Icon className="h-7 w-7" strokeWidth={1.75} />
+                  <div key={p.title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                    <span className="grid h-12 w-12 place-items-center rounded-xl border border-[#ff5a1e]/25 bg-[#ff5a1e]/10 text-[#ff5a1e]">
+                      <Icon className="h-6 w-6" strokeWidth={1.75} />
                     </span>
-                    <h3 className="mt-5 text-base font-bold text-white">{s.name}</h3>
-                    <div className="mt-4 h-6 w-full overflow-hidden rounded-full bg-white/10">
-                      <div
-                        className="flex h-full items-center justify-center rounded-full bg-[#ff5a1e] text-[11px] font-bold text-white"
-                        style={{ width: `${s.pct}%` }}
-                      >
-                        {s.pct}%
-                      </div>
-                    </div>
+                    <h3 className="mt-5 text-lg font-bold">{p.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-white/60">{p.desc}</p>
                   </div>
                 );
               })}
@@ -238,11 +191,211 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ===== WHAT DRIVES ME (flip cards) ===== */}
-        <HireHighlights />
-      </main>
+        {/* ===== 5. SEO IS NOT AN ADD-ON ===== */}
+        <section className="border-b border-white/10 bg-black px-6 py-20 lg:px-10 lg:py-24">
+          <div className="mx-auto max-w-4xl rounded-3xl border border-[#ff5a1e]/30 bg-gradient-to-b from-[#1c0e08] to-[#0a0604] p-8 sm:p-12">
+            <Eyebrow>Why It Matters</Eyebrow>
+            <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              SEO built into every build, never bolted on
+            </h2>
+            <div className="mt-6 space-y-4 text-base leading-relaxed text-white/70">
+              <p>
+                Most agencies build a site, then sell you SEO as a separate service later. By then the
+                damage is done. Slow code, messy structure, and missing meta data cost you rankings
+                before you even launch.
+              </p>
+              <p>
+                I do it the right way. Optimised meta tags, structured data, mobile-first design, clean
+                URLs, and fast Core Web Vitals are part of the build, not an upsell. That means your
+                site is ready to rank the day it goes live, and it keeps pulling in organic traffic
+                without paying for every single click.
+              </p>
+            </div>
+          </div>
+        </section>
 
-      {/* ===== FOOTER ===== */}
+        {/* ===== 6. SKILLS & TECH STACK ===== */}
+        <section className="border-b border-white/10 px-6 py-20 lg:px-10 lg:py-24">
+          <div className="mx-auto max-w-7xl">
+            <div className="max-w-2xl">
+              <Eyebrow>What I Work With</Eyebrow>
+              <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl">
+                The tools behind the results
+              </h2>
+            </div>
+            <div className="mt-12 grid gap-6 lg:grid-cols-3">
+              {STACK_GROUPS.map((g) => (
+                <div key={g.title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-[#ff5a1e]">
+                    {g.title}
+                  </h3>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {g.items.map((it) => (
+                      <span
+                        key={it}
+                        className="rounded-full border border-white/15 bg-white/[0.02] px-3 py-1.5 text-sm text-white/75"
+                      >
+                        {it}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-sm text-white/55">
+              I recommend the best fit for your project, not just the tools I happen to like most.
+            </p>
+          </div>
+        </section>
+
+        {/* ===== 7. THE WAY I WORK ===== */}
+        <section className="border-b border-white/10 bg-black px-6 py-20 lg:px-10 lg:py-24">
+          <div className="mx-auto max-w-7xl">
+            <div className="max-w-2xl">
+              <Eyebrow>My Process</Eyebrow>
+              <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl">
+                No surprises, no guesswork
+              </h2>
+            </div>
+            <div className="mt-12 space-y-4">
+              {PROCESS.map((s) => (
+                <div
+                  key={s.n}
+                  className="flex items-start gap-5 rounded-2xl border border-white/10 bg-white/[0.03] p-6"
+                >
+                  <span className="font-mono text-xl font-extrabold text-[#ff5a1e]">{s.n}</span>
+                  <div>
+                    <h3 className="text-lg font-bold">{s.t}</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-white/60">{s.d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-base font-semibold text-white/80">
+              You will never wonder where your project stands or what it will cost.
+            </p>
+          </div>
+        </section>
+
+        {/* ===== 8. NUMBERS ===== */}
+        <section className="border-b border-white/10 px-6 py-20 lg:px-10 lg:py-24">
+          <div className="mx-auto max-w-7xl">
+            <div className="mx-auto max-w-2xl text-center">
+              <Eyebrow>Proof, Not Promises</Eyebrow>
+              <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl">A few numbers</h2>
+            </div>
+            <div className="mt-12 grid grid-cols-2 gap-5 lg:grid-cols-4">
+              {NUMBERS.map(([n, l]) => (
+                <div
+                  key={l}
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center"
+                >
+                  <div className="text-4xl font-extrabold text-[#ff5a1e]">{n}</div>
+                  <div className="mt-2 text-sm text-white/55">{l}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ===== 9. WHO I WORK WITH ===== */}
+        <section className="border-b border-white/10 bg-[#0a0604] px-6 py-20 lg:px-10 lg:py-24">
+          <div className="mx-auto max-w-3xl text-center">
+            <Eyebrow>Clients</Eyebrow>
+            <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              Trusted by businesses worldwide
+            </h2>
+            <p className="mt-6 text-base leading-relaxed text-white/70">
+              I work fully remote with clients across the US, UK, UAE, Canada, and Pakistan. From
+              local contractors and service businesses to online stores and agencies, the common
+              thread is simple: they want a site that works and a developer they can actually reach.
+              No timezone has ever been a problem, and no project is too far away.
+            </p>
+          </div>
+        </section>
+
+        {/* ===== 10. WHAT I VALUE ===== */}
+        <section className="border-b border-white/10 bg-black px-6 py-20 lg:px-10 lg:py-24">
+          <div className="mx-auto max-w-7xl">
+            <div className="max-w-2xl">
+              <Eyebrow>How I Operate</Eyebrow>
+              <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl">
+                The things I will not cut corners on
+              </h2>
+            </div>
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {VALUES.map((v) => {
+                const Icon = v.icon;
+                return (
+                  <div key={v.title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                    <span className="grid h-12 w-12 place-items-center rounded-xl border border-[#ff5a1e]/25 bg-[#ff5a1e]/10 text-[#ff5a1e]">
+                      <Icon className="h-6 w-6" strokeWidth={1.75} />
+                    </span>
+                    <h3 className="mt-5 text-lg font-bold">{v.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-white/60">{v.desc}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* ===== 11. BEYOND THE CODE ===== */}
+        <section className="border-b border-white/10 px-6 py-20 lg:px-10 lg:py-24">
+          <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/about-2-asif.png"
+                alt="Asif away from the screen"
+                className="w-full rounded-2xl border border-white/10 object-cover"
+              />
+            </div>
+            <div>
+              <Eyebrow>Off the Clock</Eyebrow>
+              <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl">
+                When I&apos;m not shipping
+              </h2>
+              <p className="mt-6 text-base leading-relaxed text-white/70">
+                When I step away from the screen, I am usually reading up on what changed in search
+                this month, testing a new framework, or helping someone get their first site online. I
+                genuinely enjoy teaching web development and breaking down the stuff that scares
+                beginners. That same patience is what clients tell me they value most: I explain
+                things instead of hiding behind technical terms.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== 12. CTA ===== */}
+        <section className="px-6 pb-24 pt-20 lg:px-10">
+          <div className="mx-auto max-w-4xl rounded-3xl border border-[#ff5a1e]/30 bg-gradient-to-b from-[#1c0e08] to-[#0a0604] p-10 text-center sm:p-14">
+            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+              Let&apos;s build something that works
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-white/65">
+              Whether you need a fresh website, an online store, or a site that finally ranks, I would
+              love to hear what you are working on. Tell me your goal and I will get back within 24
+              hours with a clear plan and a fixed quote.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <Link
+                href="/contact"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-[#ff5a1e] px-8 py-4 text-sm font-bold text-white transition-transform hover:scale-105"
+              >
+                Start your project
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-8 py-4 text-sm font-bold text-white transition-colors hover:bg-white/10"
+              >
+                Get in touch
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
       <HireFooter />
     </>
   );

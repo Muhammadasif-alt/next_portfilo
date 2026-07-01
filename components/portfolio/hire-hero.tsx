@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { HireNav } from "@/components/portfolio/hire-nav";
 
 const SKILLS = [
@@ -7,6 +8,8 @@ const SKILLS = [
   { num: "03", label: "E-commerce & Automation", href: "/services/ecommerce" },
   { num: "04", label: "Support & Maintenance", href: "/services/support-maintenance" },
 ];
+
+type Cta = { label: string; href: string };
 
 type Props = {
   /** small line above the big heading */
@@ -17,10 +20,14 @@ type Props = {
   taglineTitle?: string;
   /** optional supporting line under the tagline */
   taglineText?: string;
+  /** optional primary (filled) button */
+  primaryCta?: Cta;
+  /** optional secondary (outline) button */
+  secondaryCta?: Cta;
 };
 
 /* The home-style orange hero — reused across every page. */
-export function HireHero({ small, title, taglineTitle, taglineText }: Props) {
+export function HireHero({ small, title, taglineTitle, taglineText, primaryCta, secondaryCta }: Props) {
   return (
     <section
       className="relative min-h-screen overflow-hidden text-white"
@@ -62,7 +69,7 @@ export function HireHero({ small, title, taglineTitle, taglineText }: Props) {
             {title}
           </h1>
 
-          {(taglineTitle || taglineText) && (
+          {(taglineTitle || taglineText || primaryCta || secondaryCta) && (
             <div className="mt-8 max-w-md">
               {taglineTitle && (
                 <h2 className="text-2xl font-bold leading-snug text-white sm:text-3xl">
@@ -70,9 +77,33 @@ export function HireHero({ small, title, taglineTitle, taglineText }: Props) {
                 </h2>
               )}
               {taglineText && (
-                <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/85 sm:text-base">
+                <p className="mt-3 max-w-md text-sm leading-relaxed text-white/85 sm:text-base">
                   {taglineText}
                 </p>
+              )}
+
+              {(primaryCta || secondaryCta) && (
+                <div className="mt-7 flex flex-wrap gap-3">
+                  {primaryCta && (
+                    <Link
+                      href={primaryCta.href}
+                      className="group inline-flex items-center gap-2.5 rounded-full bg-white px-6 py-3 text-sm font-bold text-neutral-900 shadow-lg shadow-black/10 transition-transform hover:scale-105"
+                    >
+                      {primaryCta.label}
+                      <span className="grid h-6 w-6 place-items-center rounded-full bg-[#e0330b] text-white">
+                        <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                      </span>
+                    </Link>
+                  )}
+                  {secondaryCta && (
+                    <Link
+                      href={secondaryCta.href}
+                      className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-white/10"
+                    >
+                      {secondaryCta.label}
+                    </Link>
+                  )}
+                </div>
               )}
             </div>
           )}

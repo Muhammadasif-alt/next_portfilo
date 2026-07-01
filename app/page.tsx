@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Plus } from "lucide-react";
+import { ArrowRight, Plus, Rocket, Code2, ShieldCheck, Headphones } from "lucide-react";
 import { PROJECTS, projectShot } from "@/lib/projects-data";
 import { HireContactForm } from "@/components/portfolio/hire-contact-form";
 import { HireNav } from "@/components/portfolio/hire-nav";
@@ -26,6 +26,14 @@ const SKILLS = [
   { num: "02", label: "Marketing & SEO", href: "/services/marketing" },
   { num: "03", label: "E-commerce & Automation", href: "/services/ecommerce" },
   { num: "04", label: "Support & Maintenance", href: "/services/support-maintenance" },
+];
+
+// Shown in the hero on mobile (desktop shows the skills grid instead).
+const HERO_STATS = [
+  { icon: Rocket, num: "50+", label: "Projects Completed" },
+  { icon: Code2, num: "5+", label: "Years of Experience" },
+  { icon: ShieldCheck, num: "100%", label: "Client Satisfaction" },
+  { icon: Headphones, num: "24/7", label: "Support & Maintenance" },
 ];
 
 const CARDS = [
@@ -179,8 +187,14 @@ export default function HireMePage() {
             "linear-gradient(to right, #b81c06 0%, rgba(184,28,6,0.78) 30%, rgba(184,28,6,0.15) 58%, transparent 75%)",
         }}
       />
-      {/* extra wash on small screens (photo sits behind the text there) */}
-      <div className="absolute inset-0 bg-[#9d1206]/55 sm:bg-[#9d1206]/30 lg:hidden" />
+      {/* mobile: keep the left solid so the copy is fully readable and the photo sits on the right */}
+      <div
+        className="absolute inset-0 lg:hidden"
+        style={{
+          background:
+            "linear-gradient(to right, #9d1206 0%, rgba(157,18,6,0.94) 40%, rgba(157,18,6,0.4) 74%, rgba(157,18,6,0.08) 100%)",
+        }}
+      />
       {/* subtle bottom + top shading */}
       <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-black/45 to-transparent" />
       <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/25 to-transparent" />
@@ -228,8 +242,28 @@ export default function HireMePage() {
           </div>
         </div>
 
-        {/* BOTTOM SKILLS */}
-        <div className="grid grid-cols-2 gap-x-6 gap-y-8 border-t border-white/15 py-8 sm:grid-cols-4">
+        {/* BOTTOM — mobile: stats list */}
+        <div className="border-t border-white/15 py-4 lg:hidden">
+          <div className="divide-y divide-white/10">
+            {HERO_STATS.map((s) => {
+              const Icon = s.icon;
+              return (
+                <div key={s.label} className="flex items-center gap-4 py-3.5">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[#ff5a1e] text-white shadow-lg shadow-[#ff5a1e]/30">
+                    <Icon className="h-5 w-5" strokeWidth={2} />
+                  </span>
+                  <div>
+                    <div className="text-2xl font-extrabold leading-none text-white">{s.num}</div>
+                    <div className="mt-1 text-sm text-white/75">{s.label}</div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* BOTTOM — desktop: skills grid */}
+        <div className="hidden border-t border-white/15 py-8 lg:grid lg:grid-cols-4 lg:gap-x-6">
           {SKILLS.map((s) => (
             <Link key={s.num} href={s.href} className="group">
               <div className="font-mono text-sm font-semibold tracking-wider text-orange-200">

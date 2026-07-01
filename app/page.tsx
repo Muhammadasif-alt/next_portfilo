@@ -10,9 +10,15 @@ import "./orbit.css";
 const ORBIT = PROJECTS.slice(0, 13);
 
 export const metadata: Metadata = {
-  title: "Asif — Web Developer",
+  title: "Freelance Web Developer & SEO Specialist | Asif.dev",
   description:
-    "Hey, I'm Asif — a web developer. From first line to launch, I build fast, SEO-ready sites that connect and convert.",
+    "I build fast, SEO-ready websites and stores in WordPress, Shopify and Next.js that rank on Google and turn clicks into clients. Freelance, worldwide, replies in 24h.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Freelance Web Developer & SEO Specialist",
+    description:
+      "I build fast, SEO-ready websites and stores in WordPress, Shopify and Next.js that rank on Google and turn clicks into clients. Freelance, worldwide, replies in 24h.",
+  },
 };
 
 const SKILLS = [
@@ -39,7 +45,7 @@ const QUALIFY: { img: string; n: string; title: string; parts: Part[] }[] = [
   {
     img: "/card1-asif.png",
     n: "1",
-    title: "Rank & get noticed",
+    title: "Rank and get noticed",
     parts: [
       { t: "You want a " },
       { t: "fast, modern website", hl: true },
@@ -72,25 +78,25 @@ const OFFER: { n: string; title: [string, string]; desc: string; href: string }[
   {
     n: "01",
     title: ["Web", "Development"],
-    desc: "Fast, SEO-ready websites and web apps — WordPress, Shopify, Laravel, and Next.js, built around your goals.",
+    desc: "Fast, SEO-ready websites and web apps in WordPress, Shopify, Laravel, and Next.js, built around your goals.",
     href: "/services/web-development",
   },
   {
     n: "02",
     title: ["Meta", "Ads"],
-    desc: "Facebook & Instagram campaigns that generate real leads — targeting, creative, pixel setup, and weekly reporting.",
+    desc: "Facebook and Instagram campaigns that generate real leads. Targeting, creative, pixel setup, and weekly reporting.",
     href: "/services/marketing",
   },
   {
     n: "03",
     title: ["SEO", "Expert"],
-    desc: "Technical and on-page SEO that gets you ranking — audits, schema, content, and Core Web Vitals tuned to win.",
+    desc: "Technical and on-page SEO that gets you ranking. Audits, schema, content, and Core Web Vitals tuned to win.",
     href: "/services/marketing",
   },
   {
     n: "04",
     title: ["Speed", "Optimization"],
-    desc: "Sub-second load times — image, caching, code, and CDN tuning that passes Google's Core Web Vitals.",
+    desc: "Sub-second load times. Image, caching, code, and CDN tuning that passes Google Core Web Vitals.",
     href: "/services/support-maintenance",
   },
 ];
@@ -185,9 +191,11 @@ export default function HireMePage() {
 
         {/* HERO BODY */}
         <div className="flex flex-1 flex-col justify-center py-16 lg:py-24">
-          <p className="text-2xl font-medium text-white/95 sm:text-3xl">Hey, I&apos;m a</p>
-          <h1 className="-mt-1 font-extrabold leading-[0.86] tracking-tight text-white drop-shadow-sm text-6xl sm:text-7xl lg:text-[8.5rem]">
-            Developer
+          <p className="text-2xl font-medium text-white/95 sm:text-3xl">Hey, I&apos;m Asif</p>
+          <h1 className="-mt-1 font-extrabold leading-[0.9] tracking-tight text-white drop-shadow-sm text-5xl sm:text-6xl lg:text-8xl">
+            Web Developer
+            <br />
+            &amp; SEO Specialist
           </h1>
 
           {/* tagline — placed below the heading, clear of the photo */}
@@ -195,9 +203,28 @@ export default function HireMePage() {
             <h2 className="text-2xl font-bold leading-snug text-white sm:text-3xl">
               Great code should feel invisible.
             </h2>
-            <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/85 sm:text-base">
-              From the first line to launch, I build fast, SEO-ready sites that connect and convert.
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-white/85 sm:text-base">
+              From the first line to launch, I build fast, SEO-ready websites and stores that rank on
+              Google and turn clicks into paying clients.
             </p>
+
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-white px-6 py-3 text-sm font-bold text-neutral-900 shadow-lg shadow-black/10 transition-transform hover:scale-105"
+              >
+                Start your project
+                <span className="grid h-6 w-6 place-items-center rounded-full bg-[#e0330b] text-white">
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </Link>
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-white/10"
+              >
+                View services
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -227,18 +254,18 @@ export default function HireMePage() {
             About Me
           </span>
           <h2 className="mt-5 text-4xl font-extrabold leading-[1.02] tracking-tight sm:text-5xl">
-            Hi, I&apos;m <span className="text-[#ff5a1e]">Asif</span> — a developer who ships.
+            Hi, I&apos;m <span className="text-[#ff5a1e]">Asif</span>, a developer who ships.
           </h2>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-white/70">
-            For the past 5+ years I&apos;ve been building fast, SEO-ready websites, online stores,
-            and web apps for clients around the world. From WordPress and Shopify to custom Laravel,
-            Python, and Next.js builds — I pick the right tool for the job and ship work that
-            actually performs.
+            For the past 5+ years I have built fast, SEO-ready websites, online stores, and web apps
+            for clients across the US, UK, UAE, and Pakistan. From WordPress and Shopify to custom
+            Laravel, Python, and Next.js builds, I pick the right stack for the job and ship work that
+            performs in the real world.
           </p>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-white/70">
-            I care about the details that move the needle: clean code, real speed, search rankings,
-            and designs that turn visitors into clients. No bloated templates, no hand-off into a
-            black box — just clear communication and results you can measure.
+            I care about the things that move the needle: clean code, real speed, search rankings, and
+            designs that turn visitors into clients. No bloated templates, no handing your project
+            into a black box. Just clear communication and results you can measure.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-x-10 gap-y-5">

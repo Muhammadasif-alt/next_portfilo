@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Preloader } from "@/components/portfolio/preloader";
 
 export const metadata: Metadata = {
   title: "Asif — Web Developer",
@@ -29,7 +28,6 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full antialiased">
-        <Preloader />
         {children}
       </body>
     </html>

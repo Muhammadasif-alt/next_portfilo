@@ -55,7 +55,7 @@ export default function ContactPage() {
       <main>
         {/* info + form */}
         <section className="border-b border-border py-20">
-          <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2 lg:gap-16">
+          <div className="mx-auto grid max-w-[1440px] gap-12 px-6 lg:grid-cols-2 lg:gap-16">
             {/* left — info */}
             <div>
               <h2 className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">

@@ -59,7 +59,7 @@ export function Hero() {
       <div className="pointer-events-none absolute -top-40 right-[-10%] h-[480px] w-[480px] rounded-full bg-brand/10 blur-[130px]" />
       <div className="pointer-events-none absolute bottom-[-20%] left-[-10%] h-[380px] w-[380px] rounded-full bg-brand/5 blur-[130px]" />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-6 pb-24 pt-36 lg:min-h-screen lg:grid-cols-2 lg:gap-16 lg:pb-28 lg:pt-40">
+      <div className="relative z-10 mx-auto grid max-w-[1440px] items-center gap-12 px-6 pb-24 pt-36 lg:min-h-screen lg:grid-cols-2 lg:gap-16 lg:pb-28 lg:pt-40">
         {/* LEFT — copy */}
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-brand/25 bg-brand/10 px-4 py-1.5 text-xs font-medium text-brand">

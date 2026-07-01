@@ -10,7 +10,7 @@ export function Projects() {
 
   return (
     <section id="work" className="border-t border-border py-24">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-[1440px] px-6">
         <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
             <span className="inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-brand">

@@ -20,7 +20,7 @@ export default function ProjectsPage() {
       <main>
         {/* grid */}
         <section className="py-20">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-[1440px] px-6">
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {PROJECTS.map((p) => (
                 <a

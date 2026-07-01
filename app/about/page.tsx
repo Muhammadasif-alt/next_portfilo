@@ -120,7 +120,7 @@ export default function AboutPage() {
 
         {/* ===== 3. MY STORY ===== */}
         <section className="border-b border-white/10 bg-black px-6 py-20 lg:px-10 lg:py-24">
-          <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="mx-auto grid max-w-[1440px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="order-2 lg:order-1">
               <Eyebrow>The Journey</Eyebrow>
               <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl">
@@ -160,7 +160,7 @@ export default function AboutPage() {
 
         {/* ===== 4. MY APPROACH ===== */}
         <section className="border-b border-white/10 bg-[#0a0604] px-6 py-20 lg:px-10 lg:py-24">
-          <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-[1440px]">
             <div className="max-w-2xl">
               <Eyebrow>How I Think</Eyebrow>
               <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl">
@@ -216,7 +216,7 @@ export default function AboutPage() {
 
         {/* ===== 6. SKILLS & TECH STACK ===== */}
         <section className="border-b border-white/10 px-6 py-20 lg:px-10 lg:py-24">
-          <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-[1440px]">
             <div className="max-w-2xl">
               <Eyebrow>What I Work With</Eyebrow>
               <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl">
@@ -250,7 +250,7 @@ export default function AboutPage() {
 
         {/* ===== 7. THE WAY I WORK ===== */}
         <section className="border-b border-white/10 bg-black px-6 py-20 lg:px-10 lg:py-24">
-          <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-[1440px]">
             <div className="max-w-2xl">
               <Eyebrow>My Process</Eyebrow>
               <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl">
@@ -279,7 +279,7 @@ export default function AboutPage() {
 
         {/* ===== 8. NUMBERS ===== */}
         <section className="border-b border-white/10 px-6 py-20 lg:px-10 lg:py-24">
-          <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-[1440px]">
             <div className="mx-auto max-w-2xl text-center">
               <Eyebrow>Proof, Not Promises</Eyebrow>
               <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl">A few numbers</h2>
@@ -316,7 +316,7 @@ export default function AboutPage() {
 
         {/* ===== 10. WHAT I VALUE ===== */}
         <section className="border-b border-white/10 bg-black px-6 py-20 lg:px-10 lg:py-24">
-          <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-[1440px]">
             <div className="max-w-2xl">
               <Eyebrow>How I Operate</Eyebrow>
               <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl">
@@ -342,7 +342,7 @@ export default function AboutPage() {
 
         {/* ===== 11. BEYOND THE CODE ===== */}
         <section className="border-b border-white/10 px-6 py-20 lg:px-10 lg:py-24">
-          <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="mx-auto grid max-w-[1440px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img

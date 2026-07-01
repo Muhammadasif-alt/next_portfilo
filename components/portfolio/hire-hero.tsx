@@ -52,13 +52,19 @@ export function HireHero({ small, title, taglineTitle, taglineText, primaryCta, 
             "linear-gradient(to right, #b81c06 0%, rgba(184,28,6,0.78) 30%, rgba(184,28,6,0.15) 58%, transparent 75%)",
         }}
       />
-      {/* extra wash on small screens (photo sits behind the text there) */}
-      <div className="absolute inset-0 bg-[#9d1206]/55 sm:bg-[#9d1206]/30 lg:hidden" />
+      {/* mobile: keep the left solid so the copy is fully readable and the photo sits on the right */}
+      <div
+        className="absolute inset-0 lg:hidden"
+        style={{
+          background:
+            "linear-gradient(to right, #9d1206 0%, rgba(157,18,6,0.94) 40%, rgba(157,18,6,0.4) 74%, rgba(157,18,6,0.08) 100%)",
+        }}
+      />
       {/* subtle bottom + top shading */}
       <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-black/45 to-transparent" />
       <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/25 to-transparent" />
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col px-6 lg:px-10">
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1440px] flex-col px-6 lg:px-10">
         {/* NAV */}
         <HireNav />
 

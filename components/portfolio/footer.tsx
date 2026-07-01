@@ -54,7 +54,7 @@ const NAV: [string, string][] = [
 export function Footer() {
   return (
     <footer className="border-t border-border bg-card">
-      <div className="mx-auto max-w-7xl px-6 py-16">
+      <div className="mx-auto max-w-[1440px] px-6 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-12">
           {/* brand */}
           <div className="lg:col-span-4">
@@ -157,7 +157,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-border">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-6 text-xs text-muted-foreground sm:flex-row">
+        <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-3 px-6 py-6 text-xs text-muted-foreground sm:flex-row">
           <p>© 2026 Asif — Web Development. All rights reserved.</p>
           <p>Built with Next.js &amp; Tailwind CSS.</p>
         </div>

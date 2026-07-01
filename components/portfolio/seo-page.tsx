@@ -173,7 +173,7 @@ export function SeoPage() {
 
         {/* STATS */}
         <section className="border-b border-border bg-card/40">
-          <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px px-6 py-2 sm:grid-cols-4">
+          <div className="mx-auto grid max-w-[1440px] grid-cols-2 gap-px px-6 py-2 sm:grid-cols-4">
             {STATS.map((s) => (
               <div key={s.label} className="px-4 py-8 text-center">
                 <div className="text-3xl font-extrabold text-foreground sm:text-4xl">{s.value}</div>
@@ -185,7 +185,7 @@ export function SeoPage() {
 
         {/* SERVICES */}
         <section className="py-24">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-[1440px] px-6">
             <div className="mb-14 max-w-2xl">
               <span className="inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-brand">
                 <span className="h-px w-8 bg-brand" />
@@ -222,7 +222,7 @@ export function SeoPage() {
 
         {/* PROCESS */}
         <section className="border-t border-border py-24">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-[1440px] px-6">
             <div className="mb-14 max-w-2xl">
               <span className="inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-brand">
                 <span className="h-px w-8 bg-brand" />
@@ -255,7 +255,7 @@ export function SeoPage() {
 
         {/* CASE STUDIES / RESULTS */}
         <section id="results" className="border-t border-border py-24">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-[1440px] px-6">
             <div className="mb-14 max-w-2xl">
               <span className="inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-brand">
                 <span className="h-px w-8 bg-brand" />
@@ -297,7 +297,7 @@ export function SeoPage() {
 
         {/* WHY CHOOSE ME */}
         <section className="border-t border-border py-24">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-[1440px] px-6">
             <div className="mb-14 max-w-2xl">
               <span className="inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-brand">
                 <span className="h-px w-8 bg-brand" />

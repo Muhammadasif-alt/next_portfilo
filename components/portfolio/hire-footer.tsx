@@ -26,7 +26,7 @@ export function HireFooter() {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src="/footer.png" alt="" className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-black/82" />
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative mx-auto max-w-[1440px]">
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
           {/* brand */}
           <div className="max-w-sm">

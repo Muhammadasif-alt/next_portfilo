@@ -76,7 +76,7 @@ export default function BlogPage() {
       <HireHero small="Insights & tips" title="Blog" taglineTitle="Build smarter sites." taglineText="Practical articles on web development, SEO, and performance." />
       <main>
         <section className="py-16">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-[1440px] px-6">
             <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
               {POSTS.map((p) => (
                 <Link

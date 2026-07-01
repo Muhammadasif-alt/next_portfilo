@@ -34,7 +34,7 @@ export function Navbar() {
         scrolled ? "border-b border-border bg-background/80 backdrop-blur-md" : "border-b border-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-4">
         <Link href="/" aria-label="Asif — Web Development, home" className="flex items-center">
           {/* light theme logo */}
           <Image

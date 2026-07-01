@@ -199,7 +199,7 @@ export default function HireMePage() {
       <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-black/45 to-transparent" />
       <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/25 to-transparent" />
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col px-6 lg:px-10">
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1440px] flex-col px-6 lg:px-10">
         {/* NAV */}
         <HireNav />
 
@@ -281,7 +281,7 @@ export default function HireMePage() {
     {/* ===== ABOUT ME ===== */}
     <section className="relative overflow-hidden border-t border-white/10 bg-black text-white">
       <div className="absolute inset-x-0 bottom-0 h-1 bg-[#e0330b]" />
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:gap-8 lg:px-10 lg:py-24">
+      <div className="mx-auto grid max-w-[1440px] items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:gap-8 lg:px-10 lg:py-24">
         {/* LEFT — about me */}
         <div>
           <span className="inline-block rounded-full border border-white/25 px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white/80">
@@ -355,7 +355,7 @@ export default function HireMePage() {
 
     {/* ===== WHAT I OFFER ===== */}
     <section className="bg-black px-6 py-20 text-white lg:px-10 lg:py-24">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-[1440px]">
         {/* header */}
         <div className="grid gap-8 lg:grid-cols-2 lg:items-end">
           <div>
@@ -417,7 +417,7 @@ export default function HireMePage() {
     {/* ===== THIS IS FOR YOU IF ===== */}
     <section className="relative overflow-hidden border-t border-[#ff5a1e]/25 bg-[#0a0604] px-6 py-20 text-white lg:px-10 lg:py-28">
       <div className="pointer-events-none absolute -top-32 left-1/2 h-80 w-[700px] -translate-x-1/2 rounded-full bg-[#ff5a1e]/15 blur-[120px]" />
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative mx-auto max-w-[1440px]">
         <h2 className="text-center text-3xl font-extrabold tracking-tight sm:text-4xl">
           This work is <span className="text-[#ff5a1e]">for you if:</span>
         </h2>
@@ -470,7 +470,7 @@ export default function HireMePage() {
 
     {/* ===== BEHIND THE CODE ===== */}
     <section className="bg-[#0a0a0a] px-6 py-20 text-white lg:px-10 lg:py-28">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-[1440px]">
         {/* top: heading + intro */}
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
@@ -529,7 +529,7 @@ export default function HireMePage() {
     {/* ===== ABOUT / BIO ===== */}
     <section className="relative overflow-hidden bg-[#0a0604] text-white">
       {/* top: image + bio */}
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-2 lg:gap-14 lg:px-10 lg:py-20">
+      <div className="mx-auto grid max-w-[1440px] gap-10 px-6 py-16 lg:grid-cols-2 lg:gap-14 lg:px-10 lg:py-20">
         {/* image */}
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -583,7 +583,7 @@ export default function HireMePage() {
 
       {/* bottom band */}
       <div className="border-t-2 border-[#ff5a1e]">
-        <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 py-12 lg:grid-cols-2 lg:px-10">
+        <div className="mx-auto grid max-w-[1440px] items-center gap-8 px-6 py-12 lg:grid-cols-2 lg:px-10">
           <h3 className="text-3xl font-extrabold uppercase leading-[1.04] tracking-tight text-[#ff5a1e] sm:text-4xl lg:text-5xl">
             Your first step toward a site that actually works
           </h3>
@@ -607,7 +607,7 @@ export default function HireMePage() {
     {/* ===== ORBIT PROJECTS ===== */}
     <section className="orbit-section py-12 text-white lg:py-16">
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-[560px] -translate-x-1/2 rounded-full bg-[#ff5a1e]/12 blur-[130px]" />
-      <div className="relative mx-auto max-w-7xl px-6">
+      <div className="relative mx-auto max-w-[1440px] px-6">
         <div className="orbit-stage">
           <div className="orbit">
             {ORBIT.map((p, i) => (
@@ -682,7 +682,7 @@ export default function HireMePage() {
 
     {/* ===== BLOG / KNOWLEDGE ===== */}
     <section className="bg-[#0a0604] px-6 py-20 text-white lg:px-10 lg:py-24">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-[1440px]">
         {/* header */}
         <div className="flex flex-wrap items-start justify-between gap-6">
           <div>
@@ -748,7 +748,7 @@ export default function HireMePage() {
 
     {/* ===== FAQ ===== */}
     <section className="bg-[#0a0604] px-6 py-20 text-white lg:px-10 lg:py-24">
-      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-2 lg:gap-16">
         {/* left — heading + description + image */}
         <div>
           <p className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-[#ff5a1e]">
@@ -792,7 +792,7 @@ export default function HireMePage() {
 
     {/* ===== CONTACT ===== */}
     <section className="border-t border-white/10 bg-black px-6 py-20 text-white lg:px-10 lg:py-24">
-      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-2 lg:gap-16">
         {/* left — heading + description */}
         <div>
           <p className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-[#ff5a1e]">

@@ -1,315 +1,202 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Globe, Code2, Layers, Triangle, Boxes, ArrowRight, type LucideIcon } from "lucide-react";
-import { HireHero } from "@/components/portfolio/hire-hero";
-import { HireFooter } from "@/components/portfolio/hire-footer";
-import { Button } from "@/components/ui/button";
+import { ServiceDetailPage, type ServiceDetail } from "@/components/portfolio/service-detail";
 
-const PHONE_WA = "923088663440";
+const DATA: ServiceDetail = {
+  slug: "web-development",
+  name: "Web Development",
+  meta: {
+    title: "Web Development Services | Asif.dev",
+    description:
+      "Fast, SEO-ready web development. WordPress, Shopify, and Next.js developer building custom web apps that load fast and rank from day one. Get a fixed quote.",
+  },
+  hero: {
+    small: "Service",
+    title: "Web Development",
+    taglineTitle: "Fast sites and apps, built on the right stack for your goals",
+    taglineText:
+      "From a simple business site to a full custom web app, I write clean, semantic code that loads fast and ranks well. No bloated page builders, no themes held together with plugins.",
+  },
+  intro: {
+    heading: "Web development done right, from the code up",
+    body:
+      "Most sites are slow because they are built the easy way, one page builder stacked on top of another, a theme propped up by twenty plugins. I do not work like that. As a WordPress developer, Shopify developer, and Next.js developer, I pick the right stack for what you actually need and build it clean, so your site is quick, semantic, and ready to rank the day it goes live.\n\nWhether you want a professional business site, a WooCommerce store, or full custom web apps in Laravel or the MERN stack, you get code that is easy to maintain and built to perform. I work with clients across the US, UK, UAE, and Pakistan, reply within 24 hours, and quote a fixed price up front so there are no surprises.",
+  },
+  included: [
+    {
+      title: "WordPress and Elementor builds",
+      desc: "Custom WordPress sites built lean, no plugin bloat, fully editable by you.",
+    },
+    {
+      title: "Shopify and Liquid themes",
+      desc: "Custom Shopify themes coded in Liquid, tuned for speed and conversions.",
+    },
+    {
+      title: "Custom web apps",
+      desc: "Full platforms in Laravel, Next.js, and the MERN stack, built for your exact workflow.",
+    },
+    {
+      title: "Headless and JAMstack builds",
+      desc: "Next.js with a headless CMS for lightning-fast, secure, scalable sites.",
+    },
+    {
+      title: "WooCommerce online stores",
+      desc: "Sell online with a fast, flexible store that is easy to manage day to day.",
+    },
+    {
+      title: "Mobile apps with React Native",
+      desc: "One codebase, iOS and Android, native feel without doubling the budget.",
+    },
+    {
+      title: "Redesign and migration",
+      desc: "Modernize an aging site or move platforms without losing your rankings.",
+    },
+    {
+      title: "API and payment integrations",
+      desc: "Connect the tools you already use and take payments securely out of the box.",
+    },
+  ],
+  benefits: [
+    {
+      title: "Sites that load fast",
+      desc: "Clean code and the right stack mean sub-second load times and strong Core Web Vitals.",
+    },
+    {
+      title: "Ready to rank on day one",
+      desc: "Semantic, SEO-ready markup so your site can rank the moment it goes live.",
+    },
+    {
+      title: "Built for your goals",
+      desc: "The right build for what you actually need, not a bloated template forced to fit.",
+    },
+    {
+      title: "Fixed quotes, no surprises",
+      desc: "A clear one-time price agreed up front, with replies within 24 hours throughout.",
+    },
+  ],
+  process: [
+    {
+      title: "Discovery and quote",
+      desc: "We talk through your goals, users, and features, then I send a fixed one-time quote.",
+    },
+    {
+      title: "Stack and plan",
+      desc: "I pick the right stack, WordPress, Shopify, Next.js, or Laravel, and map the build.",
+    },
+    {
+      title: "Design and build",
+      desc: "I code it clean and semantic, share progress, and keep you in the loop as it takes shape.",
+    },
+    {
+      title: "Test and optimize",
+      desc: "Cross-device testing, speed tuning, and Core Web Vitals checks before anything ships.",
+    },
+    {
+      title: "Launch and handover",
+      desc: "We go live, I hand over the keys, and I walk you through managing it yourself.",
+    },
+  ],
+  tech: [
+    "WordPress",
+    "Elementor",
+    "Shopify",
+    "Liquid",
+    "WooCommerce",
+    "Next.js",
+    "React",
+    "Laravel",
+    "Node.js",
+    "MongoDB",
+    "React Native",
+    "Headless CMS",
+  ],
+  packages: [
+    {
+      name: "Starter",
+      price: "From $499",
+      period: "one-time",
+      tagline: "A clean, fast professional site to get you online.",
+      features: [
+        "Up to 5 pages",
+        "Custom WordPress or landing page build",
+        "Mobile-responsive and SEO-ready",
+        "Fast, semantic code",
+        "Contact form and basic integrations",
+      ],
+      featured: false,
+      cta: "Get started",
+    },
+    {
+      name: "Growth",
+      price: "From $999",
+      period: "one-time",
+      tagline: "A bigger site or store built to convert and rank.",
+      features: [
+        "Up to 12 pages or a WooCommerce/Shopify store",
+        "Custom theme, no page builder bloat",
+        "Payment gateway integration",
+        "Speed and Core Web Vitals optimization",
+        "On-page SEO setup",
+        "Redesign or migration included",
+      ],
+      featured: true,
+      cta: "Talk to me",
+    },
+    {
+      name: "Custom",
+      price: "Custom",
+      period: "quote",
+      tagline: "A full custom web app or platform, built to spec.",
+      features: [
+        "Custom web apps in Laravel, Next.js, or MERN",
+        "Headless and JAMstack architecture",
+        "React Native mobile app option",
+        "API and third-party integrations",
+        "Scalable, maintainable codebase",
+        "Fixed quote after discovery",
+      ],
+      featured: false,
+      cta: "Get a quote",
+    },
+  ],
+  faqs: [
+    {
+      q: "Which platform will you build my site on?",
+      a: "Whichever fits your goals. As a WordPress developer, Shopify developer, and Next.js developer, I do not push one tool on everyone. For a business site WordPress often makes sense, for a store Shopify or WooCommerce, and for custom web apps I reach for Next.js, Laravel, or the MERN stack.",
+    },
+    {
+      q: "Will my site actually load fast?",
+      a: "Yes. I write clean, semantic code instead of stacking page builders and plugins, so sites load fast, usually sub-second, and score well on Core Web Vitals. That speed also helps you rank.",
+    },
+    {
+      q: "Can you redesign or migrate my existing site?",
+      a: "I do redesigns and platform migrations regularly, and I do them carefully so you keep your existing rankings and content. We plan redirects and structure up front to protect your SEO.",
+    },
+    {
+      q: "Do you build custom web apps, not just websites?",
+      a: "Yes. Alongside standard sites I build full custom web apps in Laravel, Next.js, and the MERN stack, plus mobile apps with React Native. If you need a real platform rather than a brochure site, that is squarely what I do.",
+    },
+    {
+      q: "How does pricing work?",
+      a: "Web development is priced as a one-time build. Starter sites start around $499, larger builds and stores around $999, and full custom apps get a tailored quote after a quick discovery chat. The price is fixed up front, so no surprises.",
+    },
+    {
+      q: "Where are you based and how do we work together?",
+      a: "I work with clients worldwide, including the US, UK, UAE, and Pakistan, fully remote. You get replies within 24 hours and a fixed quote before any work starts.",
+    },
+  ],
+  cta: {
+    heading: "Let's build something fast, clean, and ready to rank",
+    body: "Tell me what you need, a business site, a store, or a full custom web app, and I will send a fixed quote within 24 hours. No bloat, no surprises, just the right build for your goals.",
+  },
+};
 
 export const metadata: Metadata = {
-  title: "Web Development by Asif — Sites That Rank, Convert & Load Fast",
-  description:
-    "Web development across WordPress, PHP, Laravel, Next.js, and the MERN stack — clean, SEO-ready sites and apps built to grow your business. Clear process and transparent pricing.",
+  title: DATA.meta.title,
+  description: DATA.meta.description,
+  alternates: { canonical: "/services/web-development" },
+  openGraph: { title: DATA.meta.title, description: DATA.meta.description },
 };
 
-const STATS = [
-  { num: "120+", label: "Sites delivered" },
-  { num: "<2s", label: "Avg load time" },
-  { num: "5", label: "Tech stacks" },
-  { num: "98%", label: "Client retention" },
-];
-
-type Svc = {
-  slug: string;
-  icon: LucideIcon;
-  name: string;
-  desc: string;
-  tags: string[];
-  timeline: string;
-  featured?: boolean;
-};
-
-const SERVICES: Svc[] = [
-  {
-    slug: "wordpress",
-    icon: Globe,
-    name: "WordPress Development",
-    desc: "Fast, SEO-ready sites with custom themes, WooCommerce, and page builders — no bloat, no drag.",
-    tags: ["Custom theme", "WooCommerce", "SEO optimized", "Page speed"],
-    timeline: "2–4 weeks",
-    featured: true,
-  },
-  {
-    slug: "php",
-    icon: Code2,
-    name: "PHP Development",
-    desc: "Custom PHP backends and web applications built for performance and easy maintenance.",
-    tags: ["Custom backend", "REST API", "MySQL"],
-    timeline: "3–6 weeks",
-  },
-  {
-    slug: "laravel",
-    icon: Layers,
-    name: "Laravel Development",
-    desc: "Scalable web applications with clean architecture — portals, dashboards, SaaS tools.",
-    tags: ["MVC", "Eloquent ORM", "API first"],
-    timeline: "4–8 weeks",
-  },
-  {
-    slug: "nextjs",
-    icon: Triangle,
-    name: "Next.js Development",
-    desc: "Blazing-fast React apps with SSR and SSG — ideal for SEO-heavy or content-rich sites.",
-    tags: ["SSR / SSG", "React", "Vercel deploy"],
-    timeline: "3–6 weeks",
-  },
-  {
-    slug: "mern-stack",
-    icon: Boxes,
-    name: "MERN Stack Development",
-    desc: "Full-stack JS apps using MongoDB, Express, React, and Node — end to end, one team.",
-    tags: ["MongoDB", "Express", "React", "Node.js"],
-    timeline: "6–12 weeks",
-  },
-];
-
-const PROCESS = [
-  { num: "Step 01", title: "Discovery call", desc: "I understand your goals, audience, and timeline before writing a single line of code." },
-  { num: "Step 02", title: "Proposal & scope", desc: "You get a clear document — deliverables, timeline, and price. No surprises later." },
-  { num: "Step 03", title: "Design & build", desc: "I build in sprints with regular checkpoints so you see progress, not just a final reveal." },
-  { num: "Step 04", title: "Launch & handoff", desc: "I deploy, test, and hand over everything — logins, docs, and training if needed." },
-];
-
-const TECH = [
-  "WordPress", "PHP 8", "Laravel 11", "Next.js 16", "React 19", "Node.js",
-  "MongoDB", "MySQL", "Tailwind CSS", "Vercel", "Cloudflare", "Git / GitHub",
-];
-
-type Pkg = {
-  name: string;
-  price: string;
-  unit: string;
-  desc: string;
-  features: string[];
-  cta: string;
-  featured?: boolean;
-};
-
-const PACKAGES: Pkg[] = [
-  {
-    name: "Starter",
-    price: "$499",
-    unit: "one-time",
-    desc: "For small businesses that need a clean, fast site up quickly.",
-    features: ["WordPress site, up to 5 pages", "Mobile responsive", "Basic SEO setup", "Contact form", "1 revision round"],
-    cta: "Get started",
-  },
-  {
-    name: "Growth",
-    price: "$999",
-    unit: "one-time",
-    desc: "For businesses that want a professional site that generates leads.",
-    features: ["Custom WordPress theme", "Up to 12 pages", "Full SEO optimization", "Speed optimization", "Analytics setup", "3 revision rounds"],
-    cta: "Get started",
-    featured: true,
-  },
-  {
-    name: "Custom",
-    price: "Custom",
-    unit: "quote",
-    desc: "Laravel, MERN, Next.js, or anything complex — I scope it properly.",
-    features: ["Any tech stack", "Full-stack development", "API integrations", "Custom admin panel", "Dedicated point of contact"],
-    cta: "Talk to me",
-  },
-];
-
-export default function WebDevelopmentPage() {
-  return (
-    <>
-      <HireHero small="Service" title="Web Development" taglineTitle="Fast sites that rank." taglineText="SEO-ready websites and web apps — built around your goals, not a template." />
-      <main>
-        {/* STATS */}
-        <section className="border-b border-border">
-          <div className="mx-auto grid max-w-5xl grid-cols-2 px-6 sm:grid-cols-4">
-            {STATS.map((s, i) => (
-              <div
-                key={s.label}
-                className={`px-4 py-7 text-center ${i < STATS.length - 1 ? "sm:border-r sm:border-border" : ""}`}
-              >
-                <div className="text-3xl font-extrabold tracking-tight text-brand">{s.num}</div>
-                <div className="mt-1 text-sm text-muted-foreground">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* SERVICES */}
-        <section className="mx-auto max-w-6xl px-6 py-20">
-          <p className="font-mono text-xs uppercase tracking-[0.12em] text-brand">What I build</p>
-          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
-            5 web technologies, one developer
-          </h2>
-          <p className="mt-2 text-muted-foreground">
-            I pick the right tool for your project — not the one I&apos;m most comfortable with.
-          </p>
-
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {SERVICES.map((s) => {
-              const Icon = s.icon;
-              return (
-                <Link
-                  key={s.slug}
-                  href="/contact"
-                  className={`group relative flex flex-col rounded-2xl border p-6 transition-colors ${
-                    s.featured
-                      ? "border-brand/40 bg-brand/[0.07]"
-                      : "border-border bg-card/50 hover:border-brand/40"
-                  }`}
-                >
-                  {s.featured && (
-                    <span className="absolute right-5 top-5 rounded-full bg-brand px-2.5 py-1 text-[11px] font-semibold text-primary-foreground">
-                      Most popular
-                    </span>
-                  )}
-                  <span className="grid h-11 w-11 place-items-center rounded-xl border border-brand/25 bg-brand/10 text-brand">
-                    <Icon className="h-5 w-5" strokeWidth={1.75} />
-                  </span>
-                  <h3 className="mt-4 text-base font-semibold text-foreground">{s.name}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {s.tags.map((t) => (
-                      <span key={t} className="rounded-lg border border-border bg-background/40 px-2.5 py-1 font-mono text-[11px] text-muted-foreground">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="mt-auto flex items-center justify-between border-t border-border pt-4">
-                    <span className="text-xs text-muted-foreground">
-                      Timeline: <span className="text-foreground/80">{s.timeline}</span>
-                    </span>
-                    <ArrowRight className="h-4 w-4 text-brand transition-transform group-hover:translate-x-1" />
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* PROCESS */}
-        <section className="border-t border-border">
-          <div className="mx-auto max-w-6xl px-6 py-20">
-            <p className="font-mono text-xs uppercase tracking-[0.12em] text-brand">How I work</p>
-            <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
-              From brief to live in 4 steps
-            </h2>
-            <p className="mt-2 text-muted-foreground">No long back-and-forths. I move fast and keep you in the loop.</p>
-
-            <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
-              {PROCESS.map((p) => (
-                <div key={p.num} className="bg-card/50 p-6">
-                  <div className="font-mono text-xs font-semibold uppercase tracking-[0.12em] text-brand">{p.num}</div>
-                  <h3 className="mt-3 text-base font-semibold text-foreground">{p.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* TECH STACK */}
-        <section className="border-t border-border">
-          <div className="mx-auto max-w-6xl px-6 py-20">
-            <p className="font-mono text-xs uppercase tracking-[0.12em] text-brand">Tech stack</p>
-            <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
-              Tools I use every day
-            </h2>
-            <p className="mt-2 text-muted-foreground">No outdated tech — just proven tools that work at scale.</p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              {TECH.map((t) => (
-                <span key={t} className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/50 px-4 py-2 text-sm text-muted-foreground">
-                  <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* PACKAGES */}
-        <section className="border-t border-border">
-          <div className="mx-auto max-w-6xl px-6 py-20">
-            <p className="font-mono text-xs uppercase tracking-[0.12em] text-brand">Pricing</p>
-            <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
-              Simple, transparent packages
-            </h2>
-            <p className="mt-2 text-muted-foreground">Starting prices — final quote depends on scope. No hidden fees.</p>
-
-            <div className="mt-10 grid gap-5 lg:grid-cols-3">
-              {PACKAGES.map((p) => (
-                <div
-                  key={p.name}
-                  className={`flex flex-col rounded-2xl border p-7 ${
-                    p.featured ? "border-brand/50 bg-brand/[0.07]" : "border-border bg-card/50"
-                  }`}
-                >
-                  {p.featured && (
-                    <span className="mb-4 inline-block w-fit rounded-full bg-brand px-2.5 py-1 text-[11px] font-semibold text-primary-foreground">
-                      Most popular
-                    </span>
-                  )}
-                  <h3 className="text-lg font-bold text-foreground">{p.name}</h3>
-                  <div className="mt-1 flex items-end gap-1.5">
-                    <span className="text-3xl font-extrabold tracking-tight text-brand">{p.price}</span>
-                    <span className="pb-1 text-sm text-muted-foreground">{p.unit}</span>
-                  </div>
-                  <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
-                  <ul className="mt-5 flex flex-1 flex-col gap-2.5">
-                    {p.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2.5 text-sm text-foreground/80">
-                        <span className="mt-0.5 font-bold text-brand">✓</span>
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button
-                    asChild
-                    className={`mt-6 w-full rounded-lg ${p.featured ? "" : "bg-transparent border border-border text-foreground hover:bg-accent"}`}
-                    variant={p.featured ? "default" : "outline"}
-                  >
-                    <Link href="/contact">{p.cta}</Link>
-                  </Button>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="border-t border-border">
-          <div className="mx-auto max-w-4xl px-6 py-20">
-            <div className="rounded-3xl border border-border bg-card/50 p-10 text-center sm:p-14">
-              <h2 className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
-                Ready to build something great?
-              </h2>
-              <p className="mx-auto mt-3 max-w-md text-muted-foreground">
-                Free consultation — I&apos;ll tell you exactly what your project needs and how long
-                it&apos;ll take.
-              </p>
-              <div className="mt-8 flex flex-wrap justify-center gap-3">
-                <Button asChild size="lg" className="rounded-full">
-                  <Link href="/contact">Start a project <ArrowRight className="ml-1 h-4 w-4" /></Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="rounded-full border-border bg-transparent text-foreground hover:bg-accent hover:text-foreground">
-                  <a href={`https://wa.me/${PHONE_WA}`} target="_blank" rel="noopener noreferrer">WhatsApp me</a>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <HireFooter />
-    </>
-  );
+export default function Page() {
+  return <ServiceDetailPage data={DATA} />;
 }

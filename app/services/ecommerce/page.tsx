@@ -1,295 +1,203 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import {
-  ArrowRight,
-  CreditCard,
-  Palette,
-  Zap,
-  Smartphone,
-  BarChart3,
-  Plug,
-  type LucideIcon,
-} from "lucide-react";
-import { HireHero } from "@/components/portfolio/hire-hero";
-import { HireFooter } from "@/components/portfolio/hire-footer";
-import { Button } from "@/components/ui/button";
+import { ServiceDetailPage, type ServiceDetail } from "@/components/portfolio/service-detail";
 
-const PHONE_WA = "923088663440";
+const DATA: ServiceDetail = {
+  slug: "ecommerce",
+  name: "E-commerce and Automation",
+  meta: {
+    title: "E-commerce and Automation | Asif.dev",
+    description:
+      "Shopify development and WooCommerce stores that convert, plus CRM automation and Zapier workflows that follow up with leads while you sleep. Sell more, do less.",
+  },
+  hero: {
+    small: "Service",
+    title: "E-commerce and Automation",
+    taglineTitle: "Sell more and let the busywork run itself.",
+    taglineText:
+      "I build fast Shopify and WooCommerce stores that are easy to manage and built to convert. Then I wire up the CRM automation and Zapier workflows that follow up with every lead and customer for you.",
+  },
+  intro: {
+    heading: "Stores that convert, systems that run themselves",
+    body:
+      "Whether you are launching a new store or fixing one that does not convert, I do e-commerce development that is fast, easy to manage, and built to sell. I work in both Shopify development and WooCommerce, so you get the right platform for your business instead of a one-size-fits-all template.\n\nA store is only half the job. I connect the tools that follow up with leads and customers automatically, from CRM automation to sales funnels to Zapier and Make workflows. That means abandoned carts get recovered, new leads get nurtured, and you spend less time on manual work.",
+  },
+  included: [
+    {
+      title: "Shopify and WooCommerce store builds",
+      desc: "A clean, fast store on the platform that fits how you actually run your business.",
+    },
+    {
+      title: "Product, checkout, and payment setup",
+      desc: "Products, variants, taxes, shipping, and secure payments configured and tested end to end.",
+    },
+    {
+      title: "Landing pages and sales funnels",
+      desc: "Focused pages that guide visitors from click to purchase with fewer drop-offs.",
+    },
+    {
+      title: "CRM and GHL automation",
+      desc: "Your leads and customers organized, tagged, and worked automatically inside your CRM.",
+    },
+    {
+      title: "Zapier and Make workflows",
+      desc: "Your apps talk to each other so data flows without you copying and pasting.",
+    },
+    {
+      title: "Lead capture and follow-up automation",
+      desc: "Every enquiry gets captured and followed up, so no warm lead goes cold.",
+    },
+    {
+      title: "Abandoned cart and email flows",
+      desc: "Automated emails that win back shoppers who left and keep buyers coming back.",
+    },
+  ],
+  benefits: [
+    {
+      title: "More sales, less manual work",
+      desc: "A store built to convert and automation that handles the follow-up you used to do by hand.",
+    },
+    {
+      title: "A follow-up system that never sleeps",
+      desc: "Leads get nurtured and carts get recovered around the clock, even when you are offline.",
+    },
+    {
+      title: "A store you can actually manage",
+      desc: "Clear admin, simple product updates, and no need to call a developer for small changes.",
+    },
+    {
+      title: "Fast, reliable, and built to scale",
+      desc: "Quick load times and solid Core Web Vitals so speed never costs you a sale.",
+    },
+  ],
+  process: [
+    {
+      title: "Discovery and platform pick",
+      desc: "We talk through your products, goals, and tools, then choose Shopify or WooCommerce accordingly.",
+    },
+    {
+      title: "Store build and design",
+      desc: "I build a fast, on-brand store with products, checkout, payments, and mobile all dialed in.",
+    },
+    {
+      title: "Funnels and landing pages",
+      desc: "I add the sales funnels and landing pages that turn traffic into orders.",
+    },
+    {
+      title: "Automation setup",
+      desc: "I wire up CRM automation, Zapier or Make workflows, and abandoned cart and email flows.",
+    },
+    {
+      title: "Test and launch",
+      desc: "We test every path from click to purchase to follow-up, then go live with confidence.",
+    },
+    {
+      title: "Handover and support",
+      desc: "You get a walkthrough, docs, and me on call for questions after launch.",
+    },
+  ],
+  tech: [
+    "Shopify",
+    "WooCommerce",
+    "WordPress",
+    "Liquid",
+    "Stripe",
+    "PayPal",
+    "Zapier",
+    "Make",
+    "GoHighLevel",
+    "Klaviyo",
+    "Mailchimp",
+    "Google Analytics",
+  ],
+  packages: [
+    {
+      name: "Starter Store",
+      price: "From $799",
+      period: "one-time",
+      tagline: "Get selling fast with a clean, solid store.",
+      features: [
+        "Shopify or WooCommerce store build",
+        "Up to 20 products set up",
+        "Checkout and payment configuration",
+        "Mobile-responsive design",
+        "Basic lead capture form",
+      ],
+      featured: false,
+      cta: "Get started",
+    },
+    {
+      name: "Growth Store",
+      price: "From $1,499",
+      period: "one-time",
+      tagline: "A store that converts plus automation that follows up.",
+      features: [
+        "Everything in Starter",
+        "Landing page and sales funnel",
+        "CRM and GHL automation setup",
+        "Abandoned cart and email flows",
+        "Zapier or Make workflow integration",
+        "Speed and Core Web Vitals tuning",
+      ],
+      featured: true,
+      cta: "Talk to me",
+    },
+    {
+      name: "Custom",
+      price: "Custom",
+      period: "quote",
+      tagline: "For bigger stores and deeper automation.",
+      features: [
+        "Custom store or migration",
+        "Advanced multi-step sales funnels",
+        "Full CRM automation build-out",
+        "Multiple app integrations",
+        "Custom email and SMS flows",
+        "Fixed quote, no surprises",
+      ],
+      featured: false,
+      cta: "Get a quote",
+    },
+  ],
+  faqs: [
+    {
+      q: "Should I use Shopify or WooCommerce?",
+      a: "It depends on your business. Shopify development is great for a fast, hosted store with less upkeep, while WooCommerce gives you more control and fits well if you already run WordPress. I will recommend the right one after we talk through your products and goals.",
+    },
+    {
+      q: "Can you fix a store that is not converting?",
+      a: "Yes. A lot of my e-commerce development work is fixing stores that get traffic but not sales. I audit speed, checkout, product pages, and funnels, then fix the leaks that cost you orders.",
+    },
+    {
+      q: "What exactly can you automate?",
+      a: "Lead capture, follow-up sequences, CRM automation, abandoned cart recovery, and email flows. Using Zapier and Make I can connect your store, CRM, email tool, and other apps so the busywork runs without you.",
+    },
+    {
+      q: "How long does a build take?",
+      a: "A Starter store is usually about one to two weeks, and a Growth store with sales funnels and automation is typically two to four weeks. I give you a clear timeline with your fixed quote before we start.",
+    },
+    {
+      q: "Do you work with clients outside your timezone?",
+      a: "Yes. I work with store owners across the US, UK, UAE, and Pakistan, reply within 24 hours, and quote everything up front so there are no surprises.",
+    },
+    {
+      q: "What happens after launch?",
+      a: "You get a walkthrough and docs so you can manage the store yourself, plus me on call for questions. If you want ongoing changes or new automations, we can set up a support arrangement.",
+    },
+  ],
+  cta: {
+    heading: "Ready to sell more with less busywork?",
+    body:
+      "Tell me about your store and what you want to automate. I will reply within 24 hours with a fixed quote and a clear plan to get you a store that converts and follow-up that runs while you sleep.",
+  },
+};
 
 export const metadata: Metadata = {
-  title: "E-commerce & Automation by Asif — Shopify Stores & Python Scripts",
-  description:
-    "High-converting Shopify stores and custom Python automation scripts — payment integrations, CRO, web scraping, lead generation, and report automation. Fixed pricing, fast delivery.",
+  title: DATA.meta.title,
+  description: DATA.meta.description,
+  alternates: { canonical: "/services/ecommerce" },
+  openGraph: { title: DATA.meta.title, description: DATA.meta.description },
 };
 
-const STATS = [
-  { num: "40+", label: "Stores launched" },
-  { num: "2.8x", label: "Avg conversion lift" },
-  { num: "HBL/Stripe", label: "Payment gateways" },
-  { num: "48hr", label: "Automation delivery" },
-];
-
-type Block = {
-  tag: string;
-  title: string;
-  desc: string;
-  features: string[];
-  link: { label: string; href: string };
-  timelineLabel: string;
-  timeline: string;
-  accent?: boolean;
-};
-
-const BLOCKS: Block[] = [
-  {
-    tag: "Shopify Development",
-    title: "High-converting Shopify stores",
-    desc: "I build clean, fast Shopify stores with custom Liquid sections, payment integrations (HBL, Stripe, Apple Pay), and conversion-focused design. Fully optimised for mobile and Google.",
-    features: [
-      "Custom Liquid theme development",
-      "HBL, Stripe, Apple Pay setup",
-      "Product page CRO optimization",
-      "Mobile-first design",
-      "Speed optimization (Core Web Vitals)",
-      "Google Shopping feed setup",
-      "Abandoned cart flows",
-    ],
-    link: { label: "Full Shopify details", href: "/contact" },
-    timelineLabel: "Timeline:",
-    timeline: "2–4 weeks depending on scope",
-    accent: true,
-  },
-  {
-    tag: "Python Development & Automation",
-    title: "Automation scripts that save hours",
-    desc: "Custom Python scripts for data scraping, lead generation, report automation, image processing, API integrations, and business workflows. Built clean, documented, and ready to run.",
-    features: [
-      "Web scraping & data extraction",
-      "Lead generation tools (Google Places API)",
-      "Automated PDF/Excel reporting",
-      "Image processing pipelines",
-      "API integrations (any platform)",
-      "Scheduled task automation",
-      "Data cleaning & transformation",
-    ],
-    link: { label: "Python development details", href: "/contact" },
-    timelineLabel: "Timeline:",
-    timeline: "48hr – 1 week per script",
-  },
-];
-
-type Feat = { icon: LucideIcon; title: string; desc: string };
-const SHOPIFY_FEATURES: Feat[] = [
-  { icon: CreditCard, title: "Payment integrations", desc: "HBL Pay, Stripe, Apple Pay, EasyPaisa — setup and troubleshooting included." },
-  { icon: Palette, title: "Custom Liquid sections", desc: "Custom theme sections that match your brand — no generic templates." },
-  { icon: Zap, title: "Speed optimization", desc: "Image compression, lazy loading, script deferral for sub-2s load times." },
-  { icon: Smartphone, title: "Mobile-first build", desc: "60%+ of e-commerce traffic is mobile — I design for thumbs, not mice." },
-  { icon: BarChart3, title: "Analytics & pixels", desc: "GA4, Meta Pixel, and TikTok Pixel setup with conversion event tracking." },
-  { icon: Plug, title: "App integrations", desc: "Klaviyo, Loox, Judge.me, ReConvert — the apps that actually move revenue." },
-];
-
-const USE_CASES = [
-  { num: "01", title: "Lead generation tool", desc: "Google Places API scraper that finds business leads by industry and location, checks their PageSpeed score, and exports a ranked outreach list." },
-  { num: "02", title: "SEO report generator", desc: "Automated PDF report builder that pulls data, applies branding, and generates client-ready SEO reports in seconds instead of hours." },
-  { num: "03", title: "Image processing pipeline", desc: "Background removal, sky replacement, and transparent PNG generation using OpenCV — built for e-commerce product photography workflows." },
-  { num: "04", title: "Data scraping & export", desc: "Playwright-based scrapers that extract structured data from any website and export clean Excel or JSON files — ready for analysis." },
-];
-
-type Pkg = { name: string; price: string; unit: string; desc: string; features: string[]; cta: string; featured?: boolean };
-const PACKAGES: Pkg[] = [
-  {
-    name: "Shopify Starter",
-    price: "$599",
-    unit: "one-time",
-    desc: "Simple product store — up to 50 products, clean design, payment setup.",
-    features: ["Theme customization", "Up to 50 products setup", "Payment gateway integration", "Mobile optimization", "Basic SEO setup"],
-    cta: "Get started",
-  },
-  {
-    name: "Shopify Pro",
-    price: "$1,299",
-    unit: "one-time",
-    desc: "Full custom build with CRO, speed optimization, and all integrations.",
-    features: ["Custom Liquid sections", "Unlimited products", "All payment gateways", "Speed optimization (CWV pass)", "Analytics & pixel setup", "3 app integrations"],
-    cta: "Get started",
-    featured: true,
-  },
-  {
-    name: "Automation Script",
-    price: "From $99",
-    unit: "per script",
-    desc: "Custom Python scripts — priced by complexity, delivered in 48 hours to 1 week.",
-    features: ["Fully custom to your workflow", "Clean, documented code", "Setup and testing included", "30-day bug fix guarantee", "Optional maintenance plan"],
-    cta: "Describe your need",
-  },
-];
-
-export default function EcommercePage() {
-  return (
-    <>
-      <HireHero small="Service" title="E-commerce" taglineTitle="Stores that sell." taglineText="Shopify and WooCommerce builds plus automation that runs your store for you." />
-      <main>
-        {/* STATS */}
-        <section className="border-b border-border">
-          <div className="mx-auto grid max-w-5xl grid-cols-2 px-6 sm:grid-cols-4">
-            {STATS.map((s, i) => (
-              <div key={s.label} className={`px-4 py-7 text-center ${i < STATS.length - 1 ? "sm:border-r sm:border-border" : ""}`}>
-                <div className="text-2xl font-extrabold tracking-tight text-brand sm:text-3xl">{s.num}</div>
-                <div className="mt-1 text-sm text-muted-foreground">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* SERVICES SPLIT */}
-        <section className="mx-auto max-w-6xl px-6 py-20">
-          <p className="font-mono text-xs uppercase tracking-[0.12em] text-brand">Two services</p>
-          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
-            Shopify stores + Python automation
-          </h2>
-          <p className="mt-2 text-muted-foreground">
-            Two different problems, one developer. I build stores that sell and scripts that save time.
-          </p>
-
-          <div className="mt-10 grid gap-5 lg:grid-cols-2">
-            {BLOCKS.map((b) => (
-              <div key={b.tag} className={`flex flex-col rounded-2xl border p-7 sm:p-8 ${b.accent ? "border-brand/40 bg-brand/[0.07]" : "border-border bg-card/50"}`}>
-                <div className="font-mono text-[11px] uppercase tracking-[0.09em] text-brand">{b.tag}</div>
-                <h3 className="mt-1.5 text-xl font-bold text-foreground">{b.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{b.desc}</p>
-                <ul className="mt-5 flex flex-col gap-2">
-                  {b.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-sm text-foreground/80">
-                      <span className="mt-0.5 font-bold text-brand">✓</span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <Link href={b.link.href} className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-brand transition-all hover:gap-2.5">
-                  {b.link.label} <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-                <div className="mt-5 border-t border-border pt-4 text-xs text-muted-foreground">
-                  {b.timelineLabel} <span className="text-foreground/80">{b.timeline}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* SHOPIFY FEATURES */}
-        <section className="border-t border-border">
-          <div className="mx-auto max-w-6xl px-6 py-20">
-            <p className="font-mono text-xs uppercase tracking-[0.12em] text-brand">Shopify capabilities</p>
-            <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
-              Everything a Shopify store needs
-            </h2>
-            <p className="mt-2 text-muted-foreground">
-              From basic product stores to full Liquid section development and payment troubleshooting.
-            </p>
-
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {SHOPIFY_FEATURES.map((f) => {
-                const Icon = f.icon;
-                return (
-                  <div key={f.title} className="rounded-2xl border border-border bg-card/50 p-6">
-                    <span className="grid h-10 w-10 place-items-center rounded-xl border border-brand/25 bg-brand/10 text-brand">
-                      <Icon className="h-5 w-5" strokeWidth={1.75} />
-                    </span>
-                    <h3 className="mt-4 text-sm font-semibold text-foreground">{f.title}</h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* AUTOMATION USE CASES */}
-        <section className="border-t border-border">
-          <div className="mx-auto max-w-6xl px-6 py-20">
-            <p className="font-mono text-xs uppercase tracking-[0.12em] text-brand">Automation examples</p>
-            <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
-              What I&apos;ve built with Python
-            </h2>
-            <p className="mt-2 text-muted-foreground">Real automation tools for real business problems — not generic scripts.</p>
-
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              {USE_CASES.map((u) => (
-                <div key={u.num} className="flex gap-4 rounded-2xl border border-border bg-card/50 p-6">
-                  <div className="font-mono text-2xl font-bold text-brand/40">{u.num}</div>
-                  <div>
-                    <h3 className="text-sm font-semibold text-foreground">{u.title}</h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{u.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* PACKAGES */}
-        <section className="border-t border-border">
-          <div className="mx-auto max-w-6xl px-6 py-20">
-            <p className="font-mono text-xs uppercase tracking-[0.12em] text-brand">Pricing</p>
-            <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
-              Shopify &amp; automation pricing
-            </h2>
-            <p className="mt-2 text-muted-foreground">Fixed price for defined scope. I quote before I start — no hourly surprises.</p>
-
-            <div className="mt-10 grid gap-5 lg:grid-cols-3">
-              {PACKAGES.map((p) => (
-                <div key={p.name} className={`flex flex-col rounded-2xl border p-7 ${p.featured ? "border-brand/50 bg-brand/[0.07]" : "border-border bg-card/50"}`}>
-                  {p.featured && (
-                    <span className="mb-4 inline-block w-fit rounded-full bg-brand px-2.5 py-1 text-[11px] font-semibold text-primary-foreground">
-                      Most popular
-                    </span>
-                  )}
-                  <h3 className="text-lg font-bold text-foreground">{p.name}</h3>
-                  <div className="mt-1 flex items-end gap-1.5">
-                    <span className="text-3xl font-extrabold tracking-tight text-brand">{p.price}</span>
-                    <span className="pb-1 text-sm text-muted-foreground">{p.unit}</span>
-                  </div>
-                  <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
-                  <ul className="mt-5 flex flex-1 flex-col gap-2.5">
-                    {p.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2.5 text-sm text-foreground/80">
-                        <span className="mt-0.5 font-bold text-brand">✓</span>
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button asChild className="mt-6 w-full rounded-lg" variant={p.featured ? "default" : "outline"}>
-                    <Link href="/contact">{p.cta}</Link>
-                  </Button>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="border-t border-border">
-          <div className="mx-auto max-w-4xl px-6 py-20">
-            <div className="rounded-3xl border border-border bg-card/50 p-10 text-center sm:p-14">
-              <h2 className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
-                Have a store or workflow in mind?
-              </h2>
-              <p className="mx-auto mt-3 max-w-md text-muted-foreground">
-                Tell me what you need — I&apos;ll scope it, price it, and deliver it on time.
-              </p>
-              <div className="mt-8 flex flex-wrap justify-center gap-3">
-                <Button asChild size="lg" className="rounded-full">
-                  <Link href="/contact">Start a project <ArrowRight className="ml-1 h-4 w-4" /></Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="rounded-full border-border bg-transparent text-foreground hover:bg-accent hover:text-foreground">
-                  <a href={`https://wa.me/${PHONE_WA}`} target="_blank" rel="noopener noreferrer">WhatsApp me</a>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <HireFooter />
-    </>
-  );
+export default function Page() {
+  return <ServiceDetailPage data={DATA} />;
 }

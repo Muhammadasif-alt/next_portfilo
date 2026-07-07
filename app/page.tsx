@@ -203,10 +203,10 @@ export default function HireMePage() {
         {/* NAV */}
         <HireNav />
 
-        {/* HERO BODY */}
-        <div className="flex flex-1 flex-col justify-center py-16 lg:py-24">
+        {/* HERO BODY — kept in the left zone so the heading never runs over the face */}
+        <div className="flex flex-1 flex-col justify-center py-16 lg:max-w-[680px] lg:py-24 xl:max-w-[820px]">
           <p className="text-2xl font-medium text-white/95 sm:text-3xl">Hey, I&apos;m Asif</p>
-          <h1 className="-mt-1 font-extrabold leading-[0.9] tracking-tight text-white drop-shadow-sm text-5xl sm:text-6xl lg:text-8xl">
+          <h1 className="-mt-1 font-extrabold leading-[0.9] tracking-tight text-white drop-shadow-sm text-5xl sm:text-6xl lg:text-7xl xl:text-[5rem]">
             Web Developer
             <br />
             &amp; SEO Specialist

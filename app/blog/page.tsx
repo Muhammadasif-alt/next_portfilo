@@ -1,108 +1,100 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 import { HireHero } from "@/components/portfolio/hire-hero";
 import { HireFooter } from "@/components/portfolio/hire-footer";
+import { getSortedPosts, POSTS_PER_PAGE } from "@/lib/blog-data";
 
 export const metadata: Metadata = {
-  title: "Blog — Web Development Tips by Asif",
+  title: "Blog | Web Development & SEO Tips by Asif",
   description:
-    "Articles on web development, SEO, speed optimisation, WordPress, Shopify, and Next.js — practical tips to build faster, better-ranking websites.",
+    "Practical articles on web development, SEO, speed optimisation, WordPress, Shopify, and Next.js. Real advice to build faster, better-ranking websites.",
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Blog | Web Development & SEO Tips by Asif",
+    description:
+      "Practical articles on web development, SEO, speed optimisation, WordPress, Shopify, and Next.js.",
+  },
 };
 
-type Post = {
-  title: string;
-  excerpt: string;
-  category: string;
-  date: string;
-  read: string;
-  img: string;
-};
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-[#ff5a1e]">
+      <span className="h-2 w-2 rounded-full bg-[#ff5a1e]" />
+      {children}
+    </p>
+  );
+}
 
-const POSTS: Post[] = [
-  {
-    title: "10 ways to make your WordPress site load in under a second",
-    excerpt: "Caching, image optimisation, and the plugins that are secretly slowing you down — a practical speed checklist.",
-    category: "Performance",
-    date: "Jun 2026",
-    read: "6 min read",
-    img: "https://picsum.photos/seed/asif-blog-1/800/500",
-  },
-  {
-    title: "Shopify vs WooCommerce: which should you actually choose?",
-    excerpt: "An honest comparison for store owners — cost, control, SEO, and scaling — with no platform bias.",
-    category: "E-commerce",
-    date: "Jun 2026",
-    read: "8 min read",
-    img: "https://picsum.photos/seed/asif-blog-2/800/500",
-  },
-  {
-    title: "The technical SEO checklist every new website needs",
-    excerpt: "Sitemaps, schema, Core Web Vitals, and the on-page basics that get you indexed and ranking faster.",
-    category: "SEO",
-    date: "May 2026",
-    read: "7 min read",
-    img: "https://picsum.photos/seed/asif-blog-3/800/500",
-  },
-  {
-    title: "Why I build with Next.js (and when I don't)",
-    excerpt: "Server rendering, SEO, and speed — the real-world trade-offs of the modern React framework.",
-    category: "Next.js",
-    date: "May 2026",
-    read: "5 min read",
-    img: "https://picsum.photos/seed/asif-blog-4/800/500",
-  },
-  {
-    title: "Fixing the most common contact-form problems",
-    excerpt: "Why your form emails go to spam — and how proper SMTP, SPF, and DKIM keep your leads landing in the inbox.",
-    category: "Development",
-    date: "Apr 2026",
-    read: "6 min read",
-    img: "https://picsum.photos/seed/asif-blog-5/800/500",
-  },
-  {
-    title: "Core Web Vitals explained for non-developers",
-    excerpt: "LCP, CLS, INP — what Google's speed metrics mean, why they affect rankings, and how to pass them.",
-    category: "Performance",
-    date: "Apr 2026",
-    read: "9 min read",
-    img: "https://picsum.photos/seed/asif-blog-6/800/500",
-  },
-];
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  const posts = getSortedPosts();
+  const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
 
-export default function BlogPage() {
+  const { page } = await searchParams;
+  const requested = parseInt(page ?? "1", 10);
+  const current = Math.min(Math.max(1, Number.isNaN(requested) ? 1 : requested), totalPages);
+
+  const start = (current - 1) * POSTS_PER_PAGE;
+  const shown = posts.slice(start, start + POSTS_PER_PAGE);
+
+  const pageHref = (p: number) => (p <= 1 ? "/blog" : `/blog?page=${p}`);
+
   return (
     <>
-      <HireHero small="Insights & tips" title="Blog" taglineTitle="Build smarter sites." taglineText="Practical articles on web development, SEO, and performance." />
-      <main>
-        <section className="py-16">
-          <div className="mx-auto max-w-[1440px] px-6">
-            <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-              {POSTS.map((p) => (
+      <HireHero
+        small="Insights & tips"
+        title="The Blog"
+        taglineTitle="Build smarter sites."
+        taglineText="Practical, no-nonsense articles on web development, SEO, and performance, written from real client work."
+        primaryCta={{ label: "Start your project", href: "/contact" }}
+        secondaryCta={{ label: "View services", href: "/services" }}
+      />
+
+      <main className="bg-[#0a0a0a] text-white">
+        <section className="px-6 py-20 lg:px-10 lg:py-24">
+          <div className="mx-auto max-w-[1440px]">
+            <div className="mx-auto max-w-2xl text-center">
+              <Eyebrow>Latest articles</Eyebrow>
+              <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl">
+                Advice you can actually use
+              </h2>
+              <p className="mt-4 text-white/65">
+                Straight talk on building fast, SEO-ready websites that bring in real business.
+              </p>
+            </div>
+
+            {/* grid */}
+            <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+              {shown.map((p) => (
                 <Link
-                  key={p.title}
-                  href="#"
-                  className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card/50 transition-colors hover:border-brand/50"
+                  key={p.slug}
+                  href={`/blog/${p.slug}`}
+                  className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#ff5a1e]/60"
                 >
-                  <div className="aspect-[16/10] overflow-hidden">
+                  <div className="aspect-[16/10] overflow-hidden bg-[#141414]">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={p.img}
+                      src={p.cover}
                       alt={p.title}
+                      loading="lazy"
                       className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                     />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <div className="flex items-center gap-3 font-mono text-xs text-muted-foreground">
-                      <span className="text-brand">{p.category}</span>
+                    <div className="flex items-center gap-2.5 font-mono text-xs text-white/50">
+                      <span className="font-semibold text-[#ff5a1e]">{p.category}</span>
                       <span>•</span>
                       <span>{p.date}</span>
                       <span>•</span>
                       <span>{p.read}</span>
                     </div>
-                    <h2 className="mt-3 text-lg font-semibold leading-snug text-foreground">{p.title}</h2>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{p.excerpt}</p>
-                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
+                    <h3 className="mt-3 text-lg font-bold leading-snug text-white">{p.title}</h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-white/60">{p.excerpt}</p>
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-[#ff5a1e]">
                       Read article
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>
@@ -111,8 +103,63 @@ export default function BlogPage() {
               ))}
             </div>
 
-            <p className="mt-12 text-center text-sm text-muted-foreground">
-              More articles coming soon — check back regularly.
+            {/* pagination */}
+            {totalPages > 1 && (
+              <nav
+                aria-label="Blog pagination"
+                className="mt-14 flex items-center justify-center gap-2"
+              >
+                {current > 1 ? (
+                  <Link
+                    href={pageHref(current - 1)}
+                    className="inline-flex h-11 items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.03] px-5 text-sm font-semibold text-white transition-colors hover:border-[#ff5a1e]/60"
+                  >
+                    <ArrowLeft className="h-4 w-4" />
+                    Prev
+                  </Link>
+                ) : (
+                  <span className="inline-flex h-11 cursor-not-allowed items-center gap-1.5 rounded-full border border-white/10 px-5 text-sm font-semibold text-white/30">
+                    <ArrowLeft className="h-4 w-4" />
+                    Prev
+                  </span>
+                )}
+
+                <div className="flex items-center gap-1.5">
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
+                    <Link
+                      key={n}
+                      href={pageHref(n)}
+                      aria-current={n === current ? "page" : undefined}
+                      className={`grid h-11 w-11 place-items-center rounded-full text-sm font-bold transition-colors ${
+                        n === current
+                          ? "bg-[#ff5a1e] text-white"
+                          : "border border-white/15 bg-white/[0.03] text-white/70 hover:border-[#ff5a1e]/60 hover:text-white"
+                      }`}
+                    >
+                      {n}
+                    </Link>
+                  ))}
+                </div>
+
+                {current < totalPages ? (
+                  <Link
+                    href={pageHref(current + 1)}
+                    className="inline-flex h-11 items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.03] px-5 text-sm font-semibold text-white transition-colors hover:border-[#ff5a1e]/60"
+                  >
+                    Next
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                ) : (
+                  <span className="inline-flex h-11 cursor-not-allowed items-center gap-1.5 rounded-full border border-white/10 px-5 text-sm font-semibold text-white/30">
+                    Next
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                )}
+              </nav>
+            )}
+
+            <p className="mt-8 text-center text-sm text-white/40">
+              Page {current} of {totalPages}
             </p>
           </div>
         </section>

@@ -98,20 +98,20 @@ const OFFER: { n: string; title: [string, string]; desc: string; href: string }[
   },
   {
     n: "02",
-    title: ["Meta", "Ads"],
-    desc: "Facebook and Instagram campaigns that generate real leads. Targeting, creative, pixel setup, and weekly reporting.",
+    title: ["Marketing", "& SEO"],
+    desc: "Technical and on-page SEO plus Meta and Google campaigns. Audits, schema, content, and reporting that bring in real leads.",
     href: "/services/marketing",
   },
   {
     n: "03",
-    title: ["SEO", "Expert"],
-    desc: "Technical and on-page SEO that gets you ranking. Audits, schema, content, and Core Web Vitals tuned to win.",
-    href: "/services/marketing",
+    title: ["E-commerce", "& Automation"],
+    desc: "Online stores built to sell in Shopify and WooCommerce, plus automation that saves you hours every week.",
+    href: "/services/ecommerce",
   },
   {
     n: "04",
-    title: ["Speed", "Optimization"],
-    desc: "Sub-second load times. Image, caching, code, and CDN tuning that passes Google Core Web Vitals.",
+    title: ["Support", "& Maintenance"],
+    desc: "Updates, backups, security, and speed tuning. Sub-second load times that keep passing Core Web Vitals long after launch.",
     href: "/services/support-maintenance",
   },
 ];

@@ -1,6 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Plus, Rocket, Code2, ShieldCheck, Headphones } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Plus,
+  Rocket,
+  Code2,
+  ShieldCheck,
+  Headphones,
+  Check,
+  Megaphone,
+  ShoppingBag,
+  Settings,
+} from "lucide-react";
 import { PROJECTS, projectShot, type Project } from "@/lib/projects-data";
 import { HireContactForm } from "@/components/portfolio/hire-contact-form";
 import { HireNav } from "@/components/portfolio/hire-nav";
@@ -115,6 +127,54 @@ const OFFER: { n: string; title: [string, string]; desc: string; href: string }[
     n: "04",
     title: ["Support", "& Maintenance"],
     desc: "Updates, backups, security, and speed tuning. Sub-second load times that keep passing Core Web Vitals long after launch.",
+    href: "/services/support-maintenance",
+  },
+];
+
+/* Entry prices. These mirror the Starter tier on each service detail page. */
+const PRICING: {
+  icon: typeof Code2;
+  name: string;
+  price: string;
+  period: string;
+  tagline: string;
+  points: string[];
+  href: string;
+}[] = [
+  {
+    icon: Code2,
+    name: "Web Development",
+    price: "From $499",
+    period: "one-time",
+    tagline: "A clean, fast professional site to get you online.",
+    points: ["Custom, mobile-first design", "SEO-ready from day one", "Speed tuned before launch"],
+    href: "/services/web-development",
+  },
+  {
+    icon: Megaphone,
+    name: "Marketing & SEO",
+    price: "From $299",
+    period: "/mo",
+    tagline: "Get the foundations right and start climbing.",
+    points: ["Technical and on-page SEO", "Content and schema", "Monthly reporting"],
+    href: "/services/marketing",
+  },
+  {
+    icon: ShoppingBag,
+    name: "E-commerce & Automation",
+    price: "From $799",
+    period: "one-time",
+    tagline: "Get selling fast with a clean, solid store.",
+    points: ["Shopify or WooCommerce", "Products and payments set up", "Automation that follows up"],
+    href: "/services/ecommerce",
+  },
+  {
+    icon: Settings,
+    name: "Support & Maintenance",
+    price: "From $99",
+    period: "/mo",
+    tagline: "Keep the lights on and the basics covered.",
+    points: ["Updates and backups", "Security monitoring", "Small changes handled"],
     href: "/services/support-maintenance",
   },
 ];
@@ -677,6 +737,91 @@ export default function HireMePage() {
             </a>
           ))}
         </div>
+      </div>
+    </section>
+
+    {/* ===== PRICING ===== */}
+    <section className="relative overflow-hidden border-t border-white/10 bg-black px-6 py-20 text-white lg:px-10 lg:py-24">
+      <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-[600px] -translate-x-1/2 rounded-full bg-[#ff5a1e]/10 blur-[130px]" />
+      <div className="relative mx-auto max-w-[1440px]">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-[#ff5a1e]">
+            <span className="h-2 w-2 rounded-full bg-[#ff5a1e]" />
+            Pricing
+          </p>
+          <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
+            Simple pricing, <span className="text-[#ff5a1e]">no surprises</span>
+          </h2>
+          <p className="mt-4 text-white/65">
+            Starting prices for each service. Every project gets a fixed quote after a quick chat, so
+            you know the full cost before any work begins.
+          </p>
+        </div>
+
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {PRICING.map((p) => {
+            const Icon = p.icon;
+            return (
+              <div
+                key={p.name}
+                className="group flex flex-col rounded-3xl border border-white/10 bg-white/[0.03] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#ff5a1e]/60"
+              >
+                <span className="grid h-11 w-11 place-items-center rounded-xl border border-[#ff5a1e]/25 bg-[#ff5a1e]/10 text-[#ff5a1e]">
+                  <Icon className="h-5 w-5" />
+                </span>
+                <h3 className="mt-5 text-base font-bold">{p.name}</h3>
+                <div className="mt-3 flex items-baseline gap-1.5">
+                  <span className="text-3xl font-extrabold text-[#ff5a1e]">{p.price}</span>
+                  <span className="text-xs text-white/45">{p.period}</span>
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-white/60">{p.tagline}</p>
+                <ul className="mt-5 flex-1 space-y-2.5">
+                  {p.points.map((pt) => (
+                    <li key={pt} className="flex items-start gap-2 text-sm text-white/75">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#ff5a1e]" strokeWidth={2.5} />
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href={p.href}
+                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-colors group-hover:border-[#ff5a1e] group-hover:bg-[#ff5a1e]"
+                >
+                  See packages
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* reassurance strip */}
+        <div className="mx-auto mt-12 flex max-w-3xl flex-wrap items-center justify-center gap-x-8 gap-y-3 rounded-2xl border border-[#ff5a1e]/25 bg-[#ff5a1e]/5 px-6 py-5 text-sm text-white/75">
+          <span className="inline-flex items-center gap-2">
+            <Check className="h-4 w-4 text-[#ff5a1e]" strokeWidth={2.5} />
+            Fixed quote upfront
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <Check className="h-4 w-4 text-[#ff5a1e]" strokeWidth={2.5} />
+            No hidden fees
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <Check className="h-4 w-4 text-[#ff5a1e]" strokeWidth={2.5} />
+            SEO and speed included
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <Check className="h-4 w-4 text-[#ff5a1e]" strokeWidth={2.5} />
+            Reply within 24 hours
+          </span>
+        </div>
+
+        <p className="mt-8 text-center text-sm text-white/50">
+          Not sure which one fits?{" "}
+          <Link href="/contact" className="font-semibold text-[#ff5a1e] hover:underline">
+            Tell me your goal
+          </Link>{" "}
+          and I will point you the right way.
+        </p>
       </div>
     </section>
 

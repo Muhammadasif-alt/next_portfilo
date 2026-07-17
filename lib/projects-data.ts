@@ -36,6 +36,35 @@ export const PROJECTS: Project[] = [
   { url: "https://mychildsroom.co.uk", title: "My Child's Room", tag: "E-commerce", desc: "Children's furniture and nursery store.", category: "E-commerce", stack: ["WooCommerce", "WordPress"] },
   { url: "https://baby-fair.co.uk", title: "Baby Fair", tag: "E-commerce", desc: "Baby products and nursery essentials store.", category: "E-commerce", stack: ["WooCommerce", "WordPress"] },
   { url: "https://jobsinusa.us", title: "Jobs in USA", tag: "Job Portal", desc: "Job listing and recruitment platform.", category: "Web Apps", stack: ["Next.js", "MERN"] },
+
+  /* Singapore: team building, workshops, and retail */
+  { url: "https://www.teamlabs.sg", title: "TeamLabs", tag: "Team Building", desc: "Team bonding and corporate activities company website in Singapore.", category: "Web Development", stack: ["WordPress", "Elementor"] },
+  { url: "https://www.craftlabs.sg", title: "Craft Labs", tag: "Team Building", desc: "Team bonding and craft activities company website in Singapore.", category: "Web Development", stack: ["WordPress", "Elementor"] },
+  { url: "https://epicworkshops.com.sg", title: "Epic Workshops", tag: "Workshops", desc: "Team building workshops company with an online booking store.", category: "E-commerce", stack: ["WooCommerce", "WordPress"] },
+  { url: "https://www.ecoponics.com.sg", title: "Ecoponics", tag: "Education", desc: "Science and environmental sustainability workshops with online booking.", category: "E-commerce", stack: ["WooCommerce", "WordPress"] },
+  { url: "https://craft-everything.com", title: "Craft Everything", tag: "Craft Studio", desc: "Craft studio and workshops website with a bright, playful design.", category: "Web Development", stack: ["WordPress", "Elementor"] },
+  { url: "https://triokids.com.sg", title: "TrioKids", tag: "E-commerce", desc: "Art, craft, and toy store for kids with a full online catalogue.", category: "E-commerce", stack: ["WooCommerce", "WordPress"] },
+
+  /* Finance, accounting, and advisory */
+  { url: "https://accountingbizsales.com", title: "Accounting Biz Sales", tag: "Business Brokerage", desc: "Marketplace site for accounting businesses and tax practices for sale.", category: "Web Development", stack: ["WordPress", "Elementor"] },
+  { url: "https://interfaceaccountants.co.uk", title: "Interface Accountants", tag: "Accountancy", desc: "Chartered accountancy firm website with services and client resources.", category: "Web Development", stack: ["WordPress", "WooCommerce"] },
+  { url: "https://koffexaccounting.com", title: "Koffex Accounting", tag: "Accounting", desc: "Accounting firm website built for small business clients.", category: "Web Development", stack: ["WordPress", "Elementor"] },
+  { url: "https://wbsadvisory.com", title: "WBS Advisory", tag: "Consulting", desc: "Business plan and feasibility study consultancy website in Dubai.", category: "Web Development", stack: ["WordPress", "Elementor"] },
+
+  /* Healthcare and services */
+  { url: "https://www.panasiasurg.com", title: "Pan Asia Surgery", tag: "Healthcare", desc: "Surgery clinic website with specialists, procedures, and appointments.", category: "Web Development", stack: ["Web Design"] },
+  { url: "https://dubaidoctorathome.com", title: "Doctor At Home Dubai", tag: "Healthcare", desc: "At-home doctor consultation service website with booking enquiries.", category: "Web Development", stack: ["WordPress", "Elementor"] },
+  { url: "https://optiquederby.co.uk", title: "Optique Derby", tag: "Opticians", desc: "Opticians practice website with services and appointment booking.", category: "Web Development", stack: ["WordPress", "Elementor"] },
+  { url: "https://peelmaster.ae", title: "Peel Master", tag: "Car Detailing", desc: "Car detailing and paint protection services website in Dubai.", category: "Web Development", stack: ["Next.js", "React"] },
+
+  /* Retail, property, and education */
+  { url: "https://www.althahanifurniture.com", title: "Al Thahani Furniture", tag: "E-commerce", desc: "Second-hand furniture store in Abu Dhabi with an online catalogue.", category: "E-commerce", stack: ["WooCommerce", "WordPress"] },
+  { url: "https://www.dhabahawalpur.com", title: "DHA Bahawalpur", tag: "Real Estate", desc: "Housing authority website with project details and resident information.", category: "Web Development", stack: ["Web Design"] },
+  { url: "https://learnersacademy.com.pk", title: "Learners Academy", tag: "Education", desc: "Online IGCSE, O and A Level tuition academy website.", category: "Web Development", stack: ["Web Design"] },
+
+  /* Marketing agencies */
+  { url: "https://pulsebeat.com.au", title: "Pulse Beat", tag: "Digital Marketing", desc: "Digital marketing agency website in Sydney with services and lead capture.", category: "SEO and Growth", stack: ["WordPress", "Elementor"] },
+  { url: "https://weproms.com", title: "WeProms Digital", tag: "Digital Marketing", desc: "Digital marketing agency website with services and case studies.", category: "SEO and Growth", stack: ["Web Design"] },
 ];
 
 /* Live screenshot of any URL via WordPress mShots. */

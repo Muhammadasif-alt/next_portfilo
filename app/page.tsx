@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Plus, Rocket, Code2, ShieldCheck, Headphones } from "lucide-react";
-import { PROJECTS, projectShot } from "@/lib/projects-data";
+import { ArrowRight, ArrowUpRight, Plus, Rocket, Code2, ShieldCheck, Headphones } from "lucide-react";
+import { PROJECTS, projectShot, type Project } from "@/lib/projects-data";
 import { HireContactForm } from "@/components/portfolio/hire-contact-form";
 import { HireNav } from "@/components/portfolio/hire-nav";
 import { HireFooter } from "@/components/portfolio/hire-footer";
-import "./orbit.css";
 
-const ORBIT = PROJECTS.slice(0, 13);
+/* Three featured builds. Names and categories come from the real projects data. */
+const FEATURED: { headline: string; project: Project }[] = [
+  { url: "https://ideadigital.services/", headline: "Rank Higher, Win Clients" },
+  { url: "https://epicworkshops.com.sg", headline: "Book Workshops Online" },
+  { url: "https://peelmaster.ae", headline: "Built For Pure Speed" },
+].flatMap((f) => {
+  const project = PROJECTS.find((p) => p.url === f.url);
+  return project ? [{ headline: f.headline, project }] : [];
+});
 
 export const metadata: Metadata = {
   title: "Freelance Web Developer & SEO Specialist | Asif.dev",
@@ -604,47 +611,67 @@ export default function HireMePage() {
       </div>
     </section>
 
-    {/* ===== ORBIT PROJECTS ===== */}
-    <section className="orbit-section py-12 text-white lg:py-16">
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-[560px] -translate-x-1/2 rounded-full bg-[#ff5a1e]/12 blur-[130px]" />
-      <div className="relative mx-auto max-w-[1440px] px-6">
-        <div className="orbit-stage">
-          <div className="orbit">
-            {ORBIT.map((p, i) => (
-              <div
-                key={p.url}
-                className="orbit-item"
-                style={{
-                  transform: `rotate(${(360 / ORBIT.length) * i}deg) translateY(calc(var(--orbit-r) * -1))`,
-                }}
-              >
-                <div className="orbit-card">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={projectShot(p.url, 600, 460)} alt={p.title} loading="lazy" />
-                </div>
-              </div>
-            ))}
-          </div>
+    {/* ===== FEATURED PROJECTS ===== */}
+    <section className="relative overflow-hidden border-t border-white/10 bg-[#0a0a0a] px-6 py-20 text-white lg:px-10 lg:py-24">
+      <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-[560px] -translate-x-1/2 rounded-full bg-[#ff5a1e]/12 blur-[130px]" />
+      <div className="relative mx-auto max-w-[1440px]">
+        {/* header row */}
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <p className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-[#ff5a1e]">
+            <span className="h-2 w-2 rounded-full bg-[#ff5a1e]" />
+            Featured Projects
+          </p>
+          <Link
+            href="/projects"
+            className="group inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.18em] text-white/70 transition-colors hover:text-white"
+          >
+            View all projects
+            <span className="grid h-7 w-7 place-items-center rounded-full border border-white/20 transition-colors group-hover:border-[#ff5a1e] group-hover:bg-[#ff5a1e] group-hover:text-white">
+              <Plus className="h-3.5 w-3.5" />
+            </span>
+          </Link>
+        </div>
 
-          <div className="orbit-caption">
-            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-              Let&apos;s Create Something{" "}
-              <span className="bg-gradient-to-r from-[#ff5a1e] to-[#ffb020] bg-clip-text text-transparent">
-                Exceptional
-              </span>
-            </h2>
-            <p className="mx-auto mt-3 max-w-xl text-sm text-white/70 sm:text-base">
-              Let&apos;s collaborate to build a fast, modern website or web app that sets you apart.
-              Get in touch!
-            </p>
-            <Link
-              href="/projects"
-              className="group mt-6 inline-flex items-center gap-2 rounded-full bg-[#ff5a1e] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#ff5a1e]/30 transition-transform hover:scale-105"
+        <h2 className="mt-6 max-w-2xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          Work that ships and <span className="text-[#ff5a1e]">performs</span>
+        </h2>
+
+        {/* cards */}
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          {FEATURED.map(({ headline, project }) => (
+            <a
+              key={project.url}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#1c0e08] to-[#0a0604] p-3 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#ff5a1e]/60"
             >
-              View all projects
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          </div>
+              {/* screenshot */}
+              <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#141414]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={projectShot(project.url, 800, 600)}
+                  alt={project.title}
+                  loading="lazy"
+                  className="aspect-[4/3] w-full object-cover object-top transition duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              {/* body */}
+              <div className="flex flex-1 items-end justify-between gap-4 px-3 pb-2 pt-5">
+                <div>
+                  <h3 className="text-xl font-extrabold leading-tight">{headline}</h3>
+                  <div className="mt-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#ff5a1e]">
+                    {project.title}
+                  </div>
+                  <div className="mt-1 text-xs text-white/50">{project.category}</div>
+                </div>
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/20 text-white transition-colors group-hover:border-[#ff5a1e] group-hover:bg-[#ff5a1e]">
+                  <ArrowUpRight className="h-5 w-5" />
+                </span>
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </section>

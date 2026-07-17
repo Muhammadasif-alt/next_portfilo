@@ -58,7 +58,7 @@ const NOTIFS = [
 type Part = { t: string; hl?: boolean };
 const QUALIFY: { img: string; n: string; title: string; parts: Part[] }[] = [
   {
-    img: "/card1-asif.png",
+    img: "/card1-asif.webp",
     n: "1",
     title: "Rank and get noticed",
     parts: [
@@ -68,7 +68,7 @@ const QUALIFY: { img: string; n: string; title: string; parts: Part[] }[] = [
     ],
   },
   {
-    img: "/card2-asif-1.png",
+    img: "/card2-asif-1.webp",
     n: "2",
     title: "Win clients every month",
     parts: [
@@ -78,7 +78,7 @@ const QUALIFY: { img: string; n: string; title: string; parts: Part[] }[] = [
     ],
   },
   {
-    img: "/card3-asif-1.png",
+    img: "/card3-asif-1.webp",
     n: "3",
     title: "Everything, done for you",
     parts: [
@@ -181,7 +181,7 @@ export default function HireMePage() {
       {/* portrait */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/asif-hero-section.png"
+        src="/asif-hero-section.webp"
         alt="Asif — web developer"
         className="pointer-events-none absolute inset-y-0 right-0 h-full w-full object-cover object-[72%_38%] opacity-95 sm:object-[70%_40%] lg:w-[52%]"
       />
@@ -337,7 +337,7 @@ export default function HireMePage() {
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
           <div className="relative overflow-hidden rounded-2xl">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/asif-laptop.png" alt="Asif working" className="w-full object-cover" />
+            <img src="/asif-laptop.webp" alt="Asif working" className="w-full object-cover" />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
           </div>
 
@@ -541,7 +541,7 @@ export default function HireMePage() {
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/asif-about.png"
+            src="/asif-about.webp"
             alt="Asif — web developer"
             className="w-full rounded-2xl object-cover"
           />
@@ -680,7 +680,7 @@ export default function HireMePage() {
     <section className="relative overflow-hidden">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/cta1.png"
+        src="/cta1.webp"
         alt="Asif — let's work together"
         className="absolute inset-0 h-full w-full object-cover object-[center_18%]"
       />
@@ -793,7 +793,7 @@ export default function HireMePage() {
           </p>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/cta2.png"
+            src="/cta2.webp"
             alt="Asif — web developer"
             className="mt-8 w-full max-w-sm rounded-2xl object-cover"
           />

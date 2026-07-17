@@ -38,7 +38,7 @@ export function Navbar() {
         <Link href="/" aria-label="Asif — Web Development, home" className="flex items-center">
           {/* light theme logo */}
           <Image
-            src="/logo-light.png"
+            src="/logo-light.webp"
             alt="Web Development by Asif"
             width={1420}
             height={321}
@@ -47,7 +47,7 @@ export function Navbar() {
           />
           {/* dark theme logo */}
           <Image
-            src="/logo-dark.png"
+            src="/logo-dark.webp"
             alt="Web Development by Asif"
             width={1402}
             height={319}

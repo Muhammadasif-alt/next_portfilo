@@ -61,7 +61,7 @@ export function Footer() {
             <Link href="/" aria-label="Asif — Web Development, home" className="inline-flex">
               {/* light theme logo */}
               <Image
-                src="/logo-light.png"
+                src="/logo-light.webp"
                 alt="Web Development by Asif"
                 width={1420}
                 height={321}
@@ -69,7 +69,7 @@ export function Footer() {
               />
               {/* dark theme logo */}
               <Image
-                src="/logo-dark.png"
+                src="/logo-dark.webp"
                 alt="Web Development by Asif"
                 width={1402}
                 height={319}

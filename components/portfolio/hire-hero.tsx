@@ -39,7 +39,7 @@ export function HireHero({ small, title, taglineTitle, taglineText, primaryCta, 
       {/* portrait */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/asif-hero-section.png"
+        src="/asif-hero-section.webp"
         alt="Asif — web developer"
         className="pointer-events-none absolute inset-y-0 right-0 h-full w-full object-cover object-[72%_38%] opacity-95 sm:object-[70%_40%] lg:w-[52%]"
       />

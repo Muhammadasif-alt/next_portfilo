@@ -150,7 +150,7 @@ export default function AboutPage() {
             <div className="order-1 lg:order-2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/asif-about.png"
+                src="/asif-about.webp"
                 alt="Asif — freelance web developer"
                 className="w-full rounded-2xl border border-white/10 object-cover"
               />
@@ -346,7 +346,7 @@ export default function AboutPage() {
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/about-2-asif.png"
+                src="/about-2-asif.webp"
                 alt="Asif away from the screen"
                 className="w-full rounded-2xl border border-white/10 object-cover"
               />

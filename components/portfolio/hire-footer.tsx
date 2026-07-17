@@ -24,7 +24,7 @@ export function HireFooter() {
     <footer className="relative overflow-hidden border-t border-[#ff5a1e]/30 px-6 py-14 text-white lg:px-10">
       {/* background image */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/footer.png" alt="" className="absolute inset-0 h-full w-full object-cover" />
+      <img src="/footer.webp" alt="" className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-black/82" />
       <div className="relative mx-auto max-w-[1440px]">
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">

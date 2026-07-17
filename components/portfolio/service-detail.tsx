@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { HireHero } from "@/components/portfolio/hire-hero";
 import { HireFooter } from "@/components/portfolio/hire-footer";
+import { JsonLd } from "@/components/seo/json-ld";
+import { serviceSchema, faqSchema, breadcrumbSchema } from "@/lib/schema";
 
 export type ServiceDetail = {
   slug: string;
@@ -39,6 +41,21 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 export function ServiceDetailPage({ data }: { data: ServiceDetail }) {
   return (
     <>
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: data.name,
+            description: data.meta.description,
+            slug: data.slug,
+          }),
+          faqSchema(data.faqs),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: data.name, path: `/services/${data.slug}` },
+          ]),
+        ]}
+      />
       <HireHero
         small={data.hero.small}
         title={data.hero.title}

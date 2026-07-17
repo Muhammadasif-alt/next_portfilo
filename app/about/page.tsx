@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 import { HireHero } from "@/components/portfolio/hire-hero";
 import { HireFooter } from "@/components/portfolio/hire-footer";
+import { JsonLd } from "@/components/seo/json-ld";
+import { personSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "About Asif | Freelance Web Developer and SEO Specialist",
@@ -19,6 +21,7 @@ export const metadata: Metadata = {
     "Meet Asif, a freelance web developer and SEO specialist with 5+ years building fast, search-ready websites and stores for clients across the US, UK, UAE, and Pakistan.",
   alternates: { canonical: "/about" },
   openGraph: {
+    images: ["/og.jpg"],
     title: "About Asif | Web Developer and SEO Specialist",
     description:
       "Meet Asif, a freelance web developer and SEO specialist with 5+ years building fast, search-ready websites and stores for clients across the US, UK, UAE, and Pakistan.",
@@ -92,6 +95,15 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          personSchema(),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "About", path: "/about" },
+          ]),
+        ]}
+      />
       <HireHero
         small="About Me"
         title="The developer behind the builds"

@@ -5,6 +5,8 @@ import { PROJECTS, projectShot, type Project } from "@/lib/projects-data";
 import { HireContactForm } from "@/components/portfolio/hire-contact-form";
 import { HireNav } from "@/components/portfolio/hire-nav";
 import { HireFooter } from "@/components/portfolio/hire-footer";
+import { JsonLd } from "@/components/seo/json-ld";
+import { personSchema, businessSchema, websiteSchema, faqSchema } from "@/lib/schema";
 
 /* Three featured builds. Names and categories come from the real projects data. */
 const FEATURED: { headline: string; project: Project }[] = [
@@ -22,6 +24,7 @@ export const metadata: Metadata = {
     "I build fast, SEO-ready websites and stores in WordPress, Shopify and Next.js that rank on Google and turn clicks into clients. Freelance, worldwide, replies in 24h.",
   alternates: { canonical: "/" },
   openGraph: {
+    images: ["/og.jpg"],
     title: "Freelance Web Developer & SEO Specialist",
     description:
       "I build fast, SEO-ready websites and stores in WordPress, Shopify and Next.js that rank on Google and turn clicks into clients. Freelance, worldwide, replies in 24h.",
@@ -170,6 +173,7 @@ const FAQS = [
 export default function HireMePage() {
   return (
     <>
+    <JsonLd data={[personSchema(), businessSchema(), websiteSchema(), faqSchema(FAQS)]} />
     <main className="bg-[#0a0a0a]">
     <section
       className="relative min-h-screen overflow-hidden text-white"

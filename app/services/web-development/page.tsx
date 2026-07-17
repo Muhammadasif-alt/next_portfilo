@@ -194,7 +194,7 @@ export const metadata: Metadata = {
   title: DATA.meta.title,
   description: DATA.meta.description,
   alternates: { canonical: "/services/web-development" },
-  openGraph: { title: DATA.meta.title, description: DATA.meta.description },
+  openGraph: { title: DATA.meta.title, description: DATA.meta.description, images: ["/og.jpg"] },
 };
 
 export default function Page() {

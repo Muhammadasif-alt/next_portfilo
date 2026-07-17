@@ -1,10 +1,50 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Asif — Web Developer",
-  description:
-    "Freelance web development by Asif — WordPress, Shopify, custom web apps, high-converting landing pages, and SEO-ready websites.",
+  // Makes every canonical, OG, and twitter URL on the site absolute.
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: "Freelance Web Developer & SEO Specialist | Asif.dev",
+    template: "%s | Asif.dev",
+  },
+  description: SITE.description,
+  applicationName: SITE.name,
+  authors: [{ name: SITE.personName, url: SITE.url }],
+  creator: SITE.personName,
+  publisher: SITE.personName,
+  keywords: [
+    "freelance web developer",
+    "SEO specialist",
+    "WordPress developer",
+    "Shopify developer",
+    "Next.js developer",
+    "web development services",
+    "speed optimisation",
+    "e-commerce development",
+  ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: SITE.name,
+    locale: "en_US",
+    url: SITE.url,
+    title: "Freelance Web Developer & SEO Specialist | Asif.dev",
+    description: SITE.description,
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: SITE.jobTitle }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Freelance Web Developer & SEO Specialist | Asif.dev",
+    description: SITE.description,
+    images: ["/og.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
 };
 
 // The site is a single dark (orange) theme — force the dark class before paint,

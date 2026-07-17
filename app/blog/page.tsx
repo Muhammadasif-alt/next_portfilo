@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     "Practical articles on web development, SEO, speed optimisation, WordPress, Shopify, and Next.js. Real advice to build faster, better-ranking websites.",
   alternates: { canonical: "/blog" },
   openGraph: {
+    images: ["/og.jpg"],
     title: "Blog | Web Development & SEO Tips by Asif",
     description:
       "Practical articles on web development, SEO, speed optimisation, WordPress, Shopify, and Next.js.",

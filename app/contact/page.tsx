@@ -13,6 +13,8 @@ import {
 import { HireHero } from "@/components/portfolio/hire-hero";
 import { HireFooter } from "@/components/portfolio/hire-footer";
 import { ContactForm } from "@/components/portfolio/contact-form";
+import { JsonLd } from "@/components/seo/json-ld";
+import { faqSchema, breadcrumbSchema, businessSchema } from "@/lib/schema";
 
 const EMAIL = "raoasifriyasat@gmail.com";
 const PHONE = "03088663440";
@@ -25,6 +27,7 @@ export const metadata: Metadata = {
     "Tell me about your project and get a reply within 24 hours with a clear plan and a fixed quote. Web development, SEO, e-commerce, and ongoing support. Remote, worldwide.",
   alternates: { canonical: "/contact" },
   openGraph: {
+    images: ["/og.jpg"],
     title: "Contact Asif | Let's build something that works",
     description:
       "Tell me about your project and get a reply within 24 hours with a clear plan and a fixed quote. Web development, SEO, e-commerce, and ongoing support.",
@@ -132,6 +135,16 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 export default function ContactPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          businessSchema(),
+          faqSchema(FAQ),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Contact", path: "/contact" },
+          ]),
+        ]}
+      />
       <HireHero
         small="Let's talk"
         title="Get in touch"

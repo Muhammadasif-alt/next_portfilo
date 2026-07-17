@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ArrowRight, Check, Code2, Megaphone, ShoppingBag, Settings } from "lucide-react";
 import { HireHero } from "@/components/portfolio/hire-hero";
 import { HireFooter } from "@/components/portfolio/hire-footer";
+import { JsonLd } from "@/components/seo/json-ld";
+import { faqSchema, breadcrumbSchema, businessSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Web Development and SEO Services | Asif.dev",
@@ -10,6 +12,7 @@ export const metadata: Metadata = {
     "Web development, SEO, e-commerce, and Meta ads for growing businesses. WordPress, Shopify, Laravel, and Next.js builds that rank and convert. Fixed quotes, 24h replies.",
   alternates: { canonical: "/services" },
   openGraph: {
+    images: ["/og.jpg"],
     title: "Web Development and SEO Services",
     description:
       "Web development, SEO, e-commerce, and Meta ads for growing businesses. WordPress, Shopify, Laravel, and Next.js builds that rank and convert. Fixed quotes, 24h replies.",
@@ -168,6 +171,16 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          businessSchema(),
+          faqSchema(FAQS),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+          ]),
+        ]}
+      />
       <HireHero
         small="What I Do"
         title="Web Dev & SEO Services"

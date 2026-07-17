@@ -5,6 +5,8 @@ import { HireHero } from "@/components/portfolio/hire-hero";
 import { HireFooter } from "@/components/portfolio/hire-footer";
 import { ProjectsFilter } from "@/components/portfolio/projects-filter";
 import { PROJECTS, projectShot } from "@/lib/projects-data";
+import { JsonLd } from "@/components/seo/json-ld";
+import { portfolioSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Projects and Portfolio | Web Developer Asif.dev",
@@ -12,6 +14,7 @@ export const metadata: Metadata = {
     "A portfolio of fast, SEO-ready websites, online stores, and web apps built in WordPress, Shopify, Laravel, and Next.js. See real projects and the results they delivered.",
   alternates: { canonical: "/projects" },
   openGraph: {
+    images: ["/og.jpg"],
     title: "Projects and Portfolio | Asif.dev",
     description:
       "A portfolio of fast, SEO-ready websites, online stores, and web apps built in WordPress, Shopify, Laravel, and Next.js. See real projects and the results they delivered.",
@@ -39,6 +42,15 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 export default function ProjectsPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          portfolioSchema(PROJECTS),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Projects", path: "/projects" },
+          ]),
+        ]}
+      />
       <HireHero
         small="My Work"
         title="Projects & Portfolio"

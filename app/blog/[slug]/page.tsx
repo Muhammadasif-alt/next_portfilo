@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Clock, Calendar } from "lucide-react";
 import { HireNav } from "@/components/portfolio/hire-nav";
 import { HireFooter } from "@/components/portfolio/hire-footer";
+import { JsonLd } from "@/components/seo/json-ld";
+import { blogPostingSchema, breadcrumbSchema } from "@/lib/schema";
 import {
   POSTS,
   getPostBySlug,
@@ -82,6 +84,17 @@ export default async function BlogPostPage({
 
   return (
     <>
+      <JsonLd
+        data={[
+          blogPostingSchema(post),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Blog", path: "/blog" },
+            { name: post.title, path: `/blog/${post.slug}` },
+          ]),
+        ]}
+      />
+
       {/* ===== ARTICLE HEADER (orange hero band) ===== */}
       <header
         className="relative overflow-hidden text-white"

@@ -121,12 +121,12 @@ const PRICING = [
 ];
 
 const PROCESS = [
-  { n: "01", title: "Discover", desc: "We talk about your goals, audience, and what success looks like. You get a clear plan and a fixed quote.", img: "https://picsum.photos/seed/asif-proc-discover/600/520" },
-  { n: "02", title: "Design", desc: "I map the structure and design a clean, on-brand layout built to convert, not just look nice.", img: "https://picsum.photos/seed/asif-proc-design/600/520" },
-  { n: "03", title: "Build", desc: "I develop your site on the right stack with clean, semantic, SEO-ready code.", img: "https://picsum.photos/seed/asif-proc-build/600/520" },
-  { n: "04", title: "Optimise", desc: "Speed, Core Web Vitals, meta tags, and schema are tuned before anything goes live.", img: "https://picsum.photos/seed/asif-proc-optimise/600/520" },
-  { n: "05", title: "Launch", desc: "We go live with testing across devices and browsers. Everything checked, nothing left to chance.", img: "https://picsum.photos/seed/asif-proc-launch/600/520" },
-  { n: "06", title: "Support", desc: "Ongoing care plans keep your site fast, secure, and improving over time.", img: "https://picsum.photos/seed/asif-proc-support/600/520" },
+  { n: "01", title: "Discover", desc: "We talk about your goals, audience, and what success looks like. You get a clear plan and a fixed quote.", img: "/process/01.webp" },
+  { n: "02", title: "Design", desc: "I map the structure and design a clean, on-brand layout built to convert, not just look nice.", img: "/process/02.webp" },
+  { n: "03", title: "Build", desc: "I develop your site on the right stack with clean, semantic, SEO-ready code.", img: "/process/03.webp" },
+  { n: "04", title: "Optimise", desc: "Speed, Core Web Vitals, meta tags, and schema are tuned before anything goes live.", img: "/process/04.webp" },
+  { n: "05", title: "Launch", desc: "We go live with testing across devices and browsers. Everything checked, nothing left to chance.", img: "/process/05.webp" },
+  { n: "06", title: "Support", desc: "Ongoing care plans keep your site fast, secure, and improving over time.", img: "/process/06.webp" },
 ];
 
 const STACK_GROUPS = [

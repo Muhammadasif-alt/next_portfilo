@@ -14,6 +14,7 @@ import {
   Settings,
 } from "lucide-react";
 import { PROJECTS, projectShot, type Project } from "@/lib/projects-data";
+import { getSortedPosts } from "@/lib/blog-data";
 import { HireContactForm } from "@/components/portfolio/hire-contact-form";
 import { HireNav } from "@/components/portfolio/hire-nav";
 import { HireFooter } from "@/components/portfolio/hire-footer";
@@ -58,11 +59,15 @@ const HERO_STATS = [
   { icon: Headphones, num: "24/7", label: "Support & Maintenance" },
 ];
 
-const CARDS = [
-  "https://picsum.photos/seed/asif-card-craft/800/1000?grayscale",
-  "https://picsum.photos/seed/asif-card-focus/800/1000?grayscale",
-  "https://picsum.photos/seed/asif-card-detail/800/1000?grayscale",
-];
+/* Real builds shown in the "Behind the Code" section, kept in sync with projects data. */
+const CARDS: Project[] = [
+  "https://dehleezstudio.com",
+  "https://triokids.com.sg",
+  "https://ridgerocklandscaping.com",
+].flatMap((url) => {
+  const p = PROJECTS.find((x) => x.url === url);
+  return p ? [p] : [];
+});
 
 const NOTIFS = [
   { pos: "left-0 bottom-[28%] lg:-left-8", amount: "$3,396.00", time: "", show: "" },
@@ -179,29 +184,8 @@ const PRICING: {
   },
 ];
 
-const POSTS = [
-  {
-    img: "https://picsum.photos/seed/asif-blog-dev/800/600",
-    cat: "Development",
-    title: "5 Things Every New Website Must Get Right",
-    excerpt: "Launching a site is hard. These five fundamentals set you up for speed, SEO, and conversions from day one.",
-    date: "Jun 20, 2026",
-  },
-  {
-    img: "https://picsum.photos/seed/asif-blog-seo/800/600",
-    cat: "SEO",
-    title: "On-Page SEO: What Actually Moves Rankings",
-    excerpt: "Not all SEO is equal. Learn exactly what to optimise — and in what order — to climb Google for real.",
-    date: "Jun 12, 2026",
-  },
-  {
-    img: "https://picsum.photos/seed/asif-blog-speed/800/600",
-    cat: "Performance",
-    title: "How to Make Your Site Load in Under a Second",
-    excerpt: "Speed wins. Here's how to build the technical habits that keep your site fast and passing Core Web Vitals.",
-    date: "Jun 4, 2026",
-  },
-];
+/* The three newest real articles, straight from the blog. */
+const POSTS = getSortedPosts().slice(0, 3);
 
 const FAQS = [
   {
@@ -577,21 +561,33 @@ export default function HireMePage() {
           </div>
         </div>
 
-        {/* 3 image cards */}
+        {/* 3 real builds */}
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
-          {CARDS.map((src, i) => (
-            <div
-              key={src}
-              className={`overflow-hidden rounded-3xl bg-white/5 ${i === 2 ? "sm:col-span-2 lg:col-span-1" : ""}`}
+          {CARDS.map((p, i) => (
+            <a
+              key={p.url}
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition-colors hover:border-[#ff5a1e]/60 ${
+                i === 2 ? "sm:col-span-2 lg:col-span-1" : ""
+              }`}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={src}
-                alt=""
+                src={projectShot(p.url, 800, 1000)}
+                alt={`${p.title} website, built by Asif`}
                 loading="lazy"
-                className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-105"
+                className="aspect-[4/5] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
               />
-            </div>
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-5 pt-14">
+                <div className="text-sm font-bold text-white">{p.title}</div>
+                <div className="mt-0.5 text-xs text-[#ff5a1e]">{p.category}</div>
+              </div>
+              <span className="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full border border-white/20 bg-black/60 text-white opacity-0 backdrop-blur transition-opacity group-hover:opacity-100">
+                <ArrowUpRight className="h-4 w-4" />
+              </span>
+            </a>
           ))}
         </div>
       </div>
@@ -885,22 +881,22 @@ export default function HireMePage() {
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {POSTS.map((post) => (
             <Link
-              key={post.title}
-              href="/blog"
+              key={post.slug}
+              href={`/blog/${post.slug}`}
               className="group flex flex-col overflow-hidden rounded-lg transition-all duration-300 hover:-translate-y-2"
             >
               <div className="aspect-[4/3] overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={post.img}
-                  alt=""
+                  src={post.cover}
+                  alt={post.title}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
               <div className="flex flex-1 flex-col bg-[#141414] p-6 transition-colors duration-300 group-hover:bg-[#ff5a1e]">
                 <span className="w-fit bg-[#ff5a1e] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white transition-colors group-hover:bg-white group-hover:text-[#ff5a1e]">
-                  {post.cat}
+                  {post.category}
                 </span>
                 <h3 className="mt-4 text-xl font-bold leading-snug text-white">{post.title}</h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-white/55 transition-colors group-hover:text-white/90">

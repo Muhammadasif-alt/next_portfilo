@@ -99,7 +99,8 @@ export const blogPostingSchema = (p: {
   "@type": "BlogPosting",
   headline: p.title,
   description: p.excerpt,
-  image: p.cover,
+  // Covers are site-relative, but schema consumers need an absolute URL.
+  image: p.cover.startsWith("http") ? p.cover : abs(p.cover),
   datePublished: p.dateISO,
   dateModified: p.dateISO,
   author: { "@id": PERSON_ID },

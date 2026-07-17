@@ -16,8 +16,8 @@ export type BlogPost = {
   content: Block[];
 };
 
-/* Cover image for any post via picsum (grayscale-free, stable per seed). */
-const cover = (seed: string) => `https://picsum.photos/seed/${seed}/1200/720`;
+/* Branded cover generated per post, matching the site palette. */
+const cover = (slug: string) => `/blog/${slug}.webp`;
 
 export const POSTS: BlogPost[] = [
   {
@@ -29,7 +29,7 @@ export const POSTS: BlogPost[] = [
     date: "Jun 2026",
     dateISO: "2026-06-24",
     read: "6 min read",
-    cover: cover("asif-blog-wp-speed"),
+    cover: cover("make-wordpress-load-under-one-second"),
     content: [
       {
         type: "p",
@@ -102,7 +102,7 @@ export const POSTS: BlogPost[] = [
     date: "Jun 2026",
     dateISO: "2026-06-10",
     read: "8 min read",
-    cover: cover("asif-blog-shopify-woo"),
+    cover: cover("shopify-vs-woocommerce"),
     content: [
       {
         type: "p",
@@ -160,7 +160,7 @@ export const POSTS: BlogPost[] = [
     date: "May 2026",
     dateISO: "2026-05-22",
     read: "7 min read",
-    cover: cover("asif-blog-seo-checklist"),
+    cover: cover("technical-seo-checklist-new-website"),
     content: [
       {
         type: "p",
@@ -215,7 +215,7 @@ export const POSTS: BlogPost[] = [
     date: "May 2026",
     dateISO: "2026-05-08",
     read: "5 min read",
-    cover: cover("asif-blog-nextjs"),
+    cover: cover("why-i-build-with-nextjs"),
     content: [
       {
         type: "p",
@@ -260,7 +260,7 @@ export const POSTS: BlogPost[] = [
     date: "Apr 2026",
     dateISO: "2026-04-19",
     read: "6 min read",
-    cover: cover("asif-blog-forms"),
+    cover: cover("fix-common-contact-form-problems"),
     content: [
       {
         type: "p",
@@ -309,7 +309,7 @@ export const POSTS: BlogPost[] = [
     date: "Apr 2026",
     dateISO: "2026-04-03",
     read: "9 min read",
-    cover: cover("asif-blog-cwv"),
+    cover: cover("core-web-vitals-for-non-developers"),
     content: [
       {
         type: "p",
@@ -359,7 +359,7 @@ export const POSTS: BlogPost[] = [
     date: "Mar 2026",
     dateISO: "2026-03-20",
     read: "7 min read",
-    cover: cover("asif-blog-cost"),
+    cover: cover("how-much-should-a-website-cost"),
     content: [
       {
         type: "p",
@@ -403,7 +403,7 @@ export const POSTS: BlogPost[] = [
     date: "Mar 2026",
     dateISO: "2026-03-05",
     read: "6 min read",
-    cover: cover("asif-blog-redesign"),
+    cover: cover("signs-your-website-needs-a-redesign"),
     content: [
       {
         type: "p",

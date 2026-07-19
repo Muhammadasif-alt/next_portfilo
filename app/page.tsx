@@ -571,7 +571,7 @@ export default function HireMePage() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={projectShot(p.url, 800, 1000)}
+                src={projectShot(p.url)}
                 alt={`${p.title} website, built by Asif`}
                 loading="lazy"
                 className="aspect-[4/5] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
@@ -706,7 +706,7 @@ export default function HireMePage() {
               <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#141414]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={projectShot(project.url, 800, 600)}
+                  src={projectShot(project.url)}
                   alt={project.title}
                   loading="lazy"
                   className="aspect-[4/3] w-full object-cover object-top transition duration-500 group-hover:scale-105"

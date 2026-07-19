@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { PROJECTS, projectShot, type ProjectCategory } from "@/lib/projects-data";
 
-const shot = (url: string) => projectShot(url, 900, 675);
+const shot = (url: string) => projectShot(url);
 
 const TABS: ("All" | ProjectCategory)[] = [
   "All",

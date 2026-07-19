@@ -56,7 +56,7 @@ export function HireFooter() {
           </div>
 
           {/* link columns */}
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-12">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 sm:gap-10">
             <div>
               <h4 className="font-mono text-xs uppercase tracking-wider text-white/40">Explore</h4>
               <ul className="mt-4 space-y-2.5 text-sm">
@@ -83,6 +83,23 @@ export function HireFooter() {
                   ["Marketing & SEO", "/services/marketing"],
                   ["E-commerce", "/services/ecommerce"],
                   ["Support", "/services/support-maintenance"],
+                ].map(([l, h]) => (
+                  <li key={l}>
+                    <Link href={h} className="text-white/65 transition-colors hover:text-[#ff5a1e]">
+                      {l}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-mono text-xs uppercase tracking-wider text-white/40">Hire me in</h4>
+              <ul className="mt-4 space-y-2.5 text-sm">
+                {[
+                  ["USA", "/web-developer-usa"],
+                  ["Australia", "/web-developer-australia"],
+                  ["UK", "/web-developer-uk"],
+                  ["Pakistan", "/web-developer-pakistan"],
                 ].map(([l, h]) => (
                   <li key={l}>
                     <Link href={h} className="text-white/65 transition-colors hover:text-[#ff5a1e]">

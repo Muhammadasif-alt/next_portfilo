@@ -68,6 +68,15 @@ export const PROJECTS: Project[] = [
   { url: "https://weproms.com", title: "WeProms Digital", tag: "Digital Marketing", desc: "Digital marketing agency website with services and case studies.", category: "SEO and Growth", stack: ["Web Design"] },
 ];
 
-/* Live screenshot of any URL via WordPress mShots. */
-export const projectShot = (url: string, w = 900, h = 675) =>
-  `https://s.wordpress.com/mshots/v1/${encodeURIComponent(url)}?w=${w}&h=${h}`;
+/* Stable filename for a project's locally stored screenshot. */
+export const shotSlug = (url: string) =>
+  url
+    .replace(/^https?:\/\//, "")
+    .replace(/^www\./, "")
+    .replace(/\/.*$/, "")
+    .replace(/[^a-z0-9]+/gi, "-")
+    .toLowerCase()
+    .replace(/^-+|-+$/g, "");
+
+/* Local, pre-generated screenshot. Reliable and fast, never a blank remote render. */
+export const projectShot = (url: string) => `/shots/${shotSlug(url)}.webp`;

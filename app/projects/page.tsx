@@ -88,7 +88,7 @@ export default function ProjectsPage() {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={projectShot(featured.url, 1000, 750)}
+                  src={projectShot(featured.url)}
                   alt={featured.title}
                   className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
                 />

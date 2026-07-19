@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { PROJECTS, projectShot } from "@/lib/projects-data";
 
-const shot = (url: string) => projectShot(url, 900, 675);
+const shot = (url: string) => projectShot(url);
 
 export function Projects() {
   /* Show a curated subset on the home page; full list lives on /projects. */

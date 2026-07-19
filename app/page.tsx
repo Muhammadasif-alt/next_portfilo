@@ -226,15 +226,20 @@ export default function HireMePage() {
           "radial-gradient(125% 125% at 68% 32%, #ff6a1f 0%, #e0330b 46%, #9d1206 100%)",
       }}
     >
-      {/* portrait */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/asif-hero-section.webp"
-        alt="Asif — web developer"
-        className="pointer-events-none absolute inset-y-0 right-0 h-full w-full object-cover object-[72%_38%] opacity-95 sm:object-[70%_40%] lg:w-[52%]"
-      />
+      {/* background video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster="/hero-poster.webp"
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 right-0 h-full w-full object-cover object-[50%_35%] opacity-95 lg:w-[52%]"
+      >
+        <source src="/hero-video-combined.mp4" type="video/mp4" />
+      </video>
 
-      {/* left fade so the copy stays readable over the photo */}
+      {/* left fade so the copy stays readable over the video */}
       <div
         className="absolute inset-0"
         style={{

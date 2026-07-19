@@ -226,7 +226,7 @@ export default function HireMePage() {
           "radial-gradient(125% 125% at 68% 32%, #ff6a1f 0%, #e0330b 46%, #9d1206 100%)",
       }}
     >
-      {/* background video */}
+      {/* full-bleed background video */}
       <video
         autoPlay
         muted
@@ -234,7 +234,7 @@ export default function HireMePage() {
         playsInline
         poster="/hero-poster.webp"
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 h-full w-full object-cover object-[50%_35%] opacity-95 lg:w-[52%]"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[50%_30%]"
       >
         <source src="/hero-video-combined.mp4" type="video/mp4" />
       </video>
@@ -244,15 +244,15 @@ export default function HireMePage() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to right, #b81c06 0%, rgba(184,28,6,0.78) 30%, rgba(184,28,6,0.15) 58%, transparent 75%)",
+            "linear-gradient(to right, #a81806 0%, rgba(168,24,6,0.88) 28%, rgba(168,24,6,0.45) 48%, rgba(168,24,6,0.08) 66%, transparent 80%)",
         }}
       />
-      {/* mobile: keep the left solid so the copy is fully readable and the photo sits on the right */}
+      {/* mobile: darker overall so the copy stays readable over the centred subject */}
       <div
         className="absolute inset-0 lg:hidden"
         style={{
           background:
-            "linear-gradient(to right, #9d1206 0%, rgba(157,18,6,0.94) 40%, rgba(157,18,6,0.4) 74%, rgba(157,18,6,0.08) 100%)",
+            "linear-gradient(to right, #7d0f04 0%, rgba(125,15,4,0.9) 38%, rgba(125,15,4,0.62) 72%, rgba(125,15,4,0.42) 100%)",
         }}
       />
       {/* subtle bottom + top shading */}

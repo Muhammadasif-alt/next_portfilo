@@ -16,6 +16,7 @@ export type Project = {
 /* Real live projects. Verified live; temporary/platform subdomains and dead sites removed. */
 export const PROJECTS: Project[] = [
   { url: "https://ideadigital.services/", title: "Idea Digital", tag: "SEO Agency", desc: "SEO agency website with services, process, and lead generation for US businesses.", category: "SEO and Growth", stack: ["WordPress", "Elementor", "SEO"] },
+  { url: "https://www.sajaddigitalservices.com/", title: "Sajad Digital Services", tag: "Digital Agency", desc: "Digital services agency website for career guidance, job assistance, and overseas opportunities.", category: "Web Development", stack: ["Next.js", "React"] },
   { url: "https://dehleezstudio.com", title: "Dehleez Studio", tag: "Web Design", desc: "Creative studio website with a clean, modern brand presence.", category: "Web Development", stack: ["WordPress", "Elementor"] },
   { url: "https://hmgardening.com", title: "H&M Gardening", tag: "Landscaping", desc: "Landscaping and gardening services website for a Palos Park, IL business.", category: "Web Development", stack: ["WordPress", "Elementor"] },
   { url: "https://ridgerocklandscaping.com", title: "Ridge Rock Landscaping", tag: "Landscaping", desc: "Premium outdoor living and landscaping company website.", category: "Web Development", stack: ["WordPress", "Elementor"] },

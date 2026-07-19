@@ -16,6 +16,7 @@ import {
 import { PROJECTS, projectShot, type Project } from "@/lib/projects-data";
 import { getSortedPosts } from "@/lib/blog-data";
 import { HireContactForm } from "@/components/portfolio/hire-contact-form";
+import { HeroVideo } from "@/components/portfolio/hero-video";
 import { HireNav } from "@/components/portfolio/hire-nav";
 import { HireFooter } from "@/components/portfolio/hire-footer";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -227,32 +228,22 @@ export default function HireMePage() {
       }}
     >
       {/* full-bleed background video */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="/hero-poster.webp"
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[50%_30%]"
-      >
-        <source src="/hero-video-combined.mp4" type="video/mp4" />
-      </video>
+      <HeroVideo />
 
-      {/* left fade so the copy stays readable over the video */}
+      {/* light left fade so the copy stays readable, letting the video show through */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to right, #a81806 0%, rgba(168,24,6,0.88) 28%, rgba(168,24,6,0.45) 48%, rgba(168,24,6,0.08) 66%, transparent 80%)",
+            "linear-gradient(to right, rgba(24,6,3,0.78) 0%, rgba(60,12,5,0.34) 30%, rgba(90,18,7,0.08) 50%, transparent 66%)",
         }}
       />
-      {/* mobile: darker overall so the copy stays readable over the centred subject */}
+      {/* mobile: a gentle overall darken so the copy stays readable over the centred subject */}
       <div
         className="absolute inset-0 lg:hidden"
         style={{
           background:
-            "linear-gradient(to right, #7d0f04 0%, rgba(125,15,4,0.9) 38%, rgba(125,15,4,0.62) 72%, rgba(125,15,4,0.42) 100%)",
+            "linear-gradient(to right, rgba(18,5,2,0.72) 0%, rgba(18,5,2,0.5) 48%, rgba(18,5,2,0.38) 100%)",
         }}
       />
       {/* subtle bottom + top shading */}

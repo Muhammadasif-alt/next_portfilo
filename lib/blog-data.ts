@@ -21,6 +21,430 @@ const cover = (slug: string) => `/blog/${slug}.webp`;
 
 export const POSTS: BlogPost[] = [
   {
+    slug: "how-to-build-business-website-usa",
+    title: "How to build a business website in the USA (a practical 2026 guide)",
+    excerpt:
+      "A step-by-step guide to building a business website in the USA, from choosing a platform and domain to SEO, accessibility, and launch, with realistic USD costs.",
+    category: "Web Development",
+    date: "Jul 2026",
+    dateISO: "2026-07-16",
+    read: "9 min read",
+    cover: cover("how-to-build-business-website-usa"),
+    content: [
+      {
+        type: "p",
+        text: "For a business in the United States, a website is no longer optional. It is where customers check if you are real, compare you to competitors, and decide whether to call. The good news is that building a professional business website is more achievable than most owners think, as long as you approach it in the right order. This guide walks through exactly how to build a business website in the USA that loads fast, ranks on Google, and turns visitors into customers.",
+      },
+      { type: "h2", text: "1. Start with a clear goal, not a design" },
+      {
+        type: "p",
+        text: "Before anyone picks colours or fonts, decide what the site is actually for. Do you want phone calls, online orders, booked appointments, or quote requests? A plumber in Texas and a boutique in New York need very different sites. Write down the single most important action you want a visitor to take, then design every page to lead toward it. A site with a clear goal will always outperform a pretty site with no direction.",
+      },
+      { type: "h2", text: "2. Secure your domain and hosting" },
+      {
+        type: "p",
+        text: "Your domain is your address on the web, so choose one that is short, memorable, and ideally matches your business name. A dot com is still the most trusted choice for US businesses. For hosting, avoid the cheapest shared plans, because a slow server undermines everything else you do. Managed hosting or a modern platform pays for itself in speed and reliability.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Pick a dot com if it is available, and keep the name easy to spell out over the phone.",
+          "Register the domain in your own name or company, never through a developer's account.",
+          "Choose hosting with fast US-based servers so your American visitors get quick load times.",
+        ],
+      },
+      { type: "h2", text: "3. Choose the right platform" },
+      {
+        type: "p",
+        text: "There is no single best platform, only the best fit for your goals. WordPress is a great choice if you want to edit content yourself and add a blog. Shopify is built for online stores. For a fast, custom, app-like experience, a modern framework like Next.js is hard to beat. If you are not sure, a good developer will recommend the platform that matches your budget and the way you plan to run the site, not the one that is easiest for them.",
+      },
+      { type: "h2", text: "4. Design for mobile first" },
+      {
+        type: "p",
+        text: "More than half of US web traffic comes from phones, and Google judges your site on its mobile version. That means the phone layout is not an afterthought, it is the main event. Keep navigation simple, make buttons easy to tap, and put your phone number and main call to action within thumb reach. A clean, fast mobile experience will win you more business than any desktop animation.",
+      },
+      { type: "h2", text: "5. Build in SEO from the first line" },
+      {
+        type: "p",
+        text: "Search engine optimisation is far cheaper to do during the build than to bolt on later. Done right, it is what gets your business found when someone in your city searches for what you offer. The technical foundations matter as much as the words on the page.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Give every page a unique, keyword-focused title and meta description.",
+          "Use clean, readable URLs without random numbers or parameters.",
+          "Add local business schema so Google understands your address and services.",
+          "Claim and complete your Google Business Profile for local search and maps.",
+        ],
+      },
+      { type: "h2", text: "6. Make it accessible" },
+      {
+        type: "p",
+        text: "Accessibility is both good practice and increasingly expected of US businesses. Building your site so it works for people using screen readers or keyboard navigation widens your audience and reduces legal risk. Proper heading structure, descriptive alt text on images, and strong colour contrast cover most of the basics and also happen to help your SEO.",
+      },
+      { type: "h2", text: "7. What it costs in USD" },
+      {
+        type: "p",
+        text: "Prices vary widely because a one-page site and a custom store are very different projects. As a rough guide, a simple professional site sits at the lower end of a few hundred to a couple of thousand dollars, a custom business site with several pages and solid SEO lands in the mid range, and a full online store or web app costs more because of the complexity involved. Whatever the budget, insist on a fixed quote upfront so there are no surprises.",
+      },
+      { type: "h2", text: "8. Test, launch, and keep it healthy" },
+      {
+        type: "p",
+        text: "Before going live, test the site on real phones and browsers, submit a test through every form, and check your load speed. After launch, a website is not finished, it is running. Keep the platform updated, watch your performance, and refresh content so it keeps ranking and converting long after the launch day excitement fades.",
+      },
+      { type: "h2", text: "Plan your pages before you build" },
+      {
+        type: "p",
+        text: "A little planning saves a lot of rebuilding. Before anyone writes a line of code, sketch out the pages your business actually needs. Most US business websites do well with a strong home page, an about page that builds trust, a clear services or products page, proof in the form of reviews or case studies, and an easy contact page. Map how a visitor moves from landing on your site to getting in touch, and cut anything that does not serve that journey. A focused five-page site that converts will beat a sprawling twenty-page site that confuses people every time.",
+      },
+      { type: "h2", text: "Write copy that speaks to US customers" },
+      {
+        type: "p",
+        text: "Design gets attention, but words do the selling. Write the way your customers speak, lead with the benefit rather than the feature, and answer the questions they are quietly asking: can you solve my problem, can I trust you, and what happens next. Keep paragraphs short, use clear headings so people can scan, and put a call to action on every page. Good copy is also good SEO, because naturally using the terms your American customers search for helps you rank without resorting to awkward keyword stuffing.",
+      },
+      { type: "h2", text: "Add trust signals that reassure buyers" },
+      {
+        type: "p",
+        text: "US buyers research before they commit, so make it easy to trust you. Real customer reviews, recognisable client logos, clear contact details with a US phone number, and any certifications or guarantees all quietly reduce the risk a visitor feels. Even small touches, like genuine photos instead of generic stock and a visible privacy policy, make your business feel established and safe to deal with.",
+      },
+      { type: "h2", text: "Set up analytics from day one" },
+      {
+        type: "p",
+        text: "You cannot improve what you do not measure. Before launch, connect analytics and set up basic conversion tracking so you can see how many visitors you get, where they come from, and how many turn into enquiries or sales. This data turns your website from a guess into a tool you can steadily improve, doubling down on what works and quietly fixing what does not.",
+      },
+      { type: "h2", text: "Do you need a designer, a developer, or both?" },
+      {
+        type: "p",
+        text: "For a straightforward site, one skilled developer who also handles design can cover everything, which is usually faster and cheaper than juggling several freelancers. For a bigger brand project you may want a dedicated designer as well. What matters most is working with someone who takes ownership of the result, communicates clearly, and can explain their choices in plain language. Always ask to see real, live examples of their work, not just polished mockups that were never actually built.",
+      },
+      { type: "h2", text: "Keep it secure, backed up, and give it time" },
+      {
+        type: "p",
+        text: "A hacked or broken business website damages both your reputation and your rankings, so keep your platform updated, use strong passwords with two-factor authentication, and make sure automatic backups are running. It is also worth remembering that a brand new site does not rank overnight. Google needs time to crawl, index, and trust your pages, so keep publishing useful content and stay patient. The businesses that win in US search treat their website as an ongoing asset, not a one-time project they forget the week after launch.",
+      },
+      { type: "h2", text: "Common mistakes to avoid" },
+      {
+        type: "ul",
+        items: [
+          "Choosing the cheapest hosting and then wondering why the site feels slow.",
+          "Hiding your phone number or contact form instead of making it impossible to miss.",
+          "Launching without testing every form, so enquiries silently never arrive.",
+          "Treating SEO as an afterthought rather than building it in from the first page.",
+          "Never touching the site again after launch and watching the rankings slip away.",
+        ],
+      },
+      {
+        type: "quote",
+        text: "A business website is an investment that should pay you back in leads and sales. Build it with a goal, speed, and SEO in mind, and it will keep earning for years.",
+      },
+      {
+        type: "p",
+        text: "If you would rather have all of this handled for you, this is exactly the kind of build I do for US businesses, remotely and with clear USD pricing. Tell me your goal and I will come back with a plan and a fixed quote within 24 hours.",
+      },
+    ],
+  },
+  {
+    slug: "best-website-design-small-business-australia",
+    title: "The best website design for a small business in Australia",
+    excerpt:
+      "What great website design looks like for Australian small businesses in 2026: mobile-first, fast, local-SEO ready, and built to turn visitors into paying customers.",
+    category: "Strategy",
+    date: "Jul 2026",
+    dateISO: "2026-07-12",
+    read: "8 min read",
+    cover: cover("best-website-design-small-business-australia"),
+    content: [
+      {
+        type: "p",
+        text: "Australian customers are online, on their phones, and quick to judge. For a small business in Australia, good website design is not about winning awards, it is about earning trust in the first few seconds and making it effortless to get in touch. Here is what the best website design for a small Australian business actually looks like in 2026, and why each piece matters for your bottom line.",
+      },
+      { type: "h2", text: "Mobile first is not optional" },
+      {
+        type: "p",
+        text: "The majority of Australians browse on their phones, so your website has to be designed for the small screen before anything else. That means large, tappable buttons, text that is readable without zooming, and a layout that never forces sideways scrolling. If a customer in Sydney or Perth has to pinch and squint, they will leave and call the competitor whose site just worked.",
+      },
+      { type: "h2", text: "Speed builds trust" },
+      {
+        type: "p",
+        text: "A slow site feels untrustworthy, and Australian visitors will not wait. Good design keeps pages light, images optimised, and load times under a couple of seconds. Speed is also a Google ranking factor, so a fast site both keeps visitors happy and helps you climb the search results. It is one of the highest-value design decisions a small business can make.",
+      },
+      { type: "h2", text: "Clear structure and a single focus" },
+      {
+        type: "p",
+        text: "The best small business sites are not cluttered. Each page has one clear job and one obvious next step, whether that is calling you, booking a service, or requesting a quote. A confused visitor does nothing, so strong design removes distractions and guides people gently toward getting in touch.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Put your phone number and main call to action where they are always easy to reach.",
+          "Use clear headings so visitors can scan and find what they need in seconds.",
+          "Keep menus short, because too many options make people freeze.",
+        ],
+      },
+      { type: "h2", text: "Built for local search" },
+      {
+        type: "p",
+        text: "Most small businesses serve a local area, so your design and setup should help you show up when nearby customers search. That means location-focused content, local business schema, and a complete Google Business Profile. Ranking for searches like your service plus your suburb or city is often where the real leads come from for Australian small businesses.",
+      },
+      { type: "h2", text: "Trust signals that reassure" },
+      {
+        type: "p",
+        text: "Australians do their research before they buy. Good design makes it easy to trust you by featuring genuine reviews, clear contact details, honest photos, and any relevant credentials or guarantees. These small touches quietly answer the question every visitor is asking: can I rely on this business?",
+      },
+      { type: "h2", text: "Design that reflects your brand" },
+      {
+        type: "p",
+        text: "Your website should look and feel like your business, not a generic template. A consistent colour palette, a clean logo, and a tone of voice that matches how you talk to customers all make you memorable. For a small business, that sense of a real, considered brand is what separates you from the competitor using a stock theme they never customised.",
+      },
+      { type: "h2", text: "What it costs, and what to expect" },
+      {
+        type: "p",
+        text: "Quality small business design in Australia does not have to break the bank, but a price that seems too good to be true usually is. Cheap builds often skip the SEO, speed, and testing that make a site actually work. Expect a fixed quote in AUD, a clear timeline, and a developer who explains their choices in plain language rather than jargon.",
+      },
+      { type: "h2", text: "A tone that suits Australian customers" },
+      {
+        type: "p",
+        text: "Australians tend to respond to a straightforward, down-to-earth tone rather than hard sell or corporate jargon. Your website should sound like a real person who knows their trade, not a brochure written by a committee. Clear, friendly copy that gets to the point builds more trust with a local audience than clever slogans. When people feel like they are dealing with a genuine business, they are far more likely to pick up the phone or fill in the form.",
+      },
+      { type: "h2", text: "Real photos beat generic stock" },
+      {
+        type: "p",
+        text: "Nothing undermines a small business site faster than obvious stock photos of models in a fake office. Wherever you can, use real images of your work, your team, your premises, or your products. Authentic photos make you look established and trustworthy, and they help customers picture what it is actually like to deal with you. A handful of good, genuine photos will do more for conversions than a gallery of polished but soulless stock.",
+      },
+      { type: "h2", text: "Content that answers the questions buyers ask" },
+      {
+        type: "p",
+        text: "The best small business sites answer the questions customers have before they even ask them. What areas do you serve, how much does it cost, how long does it take, and what makes you different. Putting clear answers on the page removes hesitation and cuts down on time-wasting enquiries. It is also excellent for SEO, because those are exactly the phrases people type into Google when they are ready to buy.",
+      },
+      { type: "h2", text: "Accessibility widens your reach" },
+      {
+        type: "p",
+        text: "Designing your site so it works for everyone is both good practice and good business. Strong colour contrast, readable font sizes, descriptive alt text on images, and a layout that works with keyboard navigation all make your site usable for more people, including those with disabilities. Accessible sites also tend to be cleaner and faster, which helps your rankings. It is one of those decisions that quietly benefits every visitor, not just some of them.",
+      },
+      { type: "h2", text: "How to choose a web designer in Australia" },
+      {
+        type: "p",
+        text: "Look for someone who asks about your goals before they talk about design, who can show you real live sites they have built, and who explains things in plain English. Be wary of anyone who cannot tell you how your site will be found on Google, or who quotes a suspiciously low price with no mention of SEO, speed, or testing. A good designer is a partner in your business, not just someone who hands over a pretty template and disappears.",
+      },
+      { type: "h2", text: "Design mistakes that quietly cost customers" },
+      {
+        type: "ul",
+        items: [
+          "Slow-loading pages full of huge, uncompressed images.",
+          "A layout that breaks or feels awkward on a phone.",
+          "No clear call to action, so visitors do not know what to do next.",
+          "Contact details buried instead of front and centre.",
+          "A generic template that looks exactly like every competitor's site.",
+        ],
+      },
+      {
+        type: "quote",
+        text: "Good design is not decoration. For a small business, it is the difference between a site that quietly loses customers and one that brings them in.",
+      },
+      {
+        type: "p",
+        text: "If you run a small business in Australia and want a website that is fast, mobile-first, and built to bring in real enquiries, that is exactly what I build. Tell me about your business and I will reply within 24 hours with a plan and a fixed AUD quote.",
+      },
+    ],
+  },
+  {
+    slug: "nextjs-vs-wordpress-business-websites",
+    title: "Next.js vs WordPress for business websites: which should you choose?",
+    excerpt:
+      "An honest comparison of Next.js and WordPress for business websites, covering speed, SEO, cost, editing, security, and which one actually fits your business.",
+    category: "Next.js",
+    date: "Jul 2026",
+    dateISO: "2026-07-08",
+    read: "9 min read",
+    cover: cover("nextjs-vs-wordpress-business-websites"),
+    content: [
+      {
+        type: "p",
+        text: "Next.js and WordPress are two of the most popular ways to build a business website, and they could hardly be more different. WordPress powers a huge share of the web and is famous for being easy to edit. Next.js is a modern framework built for speed and custom experiences. So which is right for your business? Here is an honest comparison from someone who builds on both, with no bias toward the one that is trendier this year.",
+      },
+      { type: "h2", text: "WordPress in a nutshell" },
+      {
+        type: "p",
+        text: "WordPress is a content management system that lets you build and edit a website without touching code. Its biggest strengths are the enormous library of themes and plugins, and how easy it is for a non-technical owner to update pages, publish blog posts, and manage content day to day. If you want to run the site yourself after launch, WordPress is hard to beat.",
+      },
+      { type: "h2", text: "Next.js in a nutshell" },
+      {
+        type: "p",
+        text: "Next.js is a React-based framework used to build fast, modern websites and web apps. Instead of assembling a site from themes and plugins, a developer builds exactly what you need. The payoff is outstanding speed, tight control, and an app-like feel. The trade-off is that changes usually go through a developer rather than a simple dashboard.",
+      },
+      { type: "h2", text: "Speed and performance" },
+      {
+        type: "p",
+        text: "This is where Next.js shines. Because pages can be pre-rendered and served as lightweight static files, Next.js sites are typically very fast and pass Core Web Vitals with room to spare. WordPress can be made fast too, but it takes careful work: good hosting, caching, and disciplined use of plugins. Out of the box, a lean Next.js build usually has the edge.",
+      },
+      { type: "h2", text: "SEO" },
+      {
+        type: "p",
+        text: "Both can rank extremely well, and SEO success depends far more on content and technical care than on the platform. WordPress has mature SEO plugins that make the basics easy. Next.js gives a developer complete control over every tag, which is powerful in skilled hands. For most businesses, the deciding factor is who builds and maintains the site, not the logo on the tech.",
+      },
+      { type: "h2", text: "Editing and day-to-day control" },
+      {
+        type: "p",
+        text: "If you plan to update content often, run a blog, or change things without calling a developer, WordPress is the friendlier option. Next.js sites can be paired with a modern content system to add that flexibility, but in their simplest form, edits go through code. Be honest with yourself about how you want to manage the site after launch, because that answer often decides the platform.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Choose WordPress if easy self-editing, blogging, and a huge plugin ecosystem matter most.",
+          "Choose Next.js if speed, custom functionality, and an app-like experience are the priority.",
+          "Either can work brilliantly with a developer who builds it properly and maintains it well.",
+        ],
+      },
+      { type: "h2", text: "Security and maintenance" },
+      {
+        type: "p",
+        text: "WordPress is a big target simply because it is so popular, so it needs regular updates, backups, and sensible plugin choices to stay secure. Next.js has a smaller attack surface because there is no plugin ecosystem to exploit, though it still needs good hosting and upkeep. Whichever you choose, ongoing maintenance is not optional if you want the site to stay fast and safe.",
+      },
+      { type: "h2", text: "Cost" },
+      {
+        type: "p",
+        text: "A simple WordPress site can be quicker and cheaper to launch thanks to ready-made themes. A custom Next.js build often costs more upfront because it is made to measure, but it can pay off in performance and a distinctive experience. Over a few years, the totals are usually closer than people expect once hosting, plugins, and maintenance are factored in.",
+      },
+      { type: "h2", text: "Hosting and infrastructure" },
+      {
+        type: "p",
+        text: "The two platforms live in different worlds when it comes to hosting. WordPress needs a server running PHP and a database, which is why hosting quality has such a big effect on its speed and security. Next.js suits modern hosting platforms that serve pre-built pages from a global network, which tends to deliver excellent performance with very little tuning. For a business, this often means a Next.js site stays fast under load with less ongoing babysitting, while a WordPress site rewards good hosting and punishes cheap hosting.",
+      },
+      { type: "h2", text: "Scaling as your business grows" },
+      {
+        type: "p",
+        text: "Both platforms can grow with you, but in different ways. WordPress scales through better hosting, caching, and careful plugin management, and it handles large content libraries and blogs comfortably. Next.js scales beautifully for traffic and for custom features, because it is built like an application rather than a collection of plugins. If you expect heavy traffic spikes or plan to add custom tools, dashboards, or integrations down the line, Next.js gives you more headroom without things becoming fragile.",
+      },
+      { type: "h2", text: "The hybrid option: headless WordPress" },
+      {
+        type: "p",
+        text: "You do not always have to choose one or the other. A popular modern approach is to run WordPress purely as the place you write and manage content, while Next.js handles the actual website your visitors see. This gives you the easy editing of WordPress with the speed and flexibility of Next.js. It is more involved to set up, so it makes most sense for content-heavy businesses that want both a great editing experience and top-tier performance.",
+      },
+      { type: "h2", text: "A quick reality check on trends" },
+      {
+        type: "p",
+        text: "It is easy to get swept up in whatever framework is popular this year. The truth is that most business websites succeed or fail on fundamentals: clear content, fast loading, solid SEO, and a build that is properly maintained. A well-built WordPress site will comfortably outperform a poorly-built Next.js site, and the reverse is just as true. The platform is a tool, not a strategy.",
+      },
+      { type: "h2", text: "When each one clearly wins" },
+      {
+        type: "ul",
+        items: [
+          "A blog-led business that publishes often and wants to self-edit: WordPress.",
+          "A simple brochure site on a tight budget and timeline: usually WordPress.",
+          "A fast, custom marketing site where performance is a priority: Next.js.",
+          "A web app, dashboard, or product with custom functionality: Next.js.",
+          "A content-heavy brand that wants easy editing and top speed: headless WordPress with Next.js.",
+        ],
+      },
+      { type: "h2", text: "Can you switch later?" },
+      {
+        type: "p",
+        text: "Yes, but it is work, so it pays to choose thoughtfully now. Content can be migrated between platforms, and a good developer can move you from WordPress to Next.js or set up a hybrid when your needs change. The smart move is to pick based on how you will realistically run the site over the next few years, not just how it looks on launch day, so you are not paying to rebuild sooner than you need to.",
+      },
+      {
+        type: "quote",
+        text: "Pick the tool that fits your goals and the way you will run the site, not the one that is fashionable. The best platform is the one you can actually live with after launch.",
+      },
+      {
+        type: "p",
+        text: "Still unsure which fits your business? That is exactly the conversation I enjoy. Tell me your goals and how you want to manage the site, and I will recommend the right choice honestly, even if it is not the one I would find most fun to build.",
+      },
+    ],
+  },
+  {
+    slug: "why-your-business-needs-a-website-in-2026",
+    title: "Why your business needs a website in 2026",
+    excerpt:
+      "Social media is not enough. Here is why a professional website is essential for your business in 2026, from credibility and Google visibility to owning your own audience.",
+    category: "Business",
+    date: "Jul 2026",
+    dateISO: "2026-07-04",
+    read: "8 min read",
+    cover: cover("why-your-business-needs-a-website-in-2026"),
+    content: [
+      {
+        type: "p",
+        text: "Every year, more business happens online, and every year the excuses for not having a proper website get weaker. Some owners still lean entirely on a Facebook page or an Instagram profile and hope that is enough. In 2026, it is not. A professional website is the foundation your entire online presence should sit on. Here is why your business needs one, and what happens if you keep putting it off.",
+      },
+      { type: "h2", text: "Credibility: you look real" },
+      {
+        type: "p",
+        text: "The first thing a potential customer does after hearing about you is search your name. If nothing professional comes up, doubt creeps in. A clean, fast website instantly signals that you are an established, trustworthy business. Without one, you are asking people to take a leap of faith that many of them simply will not take when a competitor with a proper site is one click away.",
+      },
+      { type: "h2", text: "Google is where buying decisions start" },
+      {
+        type: "p",
+        text: "When someone needs a product or service, they search for it. A website is what lets you show up in those results and capture that intent at the exact moment a person is ready to act. Social media profiles rarely rank for the terms your customers type. A well-built, SEO-ready website is your ticket into the search results that actually drive enquiries.",
+      },
+      { type: "h2", text: "You own it, unlike social media" },
+      {
+        type: "p",
+        text: "Your Instagram followers and Facebook likes are borrowed. The platform controls the reach, changes the rules, and can suspend an account without warning. Your website is an asset you own outright. It is the one place online where you set the rules, keep your content, and build an audience that no algorithm change can take away overnight.",
+      },
+      { type: "h2", text: "It sells while you sleep" },
+      {
+        type: "p",
+        text: "A good website works around the clock. It answers common questions, showcases your work, takes bookings or orders, and collects enquiries at two in the morning while you rest. For a small business, that is like having a tireless salesperson who never takes a day off, all for a fraction of the cost of hiring one.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Captures leads and sales outside your working hours.",
+          "Answers the questions that would otherwise fill your inbox and phone.",
+          "Presents your business exactly the way you want, every single time.",
+        ],
+      },
+      { type: "h2", text: "The cost of not having one" },
+      {
+        type: "p",
+        text: "Not having a website is not saving money, it is losing it quietly. Every customer who searches, finds nothing convincing, and picks a competitor is a sale you never even knew you missed. In a market where buyers research before they buy, being invisible online is one of the most expensive mistakes a business can make.",
+      },
+      { type: "h2", text: "What a modern site needs in 2026" },
+      {
+        type: "p",
+        text: "A website in 2026 has to do more than exist. It needs to load in about a second, look great on phones, rank on Google, and make getting in touch effortless. Clean code, proper SEO, and a clear path to contact you are the baseline. Anything less and the site becomes a box ticked rather than a tool that grows your business.",
+      },
+      { type: "h2", text: "Search is changing, and you need to be in it" },
+      {
+        type: "p",
+        text: "The way people search is evolving fast. Between traditional Google results, maps, and AI-powered answers, customers have more ways than ever to find a business, and almost all of them pull from real websites. If you do not have a proper site with clear, structured content, you are simply not part of that conversation. A well-built website with good SEO and schema markup gives you the best chance of being the business that gets surfaced when someone is ready to buy.",
+      },
+      { type: "h2", text: "You are more than a listing on someone else's platform" },
+      {
+        type: "p",
+        text: "Marketplaces and directories can send you customers, but they also put you side by side with every competitor and take a cut along the way. Your own website is the one place where you control the story, the pricing, and the experience, with no competitor ads next to your name. It is the difference between renting a stall in someone else's market and owning your own shop.",
+      },
+      { type: "h2", text: "Build an audience you actually own" },
+      {
+        type: "p",
+        text: "A website lets you capture enquiries, grow an email list, and stay in touch with people who are interested in what you do. That audience is yours, and it keeps working for you regardless of what any social platform decides to change. Email and a solid website consistently outperform borrowed social reach for turning interest into repeat business, because you are not fighting an algorithm for the right to reach your own customers.",
+      },
+      { type: "h2", text: "The data a website gives you" },
+      {
+        type: "p",
+        text: "With a website and analytics, you can see exactly what your customers are interested in: which services get the most attention, where visitors come from, and what makes them get in touch. That insight helps you make smarter decisions about your marketing and your business as a whole. Social media hands most of that data to the platform, while your own site hands it to you.",
+      },
+      { type: "h2", text: "It levels the playing field" },
+      {
+        type: "p",
+        text: "A professional website lets a small local business look every bit as credible as a large competitor. Customers judge you on the experience you give them online, not on your headcount. A fast, well-designed site tells people you take your business seriously, and that impression alone can win you work against bigger names who have let their own website go stale.",
+      },
+      { type: "h2", text: "How to get started without the stress" },
+      {
+        type: "p",
+        text: "Getting a website does not have to be overwhelming. Start by writing down your main goal and the handful of pages you need, gather a few real photos, and then work with a developer who can handle the technical side and guide you through the rest. The hardest part is usually just deciding to begin. Once the site is live and bringing in enquiries, most business owners only wish they had done it sooner.",
+      },
+      {
+        type: "quote",
+        text: "A website is no longer a nice-to-have. In 2026 it is the front door to your business, and a locked front door costs you customers every day.",
+      },
+      {
+        type: "p",
+        text: "If your business is running on social media alone, or on a site that no longer pulls its weight, it is worth a conversation. Tell me what you do and I will reply within 24 hours with an honest plan and a fixed quote for a website that actually works.",
+      },
+    ],
+  },
+  {
     slug: "make-wordpress-load-under-one-second",
     title: "10 ways to make your WordPress site load in under a second",
     excerpt:

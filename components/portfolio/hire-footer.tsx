@@ -135,7 +135,7 @@ export function HireFooter() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/40 sm:flex-row">
           <p>© 2026 Asif — Web Development. All rights reserved.</p>
-          <p>Built with Next.js &amp; Tailwind CSS.</p>
+          <p>Development by Asif.</p>
         </div>
       </div>
     </footer>

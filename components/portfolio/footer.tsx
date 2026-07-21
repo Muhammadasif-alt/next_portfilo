@@ -159,7 +159,7 @@ export function Footer() {
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-3 px-6 py-6 text-xs text-muted-foreground sm:flex-row">
           <p>© 2026 Asif — Web Development. All rights reserved.</p>
-          <p>Built with Next.js &amp; Tailwind CSS.</p>
+          <p>Development by Asif.</p>
         </div>
       </div>
     </footer>
